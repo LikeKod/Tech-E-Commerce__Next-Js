@@ -4,7 +4,7 @@ import Twitter from "/public/images/footer/Twitter-16.svg";
 import Tiktok from "/public/images/footer/Tiktok-16.svg";
 import Instagram from "/public/images/footer/Twitter-16.svg";
 import logo from '/public/images/footer/logo-white.png'
-import './Footer.css'
+import footer from './Footer.css'
 
 export default function Footer() {
     return (
@@ -17,8 +17,6 @@ export default function Footer() {
                                 <Image
                                     priority
                                     src={logo}
-                                    width={24}
-                                    height={24}
                                     alt="Logo"
                                 />
                             </a>

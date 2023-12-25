@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import header from './header.css'
+import header from './header.module.css'
 import Gaming_24 from "/public/images/header/Gaming-24.svg";
 import Headphones from "/public/images/header/Headphones-24.svg";
 import Phones from "/public/images/header/Phones-24.svg";
@@ -12,10 +12,10 @@ import logo from "/public/images/header/LogoVector.png";
 
 export default function Header() {
     return (
-        <header className="header">
+        <header className={header.header}>
             <div className={header.header__top}>
-                <div className={header.header__top__container}>
-                    <div className="logo__black">
+                <div className={`${header.header__top__container} ${header.container}`}>
+                    <div className={header.logo__black}>
                         <a href="">
                             <Image
                                 priority
@@ -24,19 +24,19 @@ export default function Header() {
                             />
                         </a>
                     </div>
-                    <label for="" className="search header__search">
+                    <label for="" className={`${header.search} ${header.header__search}`}>
                         <span></span>
                         <input type="search" placeholder="Search" name="name" />
                     </label>
-                    <nav className="menu">
-                        <ul className="header__top__link">
-                            <li><a className="menu__link" href="#">Home</a></li>
-                            <li><a className="menu__link" href="#">About</a></li>
-                            <li><a className="menu__link" href="#">Contuct Us</a></li>
-                            <li><a className="menu__link" href="#">Blog</a></li>
+                    <nav className={header.menu}>
+                        <ul className={header.header__nav__link}>
+                            <li><a className={header.menu__link} href="#">Home</a></li>
+                            <li><a className={header.menu__link} href="#">About</a></li>
+                            <li><a className={header.menu__link} href="#">Contuct Us</a></li>
+                            <li><a className={header.menu__link} href="#">Blog</a></li>
                         </ul>
                     </nav>
-                    <div className="header__top__icons">
+                    <div className={header.header__top__icons}>
                         <a href="#">
                         <Image
                                 priority
