@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import './header.css'
 import Gaming_24 from "/public/images/header/Gaming-24.svg";
@@ -9,8 +11,20 @@ import User_svg from "/public/images/header/User-32.svg";
 import Favorites_svg from "/public/images/header/Favorites-32.svg";
 import Cart_svg from "/public/images/header/Cart-32.svg";
 import logo from "/public/images/header/LogoVector.png";
+import Menu from '../components/Menu/Menu.jsx'
+import { useState } from 'react';
+
+
 
 export default function Header() {
+    const navItem = [{ value: 'Home', href: '#' },
+    { value: 'About', href: '#' },
+    { value: 'Contuct', href: '#' },
+    { value: 'Blog', href: '#' },
+    ]
+
+    const [menuActive, setMenuActive] = useState(false)
+
     return (
         <header className={'header'}>
             <div className={'header__nav'}>
@@ -24,18 +38,11 @@ export default function Header() {
                             />
                         </a>
                     </div>
-                    <label for="" className={"search header__search"}>
+                    <label htmlFor="" className={"search header__search"}>
                         <span></span>
                         <input type="search" placeholder="Search" name="name" />
                     </label>
-                    <nav className="menu">
-                        <ul className={"header__nav__link"}>
-                            <li><a className={"menu__link"} href="#">Home</a></li>
-                            <li><a className={"menu__link"} href="#">About</a></li>
-                            <li><a className={"menu__link"} href="#">Contuct Us</a></li>
-                            <li><a className={"menu__link"} href="#">Blog</a></li>
-                        </ul>
-                    </nav>
+                    <Menu active={menuActive} setActive = {setMenuActive} items={navItem} />
                     <div className={"header__nav__icons"}>
                         <a href="#">
                             <Image
@@ -59,7 +66,7 @@ export default function Header() {
                             />
                         </a>
                     </div>
-                    <button className={"header__burger-btn"} id="burger">
+                    <button onClick={() => setMenuActive(!menuActive)} className={"header__burger-btn"} id="burger">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
