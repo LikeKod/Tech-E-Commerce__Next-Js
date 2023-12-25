@@ -5,8 +5,8 @@ import Footer from "./ui/footer/Footer"
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Header></Header>
+    <main >
+      <Header/>
       <Footer />
     </main>
   )
