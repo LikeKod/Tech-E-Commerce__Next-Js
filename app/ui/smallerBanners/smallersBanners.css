@@ -1,0 +1,88 @@
+.small {
+  flex-grow: 0.6;
+}
+
+.small__banners {
+  display: flex;
+}
+
+.small-description {
+  font-size: 14px;
+  color: rgba(144, 144, 144, 1);
+  ;
+}
+
+.title {
+  color: #000;
+}
+
+#ps {
+  font-size: 49px;
+}
+
+.info__banner h1 {
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 40px;
+  margin-bottom: 8px;
+}
+
+.info__banner p {
+  color: #909090;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.info__banner {
+  margin: auto;
+}
+
+.Banner__air {
+  background: #EDEDED;
+  max-width: 480px;
+}
+
+.banner__vision {
+  background: rgba(53, 53, 53, 1);
+  max-width: 480px;
+}
+
+.banner__vision h1 {
+  color: #fff;
+}
+
+.banner__ps {
+  max-width: 960px;
+}
+
+.ultra__small {
+  display: flex;
+}
+
+.equipment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.banner__mac {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 0.4;
+  background: rgba(237, 237, 237, 1);
+}
+
+.banner__mac img {
+  height: 500px;
+}
+
+.info__mac {
+  margin: auto;
+}
+
+#black {
+  color: #000;
+}
