@@ -9,7 +9,7 @@
     margin: 0 auto;
 }
 
-.card__category__item {
+/* .card__category__item {
     align-items: center;
     text-align: center;
     max-width: 360px;
@@ -25,10 +25,7 @@
 }
 .card__category__item.item-4{
     background-color: #2C2C2C;
-}
-.card__category__item.item-4{
-    background-color: #2C2C2C;
-}
+} */
 
 .card__category__item.item-1 .card__category-img {
     background-image: url(/images/card_category/image\ 39.png);
