@@ -15,8 +15,8 @@ export default function CardCategory() {
         <section className="w-full flex mx-auto">
             <div className="flex mx-auto hidden md:flex">
                 <div className="items-center text-center max-w-[360px] h-[640px]">
-                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
-                        <Image src={image1} alt="watch" />
+                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center bg-card-category'>
+                        <Image className='ml-[47px]' src={image1} alt="watch" />
                     </div>
                     <div className={"card__category__description"}>
                         <h3>Popular Products</h3>
@@ -27,7 +27,7 @@ export default function CardCategory() {
                     </div>
                 </div>
                 <div className="items-center text-center max-w-[360px] h-[640px] bg-card-category-1">
-                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
+                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center flex justify-end'>
                         <img src="/images/card_category/image 64.png" alt="watch" />
                     </div>
                     <div className={"card__category__description"}>
@@ -52,7 +52,7 @@ export default function CardCategory() {
                 </div>
                 <div className="items-center text-center max-w-[360px] h-[640px] bg-card-category-3">
                     <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center ml-[78px]'>
-                        <img src="/images/card_category/Macbook_1.png" alt="watch" />
+                        <img className='max-w-full max-h-full' src="/images/card_category/Macbook_1.png" alt="watch" />
                     </div>
                     <div className={"card__category__description"}>
                         <h3>Macbook Pro</h3>
@@ -63,10 +63,10 @@ export default function CardCategory() {
                     </div>
                 </div>
             </div >
-        <Carousel showArrows={false} autoPlay={true} interval={3000} infiniteLoop={true} showThumbs={false} className='block md:hidden max-w-[375px] mx-auto'>
+        <Carousel showStatus={false} showArrows={false} autoPlay={true} interval={3000} infiniteLoop={true} showThumbs={false} className='block md:hidden max-w-[375px] mx-auto'>
             <div className="items-center text-center max-w-[360px] h-[640px]">
-                <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
-                    <Image src={image1} alt="watch" />
+                <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center bg-card-category'>
+                    <Image className='max-w-[262px] max-h-[308px]' src={image1} alt="watch" />
                 </div>
                 <div className={"card__category__description"}>
                     <h3>Popular Products</h3>
@@ -102,7 +102,7 @@ export default function CardCategory() {
             </div>
             <div className="items-center text-center max-w-[360px] h-[640px] bg-card-category-3">
                 <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
-                    <img src="/images/card_category/Macbook_1.png" alt="watch" />
+                    <img className='max-w-full max-h-[500px]' src="/images/card_category/Macbook_1.png" alt="watch" />
                 </div>
                 <div className={"card__category__description"}>
                     <h3>Macbook Pro</h3>
