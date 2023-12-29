@@ -1,5 +1,6 @@
 'use client'
 
+import './Product.css'
 import Image from "next/image";
 import favoriteIcon from '/public/images/Icons/Favorite_duotone-red.svg'
 
