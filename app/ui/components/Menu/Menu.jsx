@@ -7,8 +7,8 @@ export default function Menu({ items, active, setActive }) {
             <div className="blur" />
             <ul className={"header__nav__link"} onClick={e => e.stopPropagation()}>
                 {items.map((item) =>
-                    <li>
-                        <a href={item.href}>{item.value}</a>
+                    <li key={item.id}>
+                        <a key={item.id} href={item.href}>{item.value}</a>
                     </li>
                 )}
             </ul>
