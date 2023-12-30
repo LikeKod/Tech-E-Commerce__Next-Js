@@ -58,4 +58,35 @@ export const productsList = [
     }
 ];
 
+export const tagsList = [
+    {
+        id: 1,
+        name:'New Arrival', 
+    },
+    {
+        id: 2,
+        name:'Bestseller', 
+    },
+    {
+        id: 3,
+        name:'Featured Products', 
+    }
+];
+
+
+export const discontList = [
+    {
+        id: 1,
+        name:'Discounts up to -20%', 
+    },
+    {
+        id: 2,
+        name:'Discounts up to -30%', 
+    },
+    {
+        id: 3,
+        name:'Discounts up to -50%', 
+    }
+];
+
 
