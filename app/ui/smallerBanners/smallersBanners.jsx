@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import ps from '/public/images/smallersBanners/ps.jpg';
+import ps5 from '/public/images/smallersBanners/ps5.png';
 import airpods from '/public/images/smallersBanners/airpods.png';
+import promax from '/public/images/smallersBanners/airpodspromax.png';
 import mac from '/public/images/smallersBanners/macbook.png';
 import macbook from '/public/images/smallersBanners/macBookAir.png';
 import vis from '/public/images/smallersBanners/vision.png';
-import promax from '/public/images/smallersBanners/airpodspromax.png';
+import vision from '/public/images/smallersBanners/visionPro.png';
 import "./smallersBanners.css"
 
 
@@ -14,6 +16,10 @@ export default function smallersBanners() {
       <div className={'small'}>
         <div className='banner__ps equipment'>
           <Image
+            className='ps5'
+            src={ps5}
+            alt='ps5' />
+          <Image className='ps'
             src={ps}
             alt="ps" />
           <div className={'info__banner'}>
@@ -28,8 +34,11 @@ export default function smallersBanners() {
         </div>
         <div className={'ultra__small'}>
           <div className={'Banner__air equipment'}>
-            <Image
+            <Image className='airpods'
               src={airpods}
+              alt="airpods" />
+            <Image className='promax'
+              src={promax}
               alt="airpods" />
             <div className={'info__banner'}>
               <h1 className={"title"}>
@@ -43,8 +52,11 @@ export default function smallersBanners() {
             </div>
           </div>
           <div className={'banner__vision equipment'}>
-            <Image
+            <Image className='vis'
               src={vis}
+              alt="vis" />
+            <Image className='vision'
+              src={vision}
               alt="vis" />
             <div className={'info__banner'}>
               <h1 className={"title"}>
@@ -66,8 +78,11 @@ export default function smallersBanners() {
             you love with a spacious Liquid Retina display.</p>
           <a href="#" className={"btn-black"} id={"black"}>Shop Now</a>
         </div>
-        <Image
+        <Image className='mac'
           src={mac}
+          alt="macbook" />
+        <Image className='macBook'
+          src={macbook}
           alt="macbook" />
       </div>
     </div>
