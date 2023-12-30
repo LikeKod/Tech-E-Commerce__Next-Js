@@ -17,10 +17,10 @@ import { useState } from 'react';
 
 
 export default function Header() {
-    const navItem = [{ value: 'Home', href: '#' },
-    { value: 'About', href: '#' },
-    { value: 'Contuct', href: '#' },
-    { value: 'Blog', href: '#' },
+    const navItem = [{ id: 1, value: 'Home', href: '#' },
+    { id: 2, value: 'About', href: '#' },
+    { id: 3, value: 'Contuct', href: '#' },
+    { id: 4, value: 'Blog', href: '#' },
     ]
 
     const [menuActive, setMenuActive] = useState(false)
