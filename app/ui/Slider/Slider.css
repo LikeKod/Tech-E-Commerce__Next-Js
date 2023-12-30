@@ -1,0 +1,62 @@
+
+.Slider>div {
+  font-family: 'SF Pro Display', sans-serif;
+  color: #000000;
+  max-width: 1120px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+}
+.swiper {
+  width: 100%;
+  
+}
+.swiper-slide{
+  background: #EDEDED;
+  border-radius: 15px;
+  Gap: 8px;
+  justify-content: center;
+  align-items: center;
+  
+}
+.text{
+  font-size: 16px;
+  font-weight: 500;
+text-align: center;
+}
+.Slider-img{
+  margin: 24px auto 8px;
+}
+.section-header{
+  margin-bottom: 32px;
+  order: -2;
+}
+.section-header__body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-header__arrows{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-header__arrows > div {
+  cursor: pointer;
+}
+
+.swiper-wrapper{
+  height: 128px;
+}
+.section-header__title{
+  font-weight: 500;
+  size: 24px;
+  line-height: 32px;
+}
+.section-header__arrows{
+  gap: 16px;
+}
+.section-header__arrows :hover{
+  transition: 0.7s;
+  transform: scale(1.05);
+}
