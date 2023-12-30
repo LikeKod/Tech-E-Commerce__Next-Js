@@ -6,6 +6,7 @@ import CardCategory from "./ui/card_category/CardCategory"
 import BasicButtons from './ui/components/Button.jsx'
 import Banner from "./ui/banner/Banner"
 import Banners from "./ui/smallerBanners/smallersBanners"
+import Sale from "./ui/sale/sale"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Banners />
       {/* <BasicButtons /> */}
       <CardCategory />
+      <Sale />
       <Footer />
     </main>
   )
