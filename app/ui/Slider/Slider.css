@@ -9,7 +9,6 @@
 }
 .swiper {
   width: 100%;
-  
 }
 .swiper-slide{
   background: #EDEDED;
@@ -22,7 +21,7 @@
 .text{
   font-size: 16px;
   font-weight: 500;
-text-align: center;
+  text-align: center;
 }
 .Slider-img{
   margin: 24px auto 8px;
@@ -50,7 +49,7 @@ text-align: center;
 }
 .section-header__title{
   font-weight: 500;
-  size: 24px;
+  font-size: 24px;
   line-height: 32px;
 }
 .section-header__arrows{
@@ -59,4 +58,7 @@ text-align: center;
 .section-header__arrows :hover{
   transition: 0.7s;
   transform: scale(1.05);
+}
+.arrow__button{
+  margin-top: 6px;
 }
