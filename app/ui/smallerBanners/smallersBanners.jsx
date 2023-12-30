@@ -2,7 +2,9 @@ import Image from 'next/image'
 import ps from '/public/images/smallersBanners/ps.jpg';
 import airpods from '/public/images/smallersBanners/airpods.png';
 import mac from '/public/images/smallersBanners/macbook.png';
+import macbook from '/public/images/smallersBanners/macBookAir.png';
 import vis from '/public/images/smallersBanners/vision.png';
+import promax from '/public/images/smallersBanners/airpodspromax.png';
 import "./smallersBanners.css"
 
 
