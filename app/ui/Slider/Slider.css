@@ -48,6 +48,7 @@
 }
 
 .swiper-wrapper{
+  flex-wrap: wrap;
   height: auto;
 
 }
@@ -66,11 +67,6 @@
 .arrow__button{
   margin-top: 6px;
 }
-/* @media ( max-width: 600px ) {
-  .swiper-wrapper{
-    flex-wrap: wrap;
-  height: auto;
-}
-  } */
+
 
 
