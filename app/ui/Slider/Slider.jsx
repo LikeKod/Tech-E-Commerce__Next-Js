@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
+import "swiper/css/grid";
 
 import { Grid, Navigation } from 'swiper/modules';
 import BtnSlider from '../components/Swiper'
@@ -25,26 +26,41 @@ export default function Slider() {
       <Swiper
       slidesPerView={2}
       spaceBetween={16}
+      grid={{
+        rows: 3,
+        fill: "row",
+      }}
+      pagination={{
+        clickable: true,
+      }}
       navigation={{
         nextEl: '.review-swiper-button-next',
         prevEl: '.review-swiper-button-prev'
       }}
       breakpoints={{
-        376: {
+        400: {
           slidesPerView: 3,
           spaceBetween: 16,
+          rows: 3,
+          fill: "row",
         },
         600: {
           slidesPerView: 4,
           spaceBetween: 16,
+          rows: 3,
+          fill: "row",
         },
         900: {
           slidesPerView: 5,
           spaceBetween: 32,
+          rows: 3,
+          fill: "row",
         },
         1100: {
           slidesPerView: 6,
           spaceBetween: 32,
+          rows: 3,
+          fill: "row",
         }
         
       }}

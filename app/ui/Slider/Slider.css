@@ -16,6 +16,9 @@
   Gap: 8px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 16px;
+  width: 160px;
+  height: 128px;
   
 }
 .text{
@@ -45,7 +48,8 @@
 }
 
 .swiper-wrapper{
-  height: 128px;
+  height: auto;
+
 }
 .section-header__title{
   font-weight: 500;
@@ -62,3 +66,11 @@
 .arrow__button{
   margin-top: 6px;
 }
+/* @media ( max-width: 600px ) {
+  .swiper-wrapper{
+    flex-wrap: wrap;
+  height: auto;
+}
+  } */
+
+
