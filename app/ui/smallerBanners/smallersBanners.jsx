@@ -27,7 +27,7 @@ export default function smallersBanners() {
               Playstation 5
             </h1>
             <p className={"small-description"}>
-              Incredibly powerful CPUs, GPUs, and an SSD with <br />
+              Incredibly powerful CPUs, GPUs, and an SSD with
               integrated I/O will redefine your PlayStation experience.
             </p>
           </div>
@@ -42,11 +42,11 @@ export default function smallersBanners() {
               alt="airpods" />
             <div className={'info__banner'}>
               <h1 className={"title"}>
-                Apple <br />
+                Apple
                 AirPods Max
               </h1>
               <p className={"small-description"}>
-                Computational audio. <br />
+                Computational audio.
                 Listen, it's powerful
               </p>
             </div>
@@ -60,11 +60,11 @@ export default function smallersBanners() {
               alt="vis" />
             <div className={'info__banner'}>
               <h1 className={"title"}>
-                Apple <br />
+                Apple
                 Vision Pro
               </h1>
               <p className={"small-description"}>
-                An immersive way to <br />
+                An immersive way to
                 experience entertainment
               </p>
             </div>

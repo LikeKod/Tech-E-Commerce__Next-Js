@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css'
-// import { Carousel } from "react-responsive-carousel"
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { Carousel } from "react-responsive-carousel"
 import Image from 'next/image'
 import './CardCategory.css'
 import image1 from "/public/images/card_category/image 12.png";

@@ -19,18 +19,28 @@
 #ps {
   font-size: 49px;
 }
+
 .ps5 {
   display: none;
 }
+
 .promax {
   display: none;
 }
+
 .vision {
   display: none;
 }
+
 .macBook {
   display: none;
 }
+
+.banner__ps .info__banner {
+  width: 340px;
+  height: 143px;
+}
+
 .info__banner h1 {
   font-size: 29px;
   font-weight: 500;
@@ -95,6 +105,7 @@
   .equipment {
     text-align: center;
   }
+
   .info__mac {
     text-align: center;
   }
@@ -106,38 +117,60 @@
   }
 
   @media (max-width:700px) {
+    .info__banner {
+      margin: 40px 16px;
+    }
     .info__mac h1 {
       font-size: 50px;
     }
-    
-    .info__mac .description{
+
+    .info__mac .description {
       font-size: 20px;
     }
-    
+
   }
-@media (max-width:574px) {
-  .ultra__small {
-    display: block;
+
+  @media (max-width:574px) {
+    .ultra__small {
+      display: block;
+    }
+
+    .info__mac {
+      display: flex;
+      flex-direction: column;
+      margin: 40px 16px;
+    }
   }
-  .info__mac  {
-    display: block;
+
+  @media (max-width:400px) {
+    .tittle {
+      line-height: 90px;
+    }
+
+    #ps {
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 40px;
+
+    }
+
+    .equipment img {
+      margin-top: 40px;
+    }
+    .equipment {
+      flex-direction: column;
+    }
+
+    .ps, .airpods, .vis, .mac {
+      display: none;
+    }
+
+    .ps5, .promax, .vision, .macBook {
+      display: block;
+    }
+
+    .banner__mac {
+      flex-direction: column-reverse;
+    }
   }
-}
-@media (max-width:400px) {
-  #ps {
-    font-size: 29px;
-  }
-  .equipment {
-    flex-direction: column;
-  }
-  .ps, .airpods, .vis, .mac {
-    display: none;
-  }
-  .ps5, .promax, .vision, .macBook {
-    display: block;
-  }
-  .banner__mac {
-    flex-direction: column-reverse;
-  }
-}
 }
