@@ -23,6 +23,9 @@ export default function Home() {
             <Banner />
             <Banners />
             {/* <BasicButtons /> */}
+            
+            <Slider />
+
             <div className="container py-14">
                 <div className="products__tags mb-8">
                     <TopFilters filters={tagsList} />
@@ -30,7 +33,6 @@ export default function Home() {
                 <ProductsContainer products={productsList} />
             </div>
 
-            <Slider />
 
             <CardCategory />
 
