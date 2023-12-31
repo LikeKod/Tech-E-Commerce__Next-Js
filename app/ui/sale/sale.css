@@ -1,0 +1,58 @@
+.sale {
+    padding-top: 160px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.sale__content {
+    text-align: center;
+}
+
+.banner-title--sale {
+    font-size: 86px;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 100;
+}
+
+.banner-title--sale span {
+    font-weight: 400;
+}
+
+.btn__white-small{
+    font-size: 14px;
+    width: 162px;
+    height: 48px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.header__banner-btn a{
+    color: #fff;
+}
+.banner-subtitle--sale {
+    margin-bottom: 40px;
+    color: #787878;
+}
+
+.button--sale {
+    margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+    .banner-title--sale {
+        font-size: 48px;
+    }
+
+    .banner-subtitle--sale {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
