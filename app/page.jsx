@@ -10,6 +10,7 @@ import ProductsContainer from "./ui/components/products/ProductsContainer"
 import { productsList, discontList, tagsList } from "./lib/data.js"
 import TopFilters from "./ui/components/TagsFilter/TopFilters"
 import Sale from "./ui/sale/sale"
+import Slider from "./ui/Slider/Slider"
 
 
 
@@ -28,6 +29,8 @@ export default function Home() {
                 </div>
                 <ProductsContainer products={productsList} />
             </div>
+
+            <Slider />
 
             <CardCategory />
 
