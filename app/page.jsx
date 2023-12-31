@@ -15,18 +15,6 @@ import Sale from "./ui/sale/sale"
 
 
 export default function Home() {
-<<<<<<< HEAD
-  return (
-    <main >
-      <Header />
-      <Banner />
-      <Banners />
-      {/* <BasicButtons /> */}
-      <CardCategory />
-      <Footer />
-    </main>
-  )
-=======
     // console.log(productsList)
     return (
         <main >
@@ -55,5 +43,4 @@ export default function Home() {
             <Footer />
         </main>
     )
->>>>>>> 57d408880c6e38d443f364ec0e25561e98f91089
 }
