@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import './header.css'
+import './Header.css'
 import Gaming_24 from "/public/images/header/Gaming-24.svg";
 import Headphones from "/public/images/header/Headphones-24.svg";
 import Phones from "/public/images/header/Phones-24.svg";
@@ -11,18 +11,13 @@ import User_svg from "/public/images/header/User-32.svg";
 import Favorites_svg from "/public/images/header/Favorites-32.svg";
 import Cart_svg from "/public/images/header/Cart-32.svg";
 import logo from "/public/images/header/LogoVector.png";
-import Menu from '../components/Menu/Menu.jsx'
+import Menu from "./Menu"
 import { useState } from 'react';
+import { navItem } from '../../../lib/data';
 
 
 
 export default function Header() {
-    const navItem = [{ id: 1, value: 'Home', href: '#' },
-    { id: 2, value: 'About', href: '#' },
-    { id: 3, value: 'Contuct', href: '#' },
-    { id: 4, value: 'Blog', href: '#' },
-    ]
-
     const [menuActive, setMenuActive] = useState(false)
 
     return (

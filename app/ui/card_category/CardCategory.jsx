@@ -15,8 +15,8 @@ export default function CardCategory() {
         <section className="w-full flex mx-auto">
             <div className="flex mx-auto hidden md:flex">
                 <div className="items-center text-center max-w-[360px] h-[640px]">
-                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center bg-card-category'>
-                        <Image className='ml-[47px]' src={image1} alt="watch" />
+                    <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center flex justify-end bg-card-category'>
+                        <Image className='ml-[47px] mb-[27px]' src={image1} alt="watch" />
                     </div>
                     <div className={"card__category__description"}>
                         <h3>Popular Products</h3>
