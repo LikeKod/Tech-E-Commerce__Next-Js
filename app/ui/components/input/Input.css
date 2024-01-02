@@ -1,0 +1,22 @@
+.header__search input {
+    width: 443px;
+    max-height: 56px;
+    margin-right: 32px;
+    background-color: #F5F5F5;
+}
+
+@media (max-width: 1200px) {
+    .header__search input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .search {
+        display: none;
+    }
+
+    .header__search input {
+        display: none;
+    }
+}

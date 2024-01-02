@@ -1,0 +1,27 @@
+.main {
+    text-align: center;
+}
+
+.main li{
+    display: inline-block;
+    
+}
+
+.main li a{
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    padding: 4px 11px;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+}
+
+.main li a:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.main li.selected a{
+    background-color: #000000;
+    color: white;
+}

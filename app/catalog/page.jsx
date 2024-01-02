@@ -2,9 +2,14 @@
 
 import MainLayout from "../layouts/MainLayout"
 import { productsList } from "../lib/data"
-import ProductsContainer from "../ui/components/products/ProductsContainer"
+import Pagination from "../ui/components/pagination/Pagination"
+import Product from "../ui/components/products/product/Product"
 
-export default function Product() {
+export default function Catalog({ }) {
+    const item = productsList.map((product) =>
+        <Product key={product.id} product={product} />
+    )
+
     return (
         <MainLayout>
 
@@ -20,12 +25,15 @@ export default function Product() {
 
                     <div>
                         <div className="py-14">
-                            <ProductsContainer products={productsList} />
+                            <div className="flex flex-wrap gap-4">
+                                {item}
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
+                <Pagination />
 
             </div>
 
