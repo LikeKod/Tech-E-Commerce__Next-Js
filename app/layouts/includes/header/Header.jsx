@@ -14,10 +14,11 @@ import logo from "/public/images/header/LogoVector.png";
 import Menu from "./Menu"
 import { useState } from 'react';
 import { navItem } from '../../../lib/data';
+import Search from '../../../ui/components/input/Input'
 
 
 
-export default function Header() {
+export default function Header({searchValue, setSearchValue}) {
     const [menuActive, setMenuActive] = useState(false)
 
     return (
@@ -33,10 +34,7 @@ export default function Header() {
                             />
                         </a>
                     </div>
-                    <label htmlFor="" className={"search header__search"}>
-                        <span></span>
-                        <input type="search" placeholder="Search" name="name" />
-                    </label>
+                    <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
                     <Menu active={menuActive} setActive = {setMenuActive} items={navItem} />
                     <div className={"header__nav__icons"}>
                         <a href="#">
