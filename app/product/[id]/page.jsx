@@ -1,7 +1,7 @@
 'use client'
 
 import MainLayout from "../../layouts/MainLayout"
-import Breadcrumbs from "../../ui/components/products/Breadcrumbs/Breadcrumbs"
+import Breadcrumbs from "../../ui/components/Breadcrumbs/Breadcrumbs"
 
 export default function Product() {
     return (
