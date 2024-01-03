@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout"
 import { productsList } from "../lib/data"
 import Pagination from "../ui/components/pagination/Pagination"
 import Product from "../ui/components/products/product/Product"
+import Filter from '../ui/components/filter/Filter'
 
 export default function Catalog({ }) {
     const item = productsList.map((product) =>
@@ -19,8 +20,9 @@ export default function Catalog({ }) {
                 </div>
 
                 <div className="flex justify-between">
-                    <div className="min-w-[256px]">
+                    <div className="min-w-[256px] pt-[3.5rem]">
                         Filters
+                        <Filter />
                     </div>
 
                     <div>
