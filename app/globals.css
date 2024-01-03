@@ -1,7 +1,5 @@
 /* Reset styles  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 * {
     padding: 0px;
@@ -218,3 +216,9 @@ section {
     border-radius: 6px;
     opacity: 1;
 }
+
+/* TailWind CSS */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
