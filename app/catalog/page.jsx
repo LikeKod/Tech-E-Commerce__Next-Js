@@ -20,8 +20,7 @@ export default function Catalog({ }) {
                 </div>
 
                 <div className="flex justify-between">
-                    <div className="min-w-[256px] pt-[3.5rem]">
-                        Filters
+                    <div className="min-w-[256px] pt-[3.5rem] mr-[28px]">
                         <Filter />
                     </div>
 
