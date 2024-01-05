@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import ps from '/public/images/smallersBanners/ps.jpg';
 import ps5 from '/public/images/smallersBanners/ps5.png';
