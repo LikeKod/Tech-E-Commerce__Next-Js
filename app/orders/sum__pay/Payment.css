@@ -1,0 +1,178 @@
+.content {
+  margin: 100px 0 100px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+.content__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.summary {
+  padding: 32px 24px 32px 24px;
+  border: 1px solid rgba(235, 235, 235, 1);
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+}
+
+.products {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.product {
+  display: inline-flex;
+  background-color: rgba(246, 246, 246, 1);
+  margin-bottom: 16px;
+  border-radius: 13px;
+  padding: 16px 24px 16px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  width: 465px;
+}
+
+.product:last-child {
+  margin-bottom: 24px;
+}
+
+.top {
+  color: rgba(84, 84, 84, 1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.name {
+  padding: 12px 0px 12px 0px;
+}
+
+.info {
+  margin-bottom: 24px;
+}
+
+.addres {
+  margin-bottom: 16px;
+}
+
+.subtotal {
+  margin-bottom: 20px;
+}
+
+.shipHand {
+  margin-bottom: 16px;
+}
+
+.sname {
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+}
+
+.tname {
+  line-height: 32px;
+  color: rgba(84, 84, 84, 1);
+}
+
+.info-t {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.nav {
+  display: flex;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.nav li {
+  margin-right: 56px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+.card {
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-label {
+  margin-bottom: 16px;
+}
+
+
+.contact-input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  padding: 12px 16px 12px 16px;
+  border: 1px solid rgba(206, 206, 206, 1);
+  border-radius: 7px;
+  width: 512px;
+}
+
+.input-box {
+  display: flex;
+}
+
+.exp {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.exp input {
+  width: 248px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-box button {
+  padding: 19px 102px 19px 102px;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #fff;
+}
