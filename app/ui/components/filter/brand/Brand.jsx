@@ -8,8 +8,8 @@ export default function Brand() {
     return (
         <>
             <div className='mb-[24px]'>
-                <div className='flex justify-between border-b-8'>
-                    <button onClick={() => setIsOpen(!isOpen)} className='font-medium text-xl '>Brand</button>
+                <div className={`flex justify-between filters_border`}>
+                    <button onClick={() => setIsOpen(!isOpen)} className='font-medium text-xl'>Brand</button>
                     <Image className={`${isOpen ? "arrow_open" : "arrow"}`} src={arrow} />
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
@@ -23,55 +23,55 @@ export default function Brand() {
                     </label>
                     <div className="Checkbox mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="name" />
-                        <label for="name">Samsung
+                        <label htmlFor="name">Samsung
                             <p className="checkbox_number">125</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Apple" />
-                        <label for="Apple">Apple
+                        <label htmlFor="Apple">Apple
                             <p className="checkbox_number">110</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Xiaomi" />
-                        <label for="Xiaomi">Xiaomi
+                        <label htmlFor="Xiaomi">Xiaomi
                             <p className="checkbox_number">110</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Poco" />
-                        <label for="Poco">Poco
+                        <label htmlFor="Poco">Poco
                             <p className="checkbox_number">44</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="OPPO" />
-                        <label for="OPPO">OPPO
+                        <label htmlFor="OPPO">OPPO
                             <p className="checkbox_number">36</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Honor" />
-                        <label for="Honor">Honor
+                        <label htmlFor="Honor">Honor
                             <p className="checkbox_number">10</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Motorola" />
-                        <label for="Motorola">Motorola
+                        <label htmlFor="Motorola">Motorola
                             <p className="checkbox_number">34</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Nokia" />
-                        <label for="Nokia">Nokia
+                        <label htmlFor="Nokia">Nokia
                             <p className="checkbox_number">22</p>
                         </label>
                     </div>
                     <div className="Checkbox_text mb-[8px]">
                         <input type="checkbox" className="custom-checkbox" id="Realme" />
-                        <label for="Realme">Realme
+                        <label htmlFor="Realme">Realme
                             <p className="checkbox_number">110</p>
                         </label>
                     </div>

@@ -16,6 +16,7 @@ module.exports = {
         'sale-md': "url(/images/sale/Banner-xs.jpg)",
       },
       colors: {
+        'text-price': '#A7A7A7',
         'card-category-1': '#F9F9F9',
         'card-category-2': '#EAEAEA',
         'card-category-3': '#2C2C2C',
