@@ -2,10 +2,41 @@
 
 import MainLayout from "../../layouts/MainLayout"
 import Breadcrumbs from "../../ui/components/Breadcrumbs/Breadcrumbs"
-
 import ScreenshotIcon from '@mui/icons-material/Screenshot';
 
-export default function Product() {
+import { useEffect, useState } from "react"
+
+export default function Product({ params }) {
+    const [product, setProduct] = useState({})
+
+    const getProduct = async () => {
+        // useIsLoading(true)
+        setProduct({})
+
+        const url = "https://dummyjson.com/products/";
+
+        const response = await fetch(url + params.id)
+        const prod = await response.json()
+        setProduct(prod)
+        // cart.isItemAddedToCart(prod)
+        // useIsLoading(false)
+
+    }
+
+    useEffect(() => {
+        getProduct()
+    }, [])
+    
+
+    console.log(product.images)
+
+    if (product.images){
+        product.images.map(item => 
+            console.log(item)
+            )
+    }
+
+
     return (
         <MainLayout>
 
@@ -23,31 +54,25 @@ export default function Product() {
 
                             <div className="flex gap-x-12 my-auto">
                                 <ul className="flex flex-col gap-y-6 overflow-auto h-full w-20">
-                                    <li>
-                                        <img src="../images/products/Iphone14pro-1.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="../images/products/Iphone14pro-1.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="../images/products/Iphone14pro-1.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="../images/products/Iphone14pro-1.png" alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="../images/products/Iphone14pro-1.png" alt="" />
-                                    </li>
+
+                                    {product?.images 
+                                        ?   product.images.map((image, index) => 
+                                                <li key={product?.id+index}>
+                                                    <img src={image} alt="" />
+                                                </li>
+                                            )
+                                        :   <li></li> 
+                                    }                                     
                                 </ul>
 
                                 <div className="max-w-[413px]">
-                                    <img className="w-full" src="../images/products/Iphone14pro-1.png" alt="product-photo" />
+                                    <img className="w-full h-full object-cover object-center" src={product?.thumbnail} />
                                 </div>
                             </div>
 
                             <div className="w-1/2">
-                                <h1 className="text-4xl/[40px] font-semibold mb-6">Apple iPhone 14 Pro Max</h1>
-                                <p className="text-3xl/[32px] font-semibold mb-6">$1399<span className="text-2xl line-through ml-4 text-gray-500 font-normal">$1499</span></p>
+                                <h1 className="text-4xl/[40px] font-semibold mb-6">{product?.title}</h1>
+                                <p className="text-3xl/[32px] font-semibold mb-6">${product?.price}<span className="text-2xl line-through ml-4 text-gray-500 font-normal">$1499</span></p>
                                 <div className="flex items-center gap-x-6 mb-6">
                                     <h4 className="text-[15px]">Select color:</h4>
                                     <div className="flex gap-2">
@@ -127,16 +152,16 @@ export default function Product() {
                                 </div>
 
                                 <p className=" text-[14px] tracking-wide leading-6 text-gray-500 mb-8 ">
-                                    Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing the new systemwith two cameras
+                                    {product?.description}
                                     <span className="text-gray-700 "> <a className="underline" href="#">more...</a> </span>
                                 </p>
 
                                 <div className="flex gap-x-4">
-                                    <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center px-14 py-4">
+                                    <button type="button" className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center px-14 py-4">
                                         Add to Wishlist
                                     </button>
 
-                                    <button type="button" class="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center px-14 py-4">
+                                    <button type="button" className="text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center px-14 py-4">
                                         Add to Card
                                     </button>
                                 </div>
