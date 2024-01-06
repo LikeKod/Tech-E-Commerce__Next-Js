@@ -8,7 +8,7 @@ export default function ScreenDiagl() {
     return (
         <>
             <div className='mb-[24px]'>
-                <div className={`flex justify-between filters_border`}>
+                <div className='flex justify-between border-b-2 pb-[12px]'>
                     <button onClick={() => setIsOpen(!isOpen)} className='font-medium text-xl'>Screen diagonal</button>
                     <Image className={`${isOpen ? "arrow_open" : "arrow"}`} src={arrow} />
                 </div>
