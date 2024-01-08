@@ -9,12 +9,18 @@ import TopFilters from "./ui/components/TagsFilter/TopFilters"
 import Sale from "./ui/sale/sale"
 import Slider from "./ui/Slider/Slider"
 import MainLayout from "./layouts/MainLayout"
+import  {GET_PRODUCTS_ENDPOINT} from "./lib/constants/endpoints.js"
 
 
 
+export default async function Home() {
 
-export default function Home() {
-    // console.log(productsList)
+    const req = await fetch(GET_PRODUCTS_ENDPOINT);
+    const data = await req.json();
+    
+
+
+
     return (
         <MainLayout>
             <Banner />
@@ -27,7 +33,7 @@ export default function Home() {
                 <div className="products__tags mb-8">
                     <TopFilters filters={tagsList} />
                 </div>
-                <ProductsContainer products={productsList} />
+                <ProductsContainer products={data.products} />
             </div>
 
 
@@ -37,7 +43,7 @@ export default function Home() {
                 <div className="products__tags mb-8">
                     <TopFilters filters={discontList} />
                 </div>
-                <ProductsContainer products={productsList} />
+                <ProductsContainer products={data.products} />
             </div>
 
             <Sale />
@@ -46,3 +52,5 @@ export default function Home() {
 
     )
 }
+
+

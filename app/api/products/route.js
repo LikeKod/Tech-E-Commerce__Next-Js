@@ -20,7 +20,6 @@ const api = new WooCommerceRestApi({
  */
 
 
-
 export async function GET (req, res) {
 	
 	const responseData = {
@@ -29,12 +28,14 @@ export async function GET (req, res) {
 	}
 	
 	const { perPage } = req?.query ?? {};
+
+    
 	
 	try {
 		const { data } = await api.get(
 			'products',
 			{
-				per_page: 20
+				per_page: perPage || 50
 			}
 		);
 		
