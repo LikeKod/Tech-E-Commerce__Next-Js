@@ -1,12 +1,3 @@
-// const data = [
-//     {
-//         image: '/images/cards_category/watch.png',
-//         name: 'Popular Products',
-//         description: 'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-//         txt_btn: 'shop now',
-//     },
-// ]
-
 export const navItem = [{ id: 1, value: 'Home', href: '#' },
     { id: 2, value: 'About', href: '#' },
     { id: 3, value: 'Contuct', href: '#' },

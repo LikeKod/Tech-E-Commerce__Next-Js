@@ -3,6 +3,9 @@ import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
 import { useState } from 'react'
 import defis from '../../../../../public/images/filters/defis.svg'
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import 'rc-tooltip/assets/bootstrap.css';
 
 export default function Price() {
     const [isOpen, setIsOpen] = useState(false)
@@ -25,7 +28,9 @@ export default function Price() {
                             <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" />
                         </div>
                         <label></label>
-                        <input type='range' min={5000} max={100000} step={1} value={0} />
+                        <Slider
+                            min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`}
+                            range />
                     </div>
                 </div>
             </div>
