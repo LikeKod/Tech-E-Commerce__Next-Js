@@ -9,7 +9,7 @@ const items = productsList;
 
 function Items({ currentItems }) {
     return (
-        <div className="flex flex-wrap gap-4">
+        <div className="flex justify-center flex-wrap gap-4">
             {currentItems && currentItems.map((product) =>
                 <Product key={product.id} product={product} />
             )}

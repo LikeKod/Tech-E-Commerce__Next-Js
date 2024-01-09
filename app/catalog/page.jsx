@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout"
 import PaginatedItems from "../ui/components/pagination/Pagination"
 import Filter from '../ui/components/filter/Filter'
 import Arrow from '../../public/images/Icons/Arrow-24.svg'
+import ArrowLeft from '../../public/images/Icons/Arrow_left-32.svg'
 import Image from "next/image"
 import { useState } from "react"
 import Filters from '../../public/images/Icons/Filters-24.svg'
@@ -23,12 +24,16 @@ export default function Catalog({ }) {
                     <p className="text-black">Smartphones</p>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-center sm:justify-between">
                     <div className={`${isOpen ? "block" : "hidden"} min-w-[256px] pt-[3.5rem] mr-[28px] sm:block`}>
+                        <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer flex text-2xl mb-[24px] sm:hidden">
+                            <Image className="mr-[16px]" src={ArrowLeft} />
+                            Filters
+                        </div>
                         <Filter />
                     </div>
 
-                    <div>
+                    <div className={`${isOpen ? 'hidden' : ''}`}>
                         <div className="block justify-between my-[24px] sm:flex">
                             <div className="text-neutral-400 text-sm hidden sm:block">Selected Products: <span className="text-black text-xl">85</span></div>
                             <div>
@@ -46,7 +51,9 @@ export default function Catalog({ }) {
                             </div>
                             <div className="text-neutral-400 mt-[24px] text-sm sm:hidden">Selected Products: <span className="text-black text-xl">85</span></div>
                         </div>
-                        <PaginatedItems itemsPerPage={4} />
+                        <div>
+                            <PaginatedItems itemsPerPage={4} />
+                        </div>
                     </div>
 
                 </div>
