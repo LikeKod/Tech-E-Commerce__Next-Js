@@ -2,6 +2,8 @@ import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
 import { useState } from 'react'
+import Search from '../../search/Search'
+import { categoryFoFilters } from '../../../../lib/data'
 
 export default function ScreenType() {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,20 +15,17 @@ export default function ScreenType() {
                     <Image className={`${isOpen ? "arrow_open" : "arrow"}`} src={arrow} />
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
-                    <label htmlFor="">
-                        <span></span>
-                        <input
-                            className='w-[230px] h-[40px] rounded-lg bg-neutral-100 px-12 box-border mb-[16px] mt-[24px]'
-                            type="search"
-                            placeholder="Search"
-                            name="name" />
-                    </label>
-                    <div className="Checkbox mb-[8px]">
-                        <input type="checkbox" className="custom-checkbox" id="16GB" />
-                        <label for="16GB">16GB
-                            <p className="checkbox_number">125</p>
-                        </label>
-                    </div>
+                    <Search />
+                    {categoryFoFilters.map((category) =>
+                        category.screenType ?
+                            <div key={category.id} className="Checkbox mb-[8px]">
+                                <input type="checkbox" className="custom-checkbox" id={category?.screenType} />
+                                <label for={category?.screenType}>{category?.screenType}
+                                    <p className="checkbox_number">125</p>
+                                </label>
+                            </div>
+                            : null
+                    )}
                 </div>
             </div>
         </>

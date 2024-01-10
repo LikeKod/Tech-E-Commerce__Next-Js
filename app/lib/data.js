@@ -86,4 +86,64 @@ export const discontList = [
     }
 ];
 
+export const categoryFoFilters = [
+    {
+        id: 1,
+        memory: '16GB',
+        brand: 'Samsung',
+        protection: 'ip20',
+        screenDiag: '15',
+        screenType: 'hd',
+        battery: '2600',
+    },
+    {
+        id: 2,
+        memory: '32GB',
+        brand: 'Apple',
+        protection: 'ip67',
+        screenDiag: '18',
+        screenType: 'fm',
+        battery: '2100',
+    },
+    {
+        id: 3,
+        memory: '64GB',
+        brand: 'Xiaomi',
+        protection: 'ip55',
+        screenDiag: '19',
+        screenType: 'or',
+        battery: '2000',
+    },
+    {
+        id: 4,
+        memory: '128GB',
+        brand: 'Poco',
+        protection: 'ip66',
+        screenDiag: '21',
+        battery: '1850',
+    },
+    {
+        id: 5,
+        memory: '256GB',
+        brand: 'Oppo',
+    },
+    {
+        id: 6,
+        memory: '512GB',
+        brand: 'Honor',
+    },
+    {
+        id: 7,
+        brand: 'Motorolla',
+    },
+    {
+        id: 8,
+        brand: 'Nokia',
+    },
+    {
+        id: 9,
+        brand: 'Realme',
+    },
+]
+
 
