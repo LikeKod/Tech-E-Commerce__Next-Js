@@ -5,10 +5,21 @@ import { useState } from 'react'
 import defis from '../../../../../public/images/filters/defis.svg'
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import 'rc-tooltip/assets/bootstrap.css';
 
 export default function Price() {
+    const [leftValue, setLeftValue] = useState(1000)
+    const [rightValue, setRightValue] = useState(7000)
     const [isOpen, setIsOpen] = useState(false)
+
+    const LeftOnChangeEventTriggerd = (newValue) => {
+        console.log("new Value", newValue[1]);
+        setLeftValue(newValue[1]);
+      };
+
+      const RightOnChangeEventTriggerd = (newValue) => {
+        console.log("new Value", newValue[1]);
+        setRightValue(newValue[1]);
+      };
     return (
         <>
             <div className='mb-[24px]'>
@@ -23,13 +34,16 @@ export default function Price() {
                             <p className='text-sm text-zinc-400'>To</p>
                         </div>
                         <div className='flex justify-between mt-[8px] mb-[16px]'>
-                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" />
+                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text"  value={leftValue} />
                             <Image src={defis} />
-                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" />
+                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" value={rightValue} />
                         </div>
                         <label></label>
                         <Slider
-                            min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`}
+                            min={0} max={1000000} defaultValue= {[leftValue, rightValue]} 
+                            step={1000}
+                            onChange={RightOnChangeEventTriggerd}
+                            value={[leftValue, rightValue]}
                             range />
                     </div>
                 </div>
