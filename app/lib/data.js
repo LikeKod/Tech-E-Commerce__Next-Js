@@ -7,6 +7,22 @@
 //     },
 // ]
 
+import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
+
+
+
+export const getProducts = async () => {
+    // Fetch data from external API
+    const res = await fetch(GET_PRODUCTS_ENDPOINT)
+    const data = await res.json()
+    // Pass data to the page via props
+    return { 
+        data
+    }
+  }
+
+ 
+
 export const navItem = [{ id: 1, value: 'Home', href: '#' },
     { id: 2, value: 'About', href: '#' },
     { id: 3, value: 'Contuct', href: '#' },

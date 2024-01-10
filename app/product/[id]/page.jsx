@@ -1,41 +1,44 @@
-'use client'
-
 import MainLayout from "../../layouts/MainLayout"
 import Breadcrumbs from "../../ui/components/Breadcrumbs/Breadcrumbs"
 import ScreenshotIcon from '@mui/icons-material/Screenshot';
+import { getProducts } from '../../lib/data';
+import { NextResponse } from "next/server"
 
-import { useEffect, useState } from "react"
+import { wooApi } from "../../api/products/route"
 
-export default function Product({ params }) {
-    const [product, setProduct] = useState({})
 
-    const getProduct = async () => {
-        // useIsLoading(true)
-        setProduct({})
 
-        const url = "https://dummyjson.com/products/";
 
-        const response = await fetch(url + params.id)
-        const prod = await response.json()
-        setProduct(prod)
-        // cart.isItemAddedToCart(prod)
-        // useIsLoading(false)
+export default async function Product({ params }) {
+    const { data } = await getProducts();
 
-    }
+    // Находим из массива продукт по праметру из пути
+    const product = data?.products.find(item =>
+        item.slug === params.id
+    )
 
-    useEffect(() => {
-        getProduct()
-    }, [])
     
-
-    console.log(product.images)
-
-    if (product.images){
-        product.images.map(item => 
-            console.log(item)
-            )
+    const getVariations = async (productId) => {
+        const responseData = {
+            variants: []
+        }        
+        // Fetch data from external API
+        const res = await wooApi.get(`products/${productId}/variations`);
+        responseData.variants = res.data;
+		return  responseData;
     }
 
+    const {variants} = await getVariations(product.id)
+
+    // получаем первое фото из массива фотографий
+    let img = '';
+    if (product.images) {
+        img = product?.images[0];
+    }
+
+    console.log('------------variations--------', variants , 'end') 
+    
+    
 
     return (
         <MainLayout>
@@ -55,24 +58,24 @@ export default function Product({ params }) {
                             <div className="flex gap-x-12 my-auto">
                                 <ul className="flex flex-col gap-y-6 overflow-auto h-full w-20">
 
-                                    {product?.images 
-                                        ?   product.images.map((image, index) => 
-                                                <li key={product?.id+index}>
-                                                    <img src={image} alt="" />
-                                                </li>
-                                            )
-                                        :   <li></li> 
-                                    }                                     
+                                    {product?.images
+                                        ? product.images.map((image, index) =>
+                                            <li key={image.id}>
+                                                <img src={image.src} alt="" />
+                                            </li>
+                                        )
+                                        : <li></li>
+                                    }
                                 </ul>
 
                                 <div className="max-w-[413px]">
-                                    <img className="w-full h-full object-cover object-center" src={product?.thumbnail} />
+                                    <img className="w-full h-full object-cover object-center" src={img.src} />
                                 </div>
                             </div>
 
                             <div className="w-1/2">
-                                <h1 className="text-4xl/[40px] font-semibold mb-6">{product?.title}</h1>
-                                <p className="text-3xl/[32px] font-semibold mb-6">${product?.price}<span className="text-2xl line-through ml-4 text-gray-500 font-normal">$1499</span></p>
+                                <h1 className="text-4xl/[40px] font-semibold mb-6">{product?.name}</h1>
+                                <p className="text-3xl/[32px] font-semibold mb-6">${product?.price}<span className="text-2xl line-through ml-4 text-gray-500 font-normal">{product?.regular_price ?? ''}</span></p>
                                 <div className="flex items-center gap-x-6 mb-6">
                                     <h4 className="text-[15px]">Select color:</h4>
                                     <div className="flex gap-2">
@@ -85,12 +88,11 @@ export default function Product({ params }) {
                                 </div>
 
                                 <div className="flex flex-wrap items-center gap-2 mb-6">
-
-                                    <button type="button" className=" min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 ">128Gb</button>
-                                    <button type="button" className="min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 ">256GB</button>
-                                    <button type="button" className="min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 ">512GB</button>
-                                    <button type="button" className=" min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 ">1TB</button>
-
+                                    {variants ? 
+                                        variants.map(variant => 
+                                            <button type="button" className=" min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 ">{variant.name}</button>
+                                            ) : ''
+                                    }
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-4 mb-6">
@@ -168,8 +170,6 @@ export default function Product({ params }) {
 
                             </div>
                         </div>
-
-                        <h1>Product</h1>
 
                     </div>
                 </section>
