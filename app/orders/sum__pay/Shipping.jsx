@@ -77,14 +77,6 @@ export default function Shipping({ }) {
                       <p>Next</p>
                       </button>
                       </div>
-        <div className="btn__shipping">
-        <button className="btn__black-small">
-                        <p>Back</p>
-                    </button>
-                    <button class="button btn__black">
-                      <p>Next</p>
-                      </button>
-                      </div>
             </div>
             </div>
 
