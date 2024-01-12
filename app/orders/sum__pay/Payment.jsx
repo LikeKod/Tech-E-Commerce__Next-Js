@@ -3,6 +3,11 @@ import IphoneMini from '/public/images/Payment/Phonemini.jpg';
 import AirMini from '/public/images/Payment/airmini.jpg';
 import WatchMini from '/public/images/Payment/watch-mini.jpg';
 import Card from '/public/images/Payment/cardf.jpg';
+import loc from '/public/images/Payment/Location.svg';
+import ship from '/public/images/Payment/Payment.svg';
+import pay from '/public/images/Payment/Shipping.svg';
+
+
 import { useState } from "react"
 
 import './Address.css'
@@ -14,17 +19,17 @@ export default function Payment() {
     const [isShipment, setIsShipment] = useState(true)
     const [ispayment, setPayment] = useState(false)
 
-    function handleClick1 () {
+    function handleClick1() {
         setIsOpen(!isOpen);
         setIsShipment(!isShipment);
     }
 
-    function handleClick2 () {
+    function handleClick2() {
         setIsShipment(!isShipment);
         setPayment(!ispayment)
     }
 
-    function backClick () {
+    function backClick() {
         setIsOpen(!isOpen);
         setIsShipment(!isShipment);
         setPayment(!ispayment)
@@ -36,14 +41,20 @@ export default function Payment() {
             <div className={'container'} id={'steps'}>
                 <div className='steps'>
                     <ul className="steps-menu">
-                        <li className='steps-menu__item'>
+                        <li className='steps-menu__item loc'>
                             <a href='#'> Step 1 <br /> Address</a>
+                            <Image 
+                            src={loc} />
                         </li>
-                        <li className='steps-menu__item'>
+                        <li className='steps-menu__item ship'>
                             <a href='#'>Step 2 <br /> Shipping</a>
+                            <Image 
+                            src={ship} />
                         </li>
-                        <li className='steps-menu__item'>
+                        <li className='steps-menu__item pay'>
                             <a href='#'> Step 3 <br /> payment</a>
+                            <Image 
+                            src={pay} />
                         </li>
                     </ul>
                 </div>
@@ -251,7 +262,7 @@ export default function Payment() {
                                 <button className={"btn-black"} type='submit'>Pay</button>
                             </div>
                         </div>
-                    </div>ё
+                    </div>
                 </div>
             </div>
         </div>

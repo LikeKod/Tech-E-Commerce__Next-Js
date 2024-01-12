@@ -11,11 +11,20 @@
   margin: 72px 160px;
 }
 
+.steps-menu__item  {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+}
+
+
 
 .content__inner {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  margin-bottom: 72px;
 }
 
 .summary {
