@@ -1,11 +1,14 @@
-.content {
-  margin: 100px 0 100px 0;
-}
-
 .container {
   max-width: 1440px;
   margin: 0 auto;
   height: 100%;
+}
+
+.steps-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 72px 160px;
 }
 
 
@@ -161,18 +164,23 @@ h1 {
   margin-bottom: 48px;
 }
 
+input[type='checkbox']:active {
+  background-color: #000000;
+}
+
+
 .btn-box {
   display: flex;
   justify-content: space-between;
+}
+
+.btn-box button:last-child  {
+  background: #000;
+  color: #fff;
 }
 
 .btn-box button {
   padding: 19px 102px 19px 102px;
   border: 1px solid #000;
   border-radius: 6px;
-}
-
-.btn-black {
-  background-color: #000;
-  color: #fff;
 }

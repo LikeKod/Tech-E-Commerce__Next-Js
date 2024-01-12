@@ -11,16 +11,122 @@ import './Shipping.css'
 
 export default function Payment() {
     const [isOpen, setIsOpen] = useState(true)
+    const [isShipment, setIsShipment] = useState(true)
+    const [ispayment, setPayment] = useState(false)
+
+    function handleClick1 () {
+        setIsOpen(!isOpen);
+        setIsShipment(!isShipment);
+    }
+
+    function handleClick2 () {
+        setIsShipment(!isShipment);
+        setPayment(!ispayment)
+    }
+
+    function backClick () {
+        setIsOpen(!isOpen);
+        setIsShipment(!isShipment);
+        setPayment(!ispayment)
+    }
+
+
     return (
         <div className={"content"}>
             <div className={'container'} id={'steps'}>
-                <div className="steps">
-                    <div>Step 1 Address</div>
-                    <div>Step 2 Shipping</div>
-                    <div>Step 3 Payment</div>
+                <div className='steps'>
+                    <ul className="steps-menu">
+                        <li className='steps-menu__item'>
+                            <a href='#'> Step 1 <br /> Address</a>
+                        </li>
+                        <li className='steps-menu__item'>
+                            <a href='#'>Step 2 <br /> Shipping</a>
+                        </li>
+                        <li className='steps-menu__item'>
+                            <a href='#'> Step 3 <br /> payment</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div className={`container ${isOpen ? "block" : isOpen ? 'hidden' : 'hidden'}`} id={'payment'} >
+            <div className={`container ${isOpen ? "block" : 'hidden'}`} id={'select__address'}>
+                <div className="block_shipment-method">
+                    <div className="text_shipment-method">Select Address</div>
+                    <div className="Radio-Button">
+                        <div className="container_Radio-Button">
+                            <label>
+                                <input type="radio" name="myRadio" value="Thornridge" />
+                                <div className="text_radio">2118 Thornridge</div>
+                                <div className="text_radio-description">
+                                    <p>HOME</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="container_Radio-Button">
+                            <label>
+                                <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
+                                <div className="text_radio">Headoffice</div>
+                                <div className="text_radio-description">
+                                    <div>OFFICE</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="btn__shipping">
+                        <button className="btn__black-small">
+                            <p>Back</p>
+                        </button>
+                        <button class="button btn__black" onClick={() => handleClick1()}>
+                            <p>Next</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className={`container ${!isShipment ? "block" : 'hidden'}`} id={'shipment__method'}>
+                <div className="block_shipment-method">
+                    <div className="text_shipment-method">Shipment Method</div>
+                    <div className="Radio-Button">
+                        <div className="container_Radio-Button">
+                            <label>
+                                <input type="radio" name="myRadio" value="Free" />
+                                <div className="text_radio">Free</div>
+                                <div className="text_radio-description">
+                                    <p>Regulary shipment</p>
+                                    <p>17 Oct, 2023</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="container_Radio-Button">
+                            <label>
+                                <input type="radio" name="myRadio" value="$8.50" />
+                                <div className="text_radio">$8.50</div>
+                                <div className="text_radio-description">
+                                    <div>Get your delivery as soon as possible</div>
+                                    <div>1 Oct, 2023</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="container_Radio-Button">
+                            <label>
+                                <input type="radio" name="myRadio" value="Schedule" />
+                                <div className="text_radio">Schedule</div>
+                                <div className="text_radio-description">
+                                    <div>Pick a date when you want to get your delivery</div>
+                                    <div>Select Date</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="btn__shipping">
+                        <button className="btn__black-small">
+                            <p>Back</p>
+                        </button>
+                        <button class="button btn__black" onClick={() => handleClick2()}>
+                            <p>Next</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className={`container ${ispayment ? "block" : 'hidden'}`} id={'payment'} >
                 <div className={'content__inner'}>
                     <div className={"summary"}>
                         <h1>Summary</h1>
@@ -137,95 +243,15 @@ export default function Payment() {
                                 <input type="text" className={"contact-input"} placeholder='CVV' />
                             </label>
                             <div className={'checkbox'}>
-                                <input type="checkbox" id="same" name="same" />
+                                <input type={"checkbox"} id="checkbox" name="checkbox" />
                                 <label htmlFor="same">Same as billing address</label>
                             </div>
-                            {/* <div className={"btn-box"}>
-                <button className={"btn-white"} type='reset'>Back</button>
-                <button className={"btn-black"} type='submit'>Pay</button>
-              </div> */}
+                            <div className={"btn-box"}>
+                                <button className={"btn-white"} onClick={() => backClick()}>Back</button>
+                                <button className={"btn-black"} type='submit'>Pay</button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className={`container ${!isOpen ? "block" : isOpen ? 'hidden' : 'hidden'}`} id={'select__address'}>
-                <div className="block_shipment-method">
-                    <div className="text_shipment-method">Select Address</div>
-                    <div className="Radio-Button">
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input type="radio" name="myRadio" value="Thornridge" />
-                                <div className="text_radio">2118 Thornridge</div>
-                                <div className="text_radio-description">
-                                    <p>HOME</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
-                                <div className="text_radio">Headoffice</div>
-                                <div className="text_radio-description">
-                                    <div>OFFICE</div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    {/* <div className="btn__shipping">
-            <button className="btn__black-small">
-              <p>Back</p>
-            </button>
-            <button class="button btn__black">
-              <p>Next</p>
-            </button>
-          </div> */}
-                </div>
-            </div>
-            <div className={`container ${isOpen ? "block" : isOpen ? 'hidden' : 'hidden'}`} id={'shipment__method'}>
-                <div className="block_shipment-method">
-                    <div className="text_shipment-method">Shipment Method</div>
-                    <div className="Radio-Button">
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input type="radio" name="myRadio" value="Free" />
-                                <div className="text_radio">Free</div>
-                                <div className="text_radio-description">
-                                    <p>Regulary shipment</p>
-                                    <p>17 Oct, 2023</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input type="radio" name="myRadio" value="$8.50" />
-                                <div className="text_radio">$8.50</div>
-                                <div className="text_radio-description">
-                                    <div>Get your delivery as soon as possible</div>
-                                    <div>1 Oct, 2023</div>
-                                </div>
-                            </label>
-                        </div>
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input type="radio" name="myRadio" value="Schedule" />
-                                <div className="text_radio">Schedule</div>
-                                <div className="text_radio-description">
-                                    <div>Pick a date when you want to get your delivery</div>
-                                    <div>Select Date</div>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={'container'}>
-                <div className="btn__shipping">
-                    <button className="btn__black-small">
-                        <p>Back</p>
-                    </button>
-                    <button class="button btn__black" onClick={() => setIsOpen(!isOpen)}>
-                        <p>Next</p>
-                    </button>
+                    </div>ё
                 </div>
             </div>
         </div>
