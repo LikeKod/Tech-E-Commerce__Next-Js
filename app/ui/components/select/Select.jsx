@@ -1,7 +1,21 @@
 'use client'
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+// import './Pagination.css'
+import ReactPaginate from 'react-paginate';
+import Product from "../../../ui/components/products/product/Product"
 
-export default function Select({ items, sortOptions, sortFunctions }) {
+
+function Items({ currentItems }) {
+  return (
+      <div className="flex justify-center flex-wrap gap-4">
+          {currentItems && currentItems.map((product) =>
+              <Product key={product.id} product={product} />
+          )}
+      </div>
+  );
+}
+
+export default function Select({ items, sortOptions, sortFunctions, itemsPerPage }) {
     const [ sortIndex, setSortIndex ] = useState(0);
   
     const sortedItems = useMemo(() => {
@@ -11,6 +25,27 @@ export default function Select({ items, sortOptions, sortFunctions }) {
     }, [ items, sortIndex, sortFunctions ]);
   
     const onSortChange = e => setSortIndex(+e.target.value);
+
+    const [currentItems, setCurrentItems] = useState();
+    const [pageCount, setPageCount] = useState(0);
+    // Here we use item offsets; we could also use page offsets
+    // following the API or data you're working with.
+    const [itemOffset, setItemOffset] = useState(0);
+
+    useEffect(() => {
+        // Fetch items from another resources.
+        const endOffset = itemOffset + itemsPerPage;
+        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(sortedItems.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(sortedItems.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage]);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = event.selected * itemsPerPage % items.length;
+        console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+        setItemOffset(newOffset);
+    };
   
     return (
       <div>
@@ -20,11 +55,18 @@ export default function Select({ items, sortOptions, sortFunctions }) {
             {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}
           </select>
         </div>
-        <ul>
-          {sortedItems.map(n => (
-            <li>{JSON.stringify(n)}</li>
-          ))}
-        </ul>
+        <Items currentItems={currentItems} />
+        <ReactPaginate
+                className={"main"}
+                nextLabel=">"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={3}
+                marginPagesDisplayed={2}
+                pageCount={pageCount}
+                previousLabel="<"
+                breakLabel="..."
+                renderOnZeroPageCount={null}
+            />
       </div>
     );
   }
