@@ -10,15 +10,15 @@
 import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
 
 
-
-export const getProducts = async () => {
+export async function getProducts() {
     // Fetch data from external API
     const res = await fetch(GET_PRODUCTS_ENDPOINT)
-    const data = await res.json()
-    // Pass data to the page via props
-    return { 
-        data
-    }
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+      }    
+    return res.json()
   }
 
  
