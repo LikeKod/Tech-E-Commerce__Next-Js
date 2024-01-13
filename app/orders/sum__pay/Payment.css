@@ -20,6 +20,17 @@
   gap: 8px;
 }
 
+.block__line {
+  margin: 0 20px;
+  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, #E6E6E6, #E6E6E6, #000000, #E6E6E6, #E6E6E6);
+  background-size: 6px 3px, 100% 3px;
+  border: none;
+}
+
 /* -------------Address and Shipping------------- */
 
 .content__address-shipping{
@@ -59,7 +70,7 @@ input[type="radio"]:checked::before {
   margin-right: 24px;
 }
 .btn__shipping{
-  margin: 208px 0 48px;
+  margin: 0 0 48px;
   display: flex;
   justify-content: flex-end;
 }
@@ -135,26 +146,34 @@ margin-left: 64px;
   display: flex;
 }
 
-/* .footer_bottom { 
-  width:100%; 
-  text-align:center; 
-  border-bottom: 2px dashed #cec5ba; 
-  line-height:0.1em; 
-  margin:10px 0 20px; 
-} 
-.footer_bottom Image { 
-  position:absolute; 
-  top:0;
-  left:50%;
-  margin-left:-125px;
-}
-.image__close_frfrr{
+.block__row {
   display: flex;
-  
-} */
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 64px;
+}
+
+.block__line-right {
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, #E6E6E6, #E6E6E6, #E6E6E6, #000000, #000000);
+  background-size: 6px 3px, 100% 3px;
+  border: none;
+}
+.block__line-left {
+  flex-grow: 1;
+  flex-basis: 0;
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, #000000, #000000, #E6E6E6, #E6E6E6, #E6E6E6);
+  background-size: 6px 3px, 100% 3px;
+  border: none;
+}
 
 /* -------------Shipping------------- */
-
+.container__radio-btn{
+  margin-bottom: 208px;
+}
 .text__shipping {
   font-weight: 600;
   font-size: 20px;

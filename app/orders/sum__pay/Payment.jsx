@@ -8,6 +8,7 @@ import ship from '/public/images/Payment/Payment.svg';
 import pay from '/public/images/Payment/Shipping.svg';
 import toEdit from '/public/images/Icons/To_edit-24.svg'
 import Close from '/public/images/Icons/Close-24.svg'
+import Plus from '/public/images/Icons/Plus-24.svg'
 
 
 import { useState } from "react"
@@ -54,12 +55,14 @@ export default function Payment() {
                             src={loc} 
                             alt='loc'/>
                         </li>
+                        <div className={"block__line"}></div>
                         <li className='steps-menu__item ship'>
                             <a href='#'>Step 2 <br /> Shipping</a>
                             <Image 
                             src={ship} 
                             alt='ship'/>
                         </li>
+                        <div className={"block__line"}></div>
                         <li className='steps-menu__item pay'>
                             <a href='#'> Step 3 <br /> payment</a>
                             <Image 
@@ -131,12 +134,15 @@ export default function Payment() {
                         </li>
                         </div>
                         </div>
-                        {/* <div class="footer_bottom">
-                        <li className='image__close_frfrr'>
-                            <Image  
-                            src={pay} />
-                        </li>
-                            </div> */}
+                        <div class="block">
+  <div className={"block__row"}>
+    <div className={"block__line-right"}></div>
+    <div className={"block__text"}>
+    <Image src={Plus} />
+    </div>
+    <div className={"block__line-left"}></div>
+  </div>
+</div>
                     </div>
                     <div className={"btn__shipping"}>
                         <button className={"btn__black-small"}>
