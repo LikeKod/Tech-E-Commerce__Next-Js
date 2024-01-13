@@ -62,7 +62,8 @@ export default function Catalog({ }) {
                                     </select> */}
                                     <Select items={productsList}
                                         sortOptions={SORT_OPTIONS}
-                                        sortFunctions={SORT_FUNCTIONS} />
+                                        sortFunctions={SORT_FUNCTIONS}
+                                        itemsPerPage={4} />
                                 </div>
                             </div>
                             <div className="text-neutral-400 mt-[24px] text-sm sm:hidden">Selected Products: <span className="text-black text-xl">85</span></div>
