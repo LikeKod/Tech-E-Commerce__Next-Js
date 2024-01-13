@@ -29,12 +29,19 @@ export default function Payment() {
         setPayment(!ispayment)
     }
 
-    function backClick() {
-        setIsOpen(!isOpen);
+    function backClick1() {
         setIsShipment(!isShipment);
         setPayment(!ispayment)
     }
 
+    function backClick2() {
+        setIsOpen(!isOpen);
+        setIsShipment(!isShipment);
+    }
+
+    function backclick3 () {
+        setIsOpen(!isOpen);
+    }
 
     return (
         <div className={"content"}>
@@ -44,17 +51,20 @@ export default function Payment() {
                         <li className='steps-menu__item loc'>
                             <a href='#'> Step 1 <br /> Address</a>
                             <Image 
-                            src={loc} />
+                            src={loc} 
+                            alt='loc'/>
                         </li>
                         <li className='steps-menu__item ship'>
                             <a href='#'>Step 2 <br /> Shipping</a>
                             <Image 
-                            src={ship} />
+                            src={ship} 
+                            alt='ship'/>
                         </li>
                         <li className='steps-menu__item pay'>
                             <a href='#'> Step 3 <br /> payment</a>
                             <Image 
-                            src={pay} />
+                            src={pay} 
+                            alt='pay'/>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +96,7 @@ export default function Payment() {
                         <button className="btn__black-small">
                             <p>Back</p>
                         </button>
-                        <button class="button btn__black" onClick={() => handleClick1()}>
+                        <button className="button btn__black" onClick={() => handleClick1()}>
                             <p>Next</p>
                         </button>
                     </div>
@@ -128,10 +138,10 @@ export default function Payment() {
                         </div>
                     </div>
                     <div className="btn__shipping">
-                        <button className="btn__black-small">
+                        <button className="btn__black-small" onClick={() => backClick2()}>
                             <p>Back</p>
                         </button>
-                        <button class="button btn__black" onClick={() => handleClick2()}>
+                        <button className="button btn__black" onClick={() => handleClick2()}>
                             <p>Next</p>
                         </button>
                     </div>
@@ -258,7 +268,7 @@ export default function Payment() {
                                 <label htmlFor="same">Same as billing address</label>
                             </div>
                             <div className={"btn-box"}>
-                                <button className={"btn-white"} onClick={() => backClick()}>Back</button>
+                                <button className={"btn-white"} onClick={() => backClick1()}>Back</button>
                                 <button className={"btn-black"} type='submit'>Pay</button>
                             </div>
                         </div>
