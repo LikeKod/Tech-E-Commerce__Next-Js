@@ -2,16 +2,18 @@
 
 import Footer from "./includes/footer/Footer"
 import Header from "./includes/header/Header"
+import {AppProvider} from '../context/ShopingCartContext' 
 
-export default function MainLayout({searchValue, setSearchValue,  children}) {
+export default function MainLayout({ children }) {
     return (
-        <>
-            <Header searchValue={searchValue} setSearchValue={setSearchValue}/>
-
-            {children}
-
-            <Footer />
-        </>
-
+        <AppProvider>
+            <>
+                <Header />
+                <main>
+                    {children}
+                </main>
+                <Footer />
+            </>
+        </AppProvider>
     )
 }
