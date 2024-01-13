@@ -6,13 +6,13 @@ import Card from '/public/images/Payment/cardf.jpg';
 import loc from '/public/images/Payment/Location.svg';
 import ship from '/public/images/Payment/Payment.svg';
 import pay from '/public/images/Payment/Shipping.svg';
+import toEdit from '/public/images/Icons/To_edit-24.svg'
+import Close from '/public/images/Icons/Close-24.svg'
 
 
 import { useState } from "react"
 
-import './Address.css'
 import "./Payment.css"
-import './Shipping.css'
 
 export default function Payment() {
     const [isOpen, setIsOpen] = useState(true)
@@ -70,30 +70,76 @@ export default function Payment() {
                 </div>
             </div>
             <div className={`container ${isOpen ? "block" : 'hidden'}`} id={'select__address'}>
-                <div className="block_shipment-method">
-                    <div className="text_shipment-method">Select Address</div>
-                    <div className="Radio-Button">
-                        <div className="container_Radio-Button">
-                            <label>
+                <div className={"content__address-shipping"}>
+                    <div className={"text__address"}>Select Address</div>
+                    <div className={"container__radio-btn"}>
+                        <div className={"address__radio-btn"}>
+                            <div className={"content__address-text"}>
+                            <label className={"radio-btn-a"}>
                                 <input type="radio" name="myRadio" value="Thornridge" />
-                                <div className="text_radio">2118 Thornridge</div>
-                                <div className="text_radio-description">
+                                <div className={"text__radio-btn"}>2118 Thornridge</div>
+                                <div className={"text__radio-location"}>
                                     <p>HOME</p>
                                 </div>
                             </label>
+                            <div className={"text__address-location"}>
+                                        <p>
+                                        2118 Thornridge Cir. Syracuse, Connecticut 35624
+                                        </p>
+                                        <p>
+                                        (209) 555-0104
+                                        </p>
+                                    </div>
+                                    </div>
+                                    <div className={"image__address"}>
+                                    <li className={"image__to-edit"}>
+                            <Image 
+                            src={toEdit} />
+                        </li>
+                        <li className={"image__close"}>
+                            <Image 
+                            src={Close} />
+                        </li>
                         </div>
-                        <div className="container_Radio-Button">
-                            <label>
+                        </div>
+                        <div className={"address__radio-btn"}>
+                        <div className={"content__address-text"}>
+                            <label className={"radio-btn-a"}>
                                 <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
-                                <div className="text_radio">Headoffice</div>
-                                <div className="text_radio-description">
+                                <div className={"text__radio-btn"}>Headoffice</div>
+                                <div className="text__radio-location">
                                     <div>OFFICE</div>
                                 </div>
                             </label>
+                            <div className={"text__address-location"}>
+                                        <p>
+                                        2715 Ash Dr. San Jose, South Dakota 83475
+                                        </p>
+                                        <p>
+                                        (704) 555-0127
+                                        </p>
+                                    </div>
+                                    </div>
+                                    <div className={"image__address"}>
+                                    <li className={"image__to-edit"}>
+                            <Image 
+                            src={toEdit} />
+                        </li>
+                        <li className={"image__close"}>
+                            <Image 
+                            src={Close} />
+                        </li>
                         </div>
+                        </div>
+                        {/* <div class="footer_bottom">
+                        <li className='image__close_frfrr'>
+                            <Image  
+                            src={pay} />
+                        </li>
+                            </div> */}
                     </div>
-                    <div className="btn__shipping">
-                        <button className="btn__black-small">
+                    <div className={"btn__shipping"}>
+                        <button className={"btn__black-small"}>
                             <p>Back</p>
                         </button>
                         <button className="button btn__black" onClick={() => handleClick1()}>
@@ -103,38 +149,50 @@ export default function Payment() {
                 </div>
             </div>
             <div className={`container ${!isShipment ? "block" : 'hidden'}`} id={'shipment__method'}>
-                <div className="block_shipment-method">
-                    <div className="text_shipment-method">Shipment Method</div>
-                    <div className="Radio-Button">
-                        <div className="container_Radio-Button">
-                            <label>
+                <div className={"content__address-shipping"}>
+                    <div className={"text__shipping"}>Shipment Method</div>
+                    <div className={"container__radio-btn"}>
+                        <div className={"shipping__radio-btn"}>
+                        <div className={"content__shipping-text"}>
+                            <label className={"radio-btn-s"}>
                                 <input type="radio" name="myRadio" value="Free" />
-                                <div className="text_radio">Free</div>
-                                <div className="text_radio-description">
-                                    <p>Regulary shipment</p>
-                                    <p>17 Oct, 2023</p>
+                                <div className={"text__radio-shipping"}>Free</div>
+                                <div className={"text__shipping-location"}>
+                                Regulary shipment
                                 </div>
                             </label>
                         </div>
-                        <div className="container_Radio-Button">
-                            <label>
-                                <input type="radio" name="myRadio" value="$8.50" />
-                                <div className="text_radio">$8.50</div>
-                                <div className="text_radio-description">
-                                    <div>Get your delivery as soon as possible</div>
-                                    <div>1 Oct, 2023</div>
+                            <div className={"text__shipping-data"}>
+                                17 Oct, 2023
+                                </div>
+                        </div>
+                        <div className={"shipping__radio-btn"}>
+                        <div className={"content__shipping-text"}>
+                            <label className={"radio-btn-s"}>
+                                <input type="radio" name="myRadio" value="$8.50e" />
+                                <div className={"text__radio-shipping"}>$8.50</div>
+                                <div className={"text__shipping-location"}>
+                                Get your delivery as soon as possible
                                 </div>
                             </label>
                         </div>
-                        <div className="container_Radio-Button">
-                            <label>
+                            <div className={"text__shipping-data"}>
+                            1 Oct, 2023
+                                </div>
+                        </div>
+                        <div className={"shipping__radio-btn"}>
+                        <div className={"content__shipping-text"}>
+                            <label className={"radio-btn-s"}>
                                 <input type="radio" name="myRadio" value="Schedule" />
-                                <div className="text_radio">Schedule</div>
-                                <div className="text_radio-description">
-                                    <div>Pick a date when you want to get your delivery</div>
-                                    <div>Select Date</div>
+                                <div className={"text__radio-shipping"}>Schedule</div>
+                                <div className={"text__shipping-location"}>
+                                Pick a date when you want to get your delivery
                                 </div>
                             </label>
+                        </div>
+                            <div className='text__shipping-data'>
+                            Select Date
+                                </div>
                         </div>
                     </div>
                     <div className="btn__shipping">

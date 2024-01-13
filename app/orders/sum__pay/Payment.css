@@ -4,6 +4,8 @@
   height: 100%;
 }
 
+/* -------------steps------------- */
+
 .steps-menu {
   display: flex;
   justify-content: space-between;
@@ -18,7 +20,186 @@
   gap: 8px;
 }
 
+/* -------------Address and Shipping------------- */
 
+.content__address-shipping{
+  margin: 0 160px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  color: black;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  margin-right: 16px;
+}
+
+input[type="radio"]::before {
+  accent-color: black;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.text__radio-btn{
+  font-weight: 400;
+  font-size: 18px;
+  margin-right: 24px;
+}
+.btn__shipping{
+  margin: 208px 0 48px;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn__black-small{
+  font-size: 14px;
+  width: 207px;
+  height: 64px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 8px;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+.btn__black {
+  font-size: 14px;
+  width: 207px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 6px;
+  opacity: 1;
+  margin-left: 23px;
+}
+
+/* -------------Address------------- */
+
+.text__address{
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: black;
+}
+
+.address__radio-btn{
+  display: flex;
+  justify-content: space-between;
+  min-height: 144px;
+  border: 1px solid #F6F6F6;
+  border-radius: 7px;
+  background-color: #F6F6F6;
+  margin-bottom: 16px;
+}
+
+.radio-btn-a{
+  display: flex;
+  margin: 24px 24px 16px 24px;
+}
+
+.text__radio-location {
+  color: #FFF;
+  display: flex;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: black;
+  padding: 4px 8px 4px 8px;
+}
+
+.text__address-location{
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+margin-left: 64px;
+}
+
+.image__address{
+  display: flex;
+  margin: 60px 24px;
+  gap: 24px;
+}
+
+.image__to-edit,.image__close{
+  display: flex;
+}
+
+/* .footer_bottom { 
+  width:100%; 
+  text-align:center; 
+  border-bottom: 2px dashed #cec5ba; 
+  line-height:0.1em; 
+  margin:10px 0 20px; 
+} 
+.footer_bottom Image { 
+  position:absolute; 
+  top:0;
+  left:50%;
+  margin-left:-125px;
+}
+.image__close_frfrr{
+  display: flex;
+  
+} */
+
+/* -------------Shipping------------- */
+
+.text__shipping {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: black;
+}
+
+.shipping__radio-btn {
+  display: flex;
+  justify-content: space-between;
+  min-height: 72px;
+  border: 1px solid #D1D1D8;
+  border-radius: 11px;
+  margin-bottom: 16px;
+}
+.content__shipping-text{
+  display: flex;
+  margin: 24px 24px 24px 24px;
+}
+
+.radio-btn-s{
+  display: flex;
+} 
+
+.text__radio-shipping {
+  font-weight: 500;
+  font-size: 16px;
+  width: 68px;
+  margin-right: 16px;
+} 
+.text__shipping-location{
+  display: flex;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+} 
+
+.text__shipping-data{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 24px 24px 24px 24px;
+}
+
+/* -------------Payment------------- */
 
 .content__inner {
   display: flex;
