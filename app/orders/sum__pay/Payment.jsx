@@ -40,31 +40,27 @@ export default function Payment() {
         setIsShipment(!isShipment);
     }
 
-    function backclick3 () {
-        setIsOpen(!isOpen);
-    }
-
     return (
         <div className={"content"}>
             <div className={'container'} id={'steps'}>
-                <div className='steps'>
-                    <ul className="steps-menu">
-                        <li className='steps-menu__item loc'>
+                <div className={'steps'}>
+                    <ul className={"steps-menu"}>
+                        <li className={`steps-menu__item ${isOpen ? '' : 'light'}`} id={'loc'}>
                             <a href='#'> Step 1 <br /> Address</a>
                             <Image 
                             src={loc} 
                             alt='loc'/>
                         </li>
                         <div className={"block__line"}></div>
-                        <li className='steps-menu__item ship'>
-                            <a href='#'>Step 2 <br /> Shipping</a>
+                        <li className={`steps-menu__item ${!isShipment ? ' ' : 'light'}`}>
+                            <a className={'light'} href='#'>Step 2 <br /> Shipping</a>
                             <Image 
                             src={ship} 
                             alt='ship'/>
                         </li>
                         <div className={"block__line"}></div>
-                        <li className='steps-menu__item pay'>
-                            <a href='#'> Step 3 <br /> payment</a>
+                        <li className={`steps-menu__item ${ispayment ? ' ' : 'light'}`}>
+                            <a href='#'> Step 3 <br /> Payment</a>
                             <Image 
                             src={pay} 
                             alt='pay'/>

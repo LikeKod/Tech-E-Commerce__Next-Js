@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 72px 160px;
+  /* opacity: 0.5; */
 }
 
 .steps-menu__item  {
@@ -392,4 +393,8 @@ input[type='checkbox']:active {
   padding: 19px 102px 19px 102px;
   border: 1px solid #000;
   border-radius: 6px;
+}
+
+.light{
+  opacity: .5;
 }
