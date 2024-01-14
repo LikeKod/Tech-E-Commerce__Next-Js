@@ -18,13 +18,12 @@ export default async function Home() {
 
     const  data  = await getProducts();
 
-export default function Home() {
 
-    const [searchValue, setSearchValue] = useState('')
+    // const [searchValue, setSearchValue] = useState('')
 
 
     return (
-        <MainLayout searchValue={searchValue} setSearchValue={setSearchValue}>
+        <MainLayout >
             <Banner />
             <Banners />
 
@@ -53,5 +52,3 @@ export default function Home() {
 
     )
 }
-
-
