@@ -10,10 +10,23 @@ import { useState } from "react"
 import Filters from '../../public/images/Icons/Filters-24.svg'
 import { productsList } from "../lib/data"
 import  Select  from "../ui/components/select/Select"
+import { getProducts } from "../lib/data"
 import SortedProduct from '../ui/components/sortedProduct/SortedProduct'
+import { values } from "lodash"
 
+async function getData(){
+    const  data  = await getProducts();
+    console.log(data)
+    return data.products
+}
 export default function Catalog({ }) {
     const [isOpen, setIsOpen] = useState(false)
+
+    const items = getData()
+    // console.log(items.then(function(value)))
+    items.then(function(value){
+        console.log(value)
+    })
 
     const SORT_OPTIONS = [
         { key: 'id', type: 'number' },

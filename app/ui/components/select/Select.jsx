@@ -2,22 +2,22 @@
 import { useState, useMemo, useEffect } from "react";
 // import './Pagination.css'
 import ReactPaginate from 'react-paginate';
-import Product from "../../../ui/components/products/product/Product"
+import ProductsContainer from "../../../ui/components/products/ProductsContainer"
 
 
 function Items({ currentItems }) {
   return (
       <div className="flex justify-center flex-wrap gap-4">
           {currentItems && currentItems.map((product) =>
-              <Product key={product.id} product={product} />
+              <ProductsContainer key={product.id} products={product} />
           )}
       </div>
   );
 }
 
-export default function Select({ items, sortOptions, sortFunctions, itemsPerPage }) {
+export default  function Select({ items, sortOptions, sortFunctions, itemsPerPage }) {
     const [ sortIndex, setSortIndex ] = useState(0);
-  
+
     const sortedItems = useMemo(() => {
       const { key, type } = sortOptions[sortIndex];
       const f = sortFunctions[type];

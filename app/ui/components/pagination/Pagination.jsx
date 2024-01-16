@@ -1,7 +1,7 @@
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import { productsList } from "../../../lib/data"
-import Product from "../../../ui/components/products/product/Product"
+import ProductsContainer from "../../../ui/components/products/ProductsContainer"
 import './Pagination.css'
 
 
@@ -11,7 +11,7 @@ function Items({ currentItems }) {
     return (
         <div className="flex justify-center flex-wrap gap-4">
             {currentItems && currentItems.map((product) =>
-                <Product key={product.id} product={product} />
+                <ProductsContainer key={product.id} product={product} />
             )}
         </div>
     );

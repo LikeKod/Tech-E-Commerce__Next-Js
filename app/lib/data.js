@@ -1,3 +1,28 @@
+// const data = [
+//     {
+//         image: '/images/cards_category/watch.png',
+//         name: 'Popular Products',
+//         description: 'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
+//         txt_btn: 'shop now',
+//     },
+// ]
+
+import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
+
+
+export async function getProducts() {
+    // Fetch data from external API
+    const res = await fetch(GET_PRODUCTS_ENDPOINT)
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+      }    
+    return res.json()
+  }
+
+ 
+
 export const navItem = [{ id: 1, value: 'Home', href: '#' },
     { id: 2, value: 'About', href: '#' },
     { id: 3, value: 'Contuct', href: '#' },
@@ -53,6 +78,70 @@ export const productsList = [
         image: './images/products/Iphone14pro-gold.png',
         price: '398'
     }
+];
+
+// data for categoryes of products
+
+export const categotyes = [
+    {
+        id: 1,
+        name: '',
+        img: ''
+    },
+
+];
+
+
+export const productInfo = [
+    {
+        id: 1,
+        product_id: 1,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 2,
+        product_id: 2,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 3,
+        product_id: 3,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 4,
+        product_id: 4,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 5,
+        product_id: 5,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 6,
+        product_id: 6,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 7,
+        product_id: 7,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+    {
+        id: 8,
+        product_id: 8,
+        title: '',
+        description: 'Смартфоны от производителя iPhone пользуются популярностью среди покупателей. Вы можете заказать в нашем магазине Смартфон Apple iPhone 14 Pro Max 256Gb фиолетовый eSIM с диагональю экрана 6.7 дюйм. по низкой цене. Основной цвет корпуса модели - фиолетовый. Для хранения файлов имеется внутренняя память, которая составляет 256 Гб.'
+    },
+
 ];
 
 export const tagsList = [
