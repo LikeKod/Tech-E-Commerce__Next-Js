@@ -47,23 +47,23 @@ export default function Payment() {
                     <ul className={"steps-menu"}>
                         <li className={`steps-menu__item ${isOpen ? '' : 'light'}`} id={'loc'}>
                             <a href='#'> Step 1 <br /> Address</a>
-                            <Image 
-                            src={loc} 
-                            alt='loc'/>
+                            <Image
+                                src={loc}
+                                alt='loc' />
                         </li>
                         <div className={"block__line"}></div>
                         <li className={`steps-menu__item ${!isShipment ? ' ' : 'light'}`}>
                             <a className={'light'} href='#'>Step 2 <br /> Shipping</a>
-                            <Image 
-                            src={ship} 
-                            alt='ship'/>
+                            <Image
+                                src={ship}
+                                alt='ship' />
                         </li>
                         <div className={"block__line"}></div>
                         <li className={`steps-menu__item ${ispayment ? ' ' : 'light'}`}>
                             <a href='#'> Step 3 <br /> Payment</a>
-                            <Image 
-                            src={pay} 
-                            alt='pay'/>
+                            <Image
+                                src={pay}
+                                alt='pay' />
                         </li>
                     </ul>
                 </div>
@@ -74,71 +74,81 @@ export default function Payment() {
                     <div className={"container__radio-btn"}>
                         <div className={"address__radio-btn"}>
                             <div className={"content__address-text"}>
-                            <label className={"radio-btn-a"}>
-                                <input type="radio" name="myRadio" value="Thornridge" />
-                                <div className={"text__radio-btn"}>2118 Thornridge</div>
-                                <div className={"text__radio-location"}>
-                                    <p>HOME</p>
-                                </div>
-                            </label>
-                            <div className={"text__address-location"}>
-                                        <p>
+                                <label className={"radio-btn-a"}>
+                                    <input type="radio" name="myRadio" value="Thornridge" />
+                                    <div className={"text__radio-btn"}>2118 Thornridge</div>
+                                    <div className={"text__radio-location"}>
+                                        <p>HOME</p>
+                                    </div>
+                                </label>
+                                <div className={"text__address-location"}>
+                                    <p>
                                         2118 Thornridge Cir. Syracuse, Connecticut 35624
-                                        </p>
-                                        <p>
+                                    </p>
+                                    <p>
                                         (209) 555-0104
-                                        </p>
-                                    </div>
-                                    </div>
-                                    <div className={"image__address"}>
-                                    <li className={"image__to-edit"}>
-                            <Image 
-                            src={toEdit} />
-                        </li>
-                        <li className={"image__close"}>
-                            <Image 
-                            src={Close} />
-                        </li>
-                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={"image__address"}>
+                                <li className={"image__to-edit"}>
+                                    <Image
+                                        src={toEdit}
+                                        alt='Edit'
+                                    />
+                                </li>
+                                <li className={"image__close"}>
+                                    <Image
+                                        src={Close}
+                                        alt='close'
+                                    />
+                                </li>
+                            </div>
                         </div>
                         <div className={"address__radio-btn"}>
-                        <div className={"content__address-text"}>
-                            <label className={"radio-btn-a"}>
-                                <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
-                                <div className={"text__radio-btn"}>Headoffice</div>
-                                <div className="text__radio-location">
-                                    <div>OFFICE</div>
-                                </div>
-                            </label>
-                            <div className={"text__address-location"}>
-                                        <p>
+                            <div className={"content__address-text"}>
+                                <label className={"radio-btn-a"}>
+                                    <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
+                                    <div className={"text__radio-btn"}>Headoffice</div>
+                                    <div className="text__radio-location">
+                                        <div>OFFICE</div>
+                                    </div>
+                                </label>
+                                <div className={"text__address-location"}>
+                                    <p>
                                         2715 Ash Dr. San Jose, South Dakota 83475
-                                        </p>
-                                        <p>
+                                    </p>
+                                    <p>
                                         (704) 555-0127
-                                        </p>
-                                    </div>
-                                    </div>
-                                    <div className={"image__address"}>
-                                    <li className={"image__to-edit"}>
-                            <Image 
-                            src={toEdit} />
-                        </li>
-                        <li className={"image__close"}>
-                            <Image 
-                            src={Close} />
-                        </li>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={"image__address"}>
+                                <li className={"image__to-edit"}>
+                                    <Image
+                                        src={toEdit}
+                                        alt='Edit'
+                                    />
+                                </li>
+                                <li className={"image__close"}>
+                                    <Image
+                                        src={Close}
+                                        alt='close'
+                                    />
+                                </li>
+                            </div>
                         </div>
+                        <div className="block">
+                            <div className={"block__row"}>
+                                <div className={"block__line-right"}></div>
+                                <div className={"block__text"}>
+                                    <Image src={Plus}
+                                        alt='plus'
+                                    />
+                                </div>
+                                <div className={"block__line-left"}></div>
+                            </div>
                         </div>
-                        <div class="block">
-  <div className={"block__row"}>
-    <div className={"block__line-right"}></div>
-    <div className={"block__text"}>
-    <Image src={Plus} />
-    </div>
-    <div className={"block__line-left"}></div>
-  </div>
-</div>
                     </div>
                     <div className={"btn__shipping"}>
                         <button className={"btn__black-small"}>
@@ -155,46 +165,46 @@ export default function Payment() {
                     <div className={"text__shipping"}>Shipment Method</div>
                     <div className={"container__radio-btn"}>
                         <div className={"shipping__radio-btn"}>
-                        <div className={"content__shipping-text"}>
-                            <label className={"radio-btn-s"}>
-                                <input type="radio" name="myRadio" value="Free" />
-                                <div className={"text__radio-shipping"}>Free</div>
-                                <div className={"text__shipping-location"}>
-                                Regulary shipment
-                                </div>
-                            </label>
-                        </div>
+                            <div className={"content__shipping-text"}>
+                                <label className={"radio-btn-s"}>
+                                    <input type="radio" name="myRadio" value="Free" />
+                                    <div className={"text__radio-shipping"}>Free</div>
+                                    <div className={"text__shipping-location"}>
+                                        Regulary shipment
+                                    </div>
+                                </label>
+                            </div>
                             <div className={"text__shipping-data"}>
                                 17 Oct, 2023
-                                </div>
+                            </div>
                         </div>
                         <div className={"shipping__radio-btn"}>
-                        <div className={"content__shipping-text"}>
-                            <label className={"radio-btn-s"}>
-                                <input type="radio" name="myRadio" value="$8.50e" />
-                                <div className={"text__radio-shipping"}>$8.50</div>
-                                <div className={"text__shipping-location"}>
-                                Get your delivery as soon as possible
-                                </div>
-                            </label>
-                        </div>
+                            <div className={"content__shipping-text"}>
+                                <label className={"radio-btn-s"}>
+                                    <input type="radio" name="myRadio" value="$8.50e" />
+                                    <div className={"text__radio-shipping"}>$8.50</div>
+                                    <div className={"text__shipping-location"}>
+                                        Get your delivery as soon as possible
+                                    </div>
+                                </label>
+                            </div>
                             <div className={"text__shipping-data"}>
-                            1 Oct, 2023
-                                </div>
+                                1 Oct, 2023
+                            </div>
                         </div>
                         <div className={"shipping__radio-btn"}>
-                        <div className={"content__shipping-text"}>
-                            <label className={"radio-btn-s"}>
-                                <input type="radio" name="myRadio" value="Schedule" />
-                                <div className={"text__radio-shipping"}>Schedule</div>
-                                <div className={"text__shipping-location"}>
-                                Pick a date when you want to get your delivery
-                                </div>
-                            </label>
-                        </div>
+                            <div className={"content__shipping-text"}>
+                                <label className={"radio-btn-s"}>
+                                    <input type="radio" name="myRadio" value="Schedule" />
+                                    <div className={"text__radio-shipping"}>Schedule</div>
+                                    <div className={"text__shipping-location"}>
+                                        Pick a date when you want to get your delivery
+                                    </div>
+                                </label>
+                            </div>
                             <div className='text__shipping-data'>
-                            Select Date
-                                </div>
+                                Select Date
+                            </div>
                         </div>
                     </div>
                     <div className="btn__shipping">
