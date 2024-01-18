@@ -1,3 +1,5 @@
+'use client'
+
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import { productsList } from "../../../lib/data"
@@ -5,20 +7,21 @@ import ProductsContainer from "../../../ui/components/products/ProductsContainer
 import './Pagination.css'
 
 
-const items = productsList;
 
-function Items({ currentItems }) {
-    return (
-        <div className="flex justify-center flex-wrap gap-4">
-            {currentItems && currentItems.map((product) =>
-                <ProductsContainer key={product.id} product={product} />
-            )}
-        </div>
-    );
-}
+// function Items({ currentItems }) {
+//     console.log('items', currentItems)
+//     return (
+//         <div className="flex justify-center flex-wrap gap-4">
+//             {currentItems && currentItems.map((product) =>
+//                 <ProductsContainer key={product.id} products={currentItems} />
+//             )}
+//         </div>
+//     );
+// }
 
 
-export default function PaginatedItems({ itemsPerPage }) {
+export default function PaginatedItems({ itemsPerPage, items }) {
+    const item = items.items
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState();
     const [pageCount, setPageCount] = useState(0);
@@ -30,27 +33,31 @@ export default function PaginatedItems({ itemsPerPage }) {
         // Fetch items from another resources.
         const endOffset = itemOffset + itemsPerPage;
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-        setCurrentItems(items.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(items.length / itemsPerPage));
+        setCurrentItems(item.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(item.length / itemsPerPage));
     }, [itemOffset, itemsPerPage]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-        const newOffset = event.selected * itemsPerPage % items.length;
+        const newOffset = event.selected * itemsPerPage % item.length;
         console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
         setItemOffset(newOffset);
     };
-
+    console.log('paginated', currentItems)
     return (
         <>
-            <Items currentItems={currentItems} />
+            <div className="flex justify-center flex-wrap gap-4">
+                {currentItems && currentItems.map((product) =>
+                    <ProductsContainer key={product.id} products={currentItems} />
+                )}
+            </div>
             <ReactPaginate
                 className={"main"}
                 nextLabel=">"
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={3}
+                pageRangeDisplayed={10}
                 marginPagesDisplayed={2}
-                pageCount={pageCount}
+                pageCount={itemsPerPage}
                 previousLabel="<"
                 breakLabel="..."
                 renderOnZeroPageCount={null}
