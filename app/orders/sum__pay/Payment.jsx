@@ -81,16 +81,16 @@ export default function Payment() {
                                         <p>HOME</p>
                                     </div>
                                 </label>
+                                <div className={"container-text__image"}>
                                 <div className={"text__address-location"}>
-                                    <p>
+                                    <p className={"text__address-street"}>
                                         2118 Thornridge Cir. Syracuse, Connecticut 35624
                                     </p>
-                                    <p>
+                                    <p className={"text__address-tel"}>
                                         (209) 555-0104
                                     </p>
-                                </div>
-                            </div>
-                            <div className={"image__address"}>
+                                    </div>
+                                    <div className={"image__address"}>
                                 <li className={"image__to-edit"}>
                                     <Image
                                         src={toEdit}
@@ -103,27 +103,29 @@ export default function Payment() {
                                         alt='close'
                                     />
                                 </li>
+                            </div>
+                                </div>
                             </div>
                         </div>
                         <div className={"address__radio-btn"}>
-                            <div className={"content__address-text"}>
+                        <div className={"content__address-text"}>
                                 <label className={"radio-btn-a"}>
-                                    <input className="TRTR" type="radio" name="myRadio" value="Headoffice" />
+                                    <input type="radio" name="myRadio" value="Thornridge" />
                                     <div className={"text__radio-btn"}>Headoffice</div>
-                                    <div className="text__radio-location">
-                                        <div>OFFICE</div>
+                                    <div className={"text__radio-location"}>
+                                        <p>OFFICE</p>
                                     </div>
                                 </label>
+                                <div className={"container-text__image"}>
                                 <div className={"text__address-location"}>
-                                    <p>
-                                        2715 Ash Dr. San Jose, South Dakota 83475
+                                    <p className={"text__address-street"}>
+                                    2715 Ash Dr. San Jose, South Dakota 83475
                                     </p>
-                                    <p>
-                                        (704) 555-0127
+                                    <p className={"text__address-tel"}>
+                                    (704) 555-0127
                                     </p>
-                                </div>
-                            </div>
-                            <div className={"image__address"}>
+                                    </div>
+                                    <div className={"image__address"}>
                                 <li className={"image__to-edit"}>
                                     <Image
                                         src={toEdit}
@@ -136,6 +138,8 @@ export default function Payment() {
                                         alt='close'
                                     />
                                 </li>
+                            </div>
+                                </div>
                             </div>
                         </div>
                         <div className="block">
