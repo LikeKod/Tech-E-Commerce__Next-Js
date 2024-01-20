@@ -1,5 +1,5 @@
 'use client'
-import PaginatedItems from '../pagination/Pagination'
+import Select from '../pagination/Pagination'
 import Filter from '../filter/Filter'
 import ArrowLeft from '../../../../public/images/Icons/Arrow_left-32.svg'
 import { useState } from 'react'
@@ -50,7 +50,7 @@ export default function CatalogPage(items) {
                                         <option value="price">By price</option>
                                         <option value="novelty">By novelty</option>
                                     </select> */}
-                            {/* <Select items={productsList}
+                            {/* <Select items={items}
                                 sortOptions={SORT_OPTIONS}
                                 sortFunctions={SORT_FUNCTIONS}
                                 itemsPerPage={4} /> */}
@@ -60,7 +60,10 @@ export default function CatalogPage(items) {
                 </div>
                 <div>
 
-                    <PaginatedItems itemsPerPage={4} items={items} />
+                    <Select items={items}
+                        sortOptions={SORT_OPTIONS}
+                        sortFunctions={SORT_FUNCTIONS}
+                        itemsPerPage={4} />
                 </div>
             </div>
 
