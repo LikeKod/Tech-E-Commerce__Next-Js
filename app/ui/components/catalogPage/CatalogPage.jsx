@@ -9,9 +9,6 @@ import Image from 'next/image'
 export default function CatalogPage(items) {
     const [isOpen, setIsOpen] = useState(false)
 
-    // console.log(items.then(function(value)))
-
-
     const SORT_OPTIONS = [
         { key: 'id', type: 'number' },
         { key: 'name', type: 'string' },
@@ -63,7 +60,7 @@ export default function CatalogPage(items) {
                     <Select items={items}
                         sortOptions={SORT_OPTIONS}
                         sortFunctions={SORT_FUNCTIONS}
-                        itemsPerPage={4} />
+                        itemsPerPage={4} /> 
                 </div>
             </div>
 

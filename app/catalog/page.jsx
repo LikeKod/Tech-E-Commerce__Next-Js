@@ -18,6 +18,7 @@ import CatalogPage from '../ui/components/catalogPage/CatalogPage'
 // }
 export default async function Catalog({ }) {
     const  data  = await getProducts();
+    console.log('Catalog page',data);
     return (
         <MainLayout>
 

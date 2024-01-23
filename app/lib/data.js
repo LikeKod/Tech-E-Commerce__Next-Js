@@ -13,7 +13,8 @@ import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
 export async function getProducts() {
     // Fetch data from external API
     const res = await fetch(GET_PRODUCTS_ENDPOINT)
-
+    console.log('GET_PRODUCTS_ENDPOINT', res)
+    debugger
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
