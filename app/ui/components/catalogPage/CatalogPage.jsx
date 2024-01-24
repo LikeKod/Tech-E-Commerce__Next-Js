@@ -35,7 +35,6 @@ export default function CatalogPage(items) {
 
             <div className={`${isOpen ? 'hidden' : ''}`}>
                 <div className="block justify-between my-[24px] sm:flex">
-                    <div className="text-neutral-400 text-sm hidden sm:block">Selected Products: <span className="text-black text-xl">85</span></div>
                     <div>
                         <div className='flex justify-around'>
                             <button onClick={() => setIsOpen(!isOpen)} className='flex px-[16px] w-[164px] h-[56px] items-center justify-between rounded-lg bg-white border text-base sm:hidden'>
@@ -53,14 +52,16 @@ export default function CatalogPage(items) {
                                 itemsPerPage={4} /> */}
                         </div>
                     </div>
-                    <div className="text-neutral-400 mt-[24px] text-sm sm:hidden">Selected Products: <span className="text-black text-xl">85</span></div>
                 </div>
                 <div>
+                    <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">85</span></div>
 
-                    <Select items={items}
+                    <Select 
+                        open={isOpen}
+                        items={items}
                         sortOptions={SORT_OPTIONS}
                         sortFunctions={SORT_FUNCTIONS}
-                        itemsPerPage={4} /> 
+                        itemsPerPage={5} /> 
                 </div>
             </div>
 

@@ -21,7 +21,7 @@ import './Pagination.css'
 // }
 
 
-export default function PaginatedItems({ itemsPerPage, items }) {
+export default function PaginatedItems({ itemsPerPage, items, open }) {
     const [sortIndex, setSortIndex] = useState(0);
 
     const [item, setItem] = useState(items.items)
@@ -29,12 +29,10 @@ export default function PaginatedItems({ itemsPerPage, items }) {
     const [page, setPage] = useState(0)
 
     const [sortedItems, setSortedItems] = useState(items.items)
-    // const item = items.items
-    // We start with an empty list of items.
+
     const [currentItems, setCurrentItems] = useState();
     const [pageCount, setPageCount] = useState(0);
-    // Here we use item offsets; we could also use page offsets
-    // following the API or data you're working with.
+
     const [itemOffset, setItemOffset] = useState(0);
 
     const sortOptions = [
@@ -62,9 +60,7 @@ export default function PaginatedItems({ itemsPerPage, items }) {
 
     const onSortChange = e => {
         setSortIndex(+e.target.value)
-        setItemOffset(0)
-        setPageCount(0)
-        setPage(0)
+
     }
 
 
@@ -72,11 +68,10 @@ export default function PaginatedItems({ itemsPerPage, items }) {
         // Fetch items from another resources.
         if (sortedItems !== undefined) {
             const endOffset = itemOffset + itemsPerPage;
-            console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+            // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
             setCurrentItems(sortedItems.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(sortedItems.length / itemsPerPage));
         }
-        console.log('item', item)
 
     }, [itemOffset, itemsPerPage, sortedItems]);
 
@@ -86,29 +81,28 @@ export default function PaginatedItems({ itemsPerPage, items }) {
         console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
         setItemOffset(newOffset);
     };
-    console.log('paginated', currentItems)
     return (
         <>
-            <div>
-                sort by:
+            <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
                 <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" value={sortIndex} onChange={onSortChange}>
                     {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}
                 </select>
             </div>
-            <div className="flex justify-center flex-wrap gap-4">
-                {currentItems && currentItems.map((product) =>
-                    <ProductCart key={product.id} product={product} />
-                    // <ProductsContainer key={product.id} products={currentItems} />
-                )}
+            <div className="flex flex-wrap mb-8 justify-center gap-4">
+                <div className="flex justify-center flex-wrap gap-4">
+                    {currentItems && currentItems.map((product) =>
+                        <ProductCart key={product.id} product={product} />
+                        // <ProductsContainer key={product.id} products={currentItems} />
+                    )}
+                </div>
             </div>
             <ReactPaginate
-                forcePage={page}
                 className={"main"}
                 nextLabel=">"
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={10}
-                marginPagesDisplayed={2}
-                pageCount={4}
+                // pageRangeDisplayed={10}
+                // marginPagesDisplayed={2}
+                pageCount={pageCount}
                 previousLabel="<"
                 breakLabel="..."
                 renderOnZeroPageCount={null}
