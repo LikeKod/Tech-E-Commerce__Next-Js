@@ -1,3 +1,4 @@
+'use client'
 import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
