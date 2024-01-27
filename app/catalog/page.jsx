@@ -12,7 +12,7 @@ import CatalogPage from '../ui/components/catalogPage/CatalogPage'
 //     return data.products
 // }
 export default async function Catalog({ }) {
-    const  data  = await getProducts();
+    const  {data}  = await getProducts();
     return (
         <MainLayout>
 
