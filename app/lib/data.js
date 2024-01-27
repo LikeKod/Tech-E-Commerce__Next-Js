@@ -4,6 +4,7 @@ import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
 export async function getProducts() {
     // Fetch data from external API
     const res = await fetch(GET_PRODUCTS_ENDPOINT)
+    let data
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
