@@ -10,7 +10,7 @@ import { wooApi } from "../../api/products/route"
 
 
 export default async function Product({ params }) {
-    const  data  = await getProducts();
+    const  {data}  = await getProducts();
 
     // Находим из массива продукт по праметру из пути
     const product = data?.products.find(item =>

@@ -1,5 +1,3 @@
-'use client'
-
 import CardCategory from "./ui/card_category/CardCategory"
 import Banner from "./ui/banner/Banner"
 import Banners from "./ui/smallerBanners/smallersBanners"
@@ -10,23 +8,16 @@ import Sale from "./ui/sale/sale"
 import Slider from "./ui/Slider/Slider"
 import MainLayout from "./layouts/MainLayout"
 import  {GET_PRODUCTS_ENDPOINT} from "./lib/constants/endpoints.js"
-import { useState } from 'react'
 
 
 
 export default async function Home() {
 
-    const  data  = await getProducts();
-
-
-    // const [searchValue, setSearchValue] = useState('')
-
-
+    const  {data}  = await getProducts();
     return (
         <MainLayout >
             <Banner />
             <Banners />
-
             <Slider />
 
             <div className="container py-14">

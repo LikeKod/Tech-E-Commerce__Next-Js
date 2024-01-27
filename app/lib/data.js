@@ -1,24 +1,18 @@
-// const data = [
-//     {
-//         image: '/images/cards_category/watch.png',
-//         name: 'Popular Products',
-//         description: 'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-//         txt_btn: 'shop now',
-//     },
-// ]
 
 import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
-
 
 export async function getProducts() {
     // Fetch data from external API
     const res = await fetch(GET_PRODUCTS_ENDPOINT)
-
+    let data = {}
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
-      }    
-    return res.json()
+      }
+      data = await res.json()      
+    return {
+        data
+    } 
   }
 
  
