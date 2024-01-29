@@ -1,5 +1,5 @@
 
-import  {GET_PRODUCTS_ENDPOINT} from "../lib/constants/endpoints"
+import { GET_PRODUCTS_ENDPOINT } from "../lib/constants/endpoints"
 
 export async function getProducts() {
     // Fetch data from external API
@@ -9,65 +9,64 @@ export async function getProducts() {
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
-      }
-      data = await res.json()      
+    }
+    data = await res.json()
     return {
         data
-    } 
-  }
+    }
+}
 
- 
 
-export const navItem = [{ id: 1, value: 'Home', href: '#' },
-    { id: 2, value: 'About', href: '#' },
-    { id: 3, value: 'Contuct', href: '#' },
-    { id: 4, value: 'Blog', href: '#' },
-    ]
+export const navItem = [{ id: 1, value: 'Home', href: '/' },
+{ id: 2, value: 'About', href: '/about' },
+{ id: 3, value: 'Contact', href: '/contact' },
+{ id: 4, value: 'Blog', href: '/blog' },
+]
 
 export const productsList = [
-    { 
+    {
         id: 1,
         name: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
         image: './images/products/Iphone14pro-gold.png',
         price: '900',
     },
-    { 
+    {
         id: 2,
         name: 'Blackmagic Pocket Cinema Camera 6k',
         image: './images/products/Pocket-Cinema-Camera-6k.png',
         price: '2535',
     },
-    { 
+    {
         id: 3,
         name: 'Apple Watch Series 9 GPS 41mm Starlight Aluminium Case',
         image: './images/products/Apple-Watch-Series-9.png',
         price: '399',
     },
-    { 
+    {
         id: 4,
         name: 'Samsung Galaxy Watch6 Classic 47mm Black',
         image: './images/products/AirPods-Max-Silver.png',
-        price: '549', 
+        price: '549',
     },
-    { 
+    {
         id: 5,
         name: 'Galaxy Z Fold5 Unlocked | 256GB | Phantom Black',
         image: './images/products/Iphone14pro-gold.png',
         price: '369'
     },
-    { 
+    {
         id: 6,
         name: 'Galaxy Buds FE Graphite',
         image: './images/products/Iphone14pro-gold.png',
         price: '1799'
     },
-    { 
+    {
         id: 7,
         name: 'AirPods Max Silver',
         image: './images/products/Iphone14pro-gold.png',
         price: '99.99'
     },
-    { 
+    {
         id: 8,
         name: 'AirPods Max Silver',
         image: './images/products/Iphone14pro-gold.png',
@@ -142,15 +141,15 @@ export const productInfo = [
 export const tagsList = [
     {
         id: 1,
-        name:'New Arrival', 
+        name: 'New Arrival',
     },
     {
         id: 2,
-        name:'Bestseller', 
+        name: 'Bestseller',
     },
     {
         id: 3,
-        name:'Featured Products', 
+        name: 'Featured Products',
     }
 ];
 
@@ -158,15 +157,15 @@ export const tagsList = [
 export const discontList = [
     {
         id: 1,
-        name:'Discounts up to -20%', 
+        name: 'Discounts up to -20%',
     },
     {
         id: 2,
-        name:'Discounts up to -30%', 
+        name: 'Discounts up to -30%',
     },
     {
         id: 3,
-        name:'Discounts up to -50%', 
+        name: 'Discounts up to -50%',
     }
 ];
 

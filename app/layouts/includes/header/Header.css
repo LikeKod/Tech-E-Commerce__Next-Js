@@ -82,6 +82,7 @@
   color: #FFFFFF; }
 
 .container__subnav {
+  max-width: 1240px;
   padding-top: 14px;
   display: flex;
   align-items: center;
