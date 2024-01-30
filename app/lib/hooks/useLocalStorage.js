@@ -5,7 +5,7 @@ export function useLocalStorage(key, initialValue) {
 
         if (typeof window !== "undefined"){
             const jsonValue = localStorage.getItem(key);
-            // if (jsonValue !== null) {return JSON.parse(jsonValue)}
+            if (jsonValue !== null) {return JSON.parse(jsonValue)}
         }
 
         if (typeof initialValue === "function") {
