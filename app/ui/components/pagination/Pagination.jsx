@@ -53,14 +53,13 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
             // return [...item].sort((a, b) => f(a[key], b[key]));
             setSortedItems([...item].sort((a, b) => f(a[key], b[key])))
         };
-    }, [item, sortIndex, sortFunctions]);
+    }, [item, sortIndex]);
 
 
 
 
     const onSortChange = e => {
         setSortIndex(+e.target.value)
-
     }
 
 
