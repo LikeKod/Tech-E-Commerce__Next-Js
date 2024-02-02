@@ -54,8 +54,6 @@ export default function CatalogPage(items) {
                     </div>
                 </div>
                 <div>
-                    <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">85</span></div>
-
                     <Select 
                         open={isOpen}
                         items={items}

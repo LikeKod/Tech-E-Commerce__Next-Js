@@ -2,8 +2,6 @@
 
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState, useMemo } from 'react';
-import { productsList } from "../../../lib/data"
-import ProductsContainer from "../../../ui/components/products/ProductsContainer"
 import ProductCart from '../products/ProductCart';
 import './Pagination.css'
 
@@ -82,16 +80,18 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
     };
     return (
         <>
-            <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
-                <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" value={sortIndex} onChange={onSortChange}>
-                    {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}
-                </select>
+            <div className='flex mb-5 justify-center items-center sm:justify-between'>
+                <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">{items.items.length}</span></div>
+                <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
+                    <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" value={sortIndex} onChange={onSortChange}>
+                        {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}
+                    </select>
+                </div>
             </div>
             <div className="flex flex-wrap mb-8 justify-center gap-4">
                 <div className="flex justify-center flex-wrap gap-4">
                     {currentItems && currentItems.map((product) =>
                         <ProductCart key={product.id} product={product} />
-                        // <ProductsContainer key={product.id} products={currentItems} />
                     )}
                 </div>
             </div>

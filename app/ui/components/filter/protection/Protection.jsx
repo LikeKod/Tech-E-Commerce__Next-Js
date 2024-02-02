@@ -9,6 +9,23 @@ import { categoryFoFilters } from '../../../../lib/data'
 
 export default function Protection() {
     const [isOpen, setIsOpen] = useState(false)
+    const [checked, setChecked] = useState([])
+
+    const handleToggle = (value) => {
+        const currentIndex = checked.indexOf(value)
+        const newChecked = [...checked]
+
+        if(currentIndex === -1){
+            newChecked.push(value)
+        }else{
+            newChecked.splice(currentIndex, 1)
+        }
+
+
+        setChecked(newChecked)
+        console.log(checked)
+    }
+
     return (
         <>
             <div className='mb-[24px]'>
@@ -21,7 +38,7 @@ export default function Protection() {
                     {categoryFoFilters.map((category) =>
                     category.protection ?
                         <div key={category.id} className="Checkbox mb-[8px]">
-                            <input type="checkbox" className="custom-checkbox" id={category?.protection} />
+                            <input type="checkbox" className="custom-checkbox" checked id={category?.protection} onChange={() => handleToggle(category.protection)}/>
                             <label for={category?.protection}>{category?.protection}
                                 <p className="checkbox_number">125</p>
                             </label>
