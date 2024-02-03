@@ -17,11 +17,12 @@ export async function GET (req, res) {
 		products: []
 	}
 	
-	const { perPage, slug } = req?.query ?? {};    
+	const { perPage, slug } = req?.query ?? {};
 	
 	try {
-		const { data } = await wooApi.get('products');
+		const { data } = await wooApi.get('products', { per_page: 30 });
 		responseData.products = data;		
+        // console.log(responseData)
 		return NextResponse.json( responseData );
 		
 	} catch ( error ) {
