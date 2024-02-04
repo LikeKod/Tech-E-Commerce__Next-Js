@@ -8,10 +8,12 @@ import AirB from '/public/images/Payment/airB.png';
 import WatchB from '/public/images/Payment/watchB.png';
 
 import '../orders/sum__pay/ShoppingCart.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from '../context'
 
 export default function Product() {
-    const [isOp, setIsOp] = useState(true)
+    const [isOp, setIsOp] = useState(true);
+    const {cart, setCart, getItemQuantity, increaseCartQty, decreaseCartQuantity, removerFromCart} = useContext (AppContext)
 
     function handcleClick() {
         setIsOp(!isOp)
