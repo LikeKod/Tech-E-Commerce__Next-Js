@@ -7,13 +7,11 @@ import TopFilters from "./ui/components/TagsFilter/TopFilters"
 import Sale from "./ui/sale/sale"
 import Slider from "./ui/Slider/Slider"
 import MainLayout from "./layouts/MainLayout"
-import  {GET_PRODUCTS_ENDPOINT} from "./lib/constants/endpoints.js"
-
+import {GET_PRODUCTS_ENDPOINT} from "./lib/constants/endpoints.js"
 
 
 export default async function Home() {
-
-    const  {data}  = await getProducts();
+    
     return (
         <MainLayout >
             <Banner />
@@ -24,7 +22,7 @@ export default async function Home() {
                 <div className="products__tags mb-8">
                     <TopFilters filters={tagsList} />
                 </div>
-                <ProductsContainer products={data.products} />
+                <ProductsContainer />
             </div>
 
 
@@ -34,7 +32,7 @@ export default async function Home() {
                 <div className="products__tags mb-8">
                     <TopFilters filters={discontList} />
                 </div>
-                <ProductsContainer products={data.products} />
+                <ProductsContainer />
             </div>
 
             <Sale />

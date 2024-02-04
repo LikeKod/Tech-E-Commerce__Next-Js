@@ -1,48 +1,37 @@
 'use client'
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { red } from '@mui/material/colors';
+import { useState, useContext, useEffect } from 'react';
+import { AppContext } from '../../../context/ShopingCartContext';
 import { isEmpty } from 'lodash';
 import AddToCart from '../Cart/AddToCart';
-import { useState } from 'react';
+import AddToFavourite from '../wishList/AddToFavourite'
 
 
 export default function ProductCart({ product }) {
-
-    const [favourite, setFavourite] = useState(false);
-
     if (isEmpty(product)) {
         return null;
     }
 
+    const { wishList, addToWishList, removerFromWishList } = useContext(AppContext);
+    const [isAdded, setIsAdded] = useState(false);
+    
     // get first image from array
-    const img = product?.images[0] ?? {};
-    // get type of product array
-    const productType = product?.type ?? '';
-
+    const img = product?.images[0] ?? {};    
+    
+    useEffect(() => {
+        if(product) {
+            setIsAdded(wishList.find(item => item.id === product.id));
+        }
+    }, [wishList])
 
     return (
+        product ?
         <div className="flex gap-y-4 flex-col items-center w-[268px] max-h-[455px] px-6 py-4 bg-[#F6F6F6] rounded-lg text-center">
-            {
-                favourite ?
-                    <FavoriteIcon
-                        className="w-8 self-end"
-                        sx={{ color: red[500], fontSize: 32 }}
-                    />
-                    :
-                    <FavoriteBorderIcon
-                        className="w-8 self-end"
-                        sx={{ fontSize: 32 }}
-                    />
-            }
+            
+            <AddToFavourite id={product.id} isAdded={isAdded} setIsAdded={setIsAdded} />
 
-            <a
-                className="grow"
-                href={`/product/${product?.slug}`}>
-
+            <a className="grow" href={`/product/${product?.slug}`}>
                 <div className='flex flex-col gap-y-4 items-center h-full'>
-
                     <div className="mb-2 w-full h-[160px] relative ">
                         <img
                             className="object-cover object-center h-full"
@@ -57,6 +46,13 @@ export default function ProductCart({ product }) {
             </a>
 
             <AddToCart product={product} />
-        </div>
+        </div> 
+        :
+        <h3> Loading... </h3>
     );
+
+
+
+
+
 }
