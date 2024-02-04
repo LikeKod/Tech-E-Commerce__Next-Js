@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocalStorage } from "../lib/hooks/useLocalStorage";
 import { getProducts } from "../lib/data.js";
-export const AppContext = React.createContext([{}, () => {}]);
+export const AppContext = React.createContext([{}, () => { }]);
 
 export const AppProvider = ({ children }) => {
+
+  const [filteredData, setFilteredData] = useState([]); // стейт данных после фильтрации
+  const [searchText, setSearchText] = useState(''); // стейт для поля поиска
   const [cart, setCart] = useLocalStorage("shopping-cart", []);
   const [wishList, setWishList] = useLocalStorage("swish-list", []);
   const [products, setProducts] = useState([]);
@@ -73,6 +76,12 @@ export const AppProvider = ({ children }) => {
     });
   }
 
+  if (searchText) {
+    setFilteredData(products.filter(
+      (item) => item.name.toString().toLowerCase().includes((searchText).toLowerCase())
+    ));
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -81,6 +90,8 @@ export const AppProvider = ({ children }) => {
         wishList,
         setWishList,
         getItemQuantity,
+        searchText,
+        setSearchText,
         increaseCartQty,
         decreaseCartQuantity,
         removerFromCart,

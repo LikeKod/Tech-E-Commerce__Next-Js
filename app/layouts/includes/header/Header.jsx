@@ -4,7 +4,7 @@ import Image from 'next/image'
 import './Header.css'
 import logo from "/public/images/header/LogoVector.png";
 import Menu from './headerItem/Menu'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import debounce from "debounce"
 
 import { navItem } from '../../../lib/data';
@@ -16,6 +16,7 @@ import SubNavItem from './headerItem/SubNavItem'
 import { GET_PRODUCTS_ENDPOINT } from '../../../lib/constants/endpoints';
 import { BiLoaderCircle } from 'react-icons/bi'
 import Link from 'next/link';
+import { AppContext } from '../../../context/ShopingCartContext';
 
 
 
@@ -25,33 +26,34 @@ export default function Header({ }) {
     const [menuActive, setMenuActive] = useState(false)
     const [items, setItems] = useState([])
     const [isSearching, setIsSearching] = useState(null)
+    const {searchText, setSearchText} = useContext(AppContext)
 
-    const handleSearchName = debounce(async (event) => {
-        if (event.target.value == '') {
-            setItems([])
-            return
-        }
+    // const handleSearchName = debounce(async (event) => {
+    //     if (event.target.value == '') {
+    //         setItems([])
+    //         return
+    //     }
 
-        setIsSearching(true)
+    //     setIsSearching(true)
 
-        try {
-            const response = await fetch(GET_PRODUCTS_ENDPOINT)
-            const result = await response.json()
+    //     try {
+    //         const response = await fetch(GET_PRODUCTS_ENDPOINT)
+    //         const result = await response.json()
 
-            if (result) {
-                setItems(result.products)
-                setIsSearching(false)
-                console.log(result)
+    //         if (result) {
+    //             setItems(result.products)
+    //             setIsSearching(false)
+    //             console.log(result)
 
-                return
-            }
-            setItems([])
-            setIsSearching(false)
-        } catch (error) {
-            console.log(error)
-            alert(error)
-        }
-    }, 500)
+    //             return
+    //         }
+    //         setItems([])
+    //         setIsSearching(false)
+    //     } catch (error) {
+    //         console.log(error)
+    //         alert(error)
+    //     }
+    // }, 500)
 
     return (
         <header className={'header'}>
@@ -66,7 +68,7 @@ export default function Header({ }) {
                             />
                         </a>
                     </div>
-                    <Search onChange={handleSearchName} />
+                    <Search onChange={e => setSearchText(e.target.value)} />
                     {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
 
                     {items.length > 0 ?
@@ -74,7 +76,7 @@ export default function Header({ }) {
                             {items.map((item) => ( 
                                 <div className="p-1" key={item.id}>
                                     <Link
-                                        href={`/product/${item?.id}`}
+                                        // href={`/product/${item?.id}`}
                                         className="flex items-center justify-between w-full cursor-pointer hover:bg-gray-200 p-1 px-2"
                                     >
                                         <div className="flex items-center">
