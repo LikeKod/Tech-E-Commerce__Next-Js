@@ -11,7 +11,7 @@ export default function Sale() {
                     Commodo fames vitae vitae leo mauris in. Eu consequat.
                 </div>
                 <div className={"header__banner-btn"}>
-                    <a className={"button btn__white-small button--sale"} href="#">
+                    <a className={"button btn__white-small button--sale"} href="/catalog">
                         ShopNow
                     </a>
                 </div>

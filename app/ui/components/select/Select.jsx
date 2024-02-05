@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export async function SelectedItems() {
-    const  data  = await getProducts();
+    const  {data}  = await getProducts();
     const item = data.products
 
     const sortOptions = [

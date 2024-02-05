@@ -26,34 +26,39 @@ export default function Header({ }) {
     const [menuActive, setMenuActive] = useState(false)
     const [items, setItems] = useState([])
     const [isSearching, setIsSearching] = useState(null)
-    const {searchText, setSearchText} = useContext(AppContext)
+    const { searchText, setSearchText } = useContext(AppContext)
 
-    // const handleSearchName = debounce(async (event) => {
-    //     if (event.target.value == '') {
-    //         setItems([])
-    //         return
-    //     }
+    const handleSearchName = debounce(async (event) => {
+        if (event.target.value == '') {
+            setItems([])
+            return
+        }
 
-    //     setIsSearching(true)
+        setIsSearching(true)
 
-    //     try {
-    //         const response = await fetch(GET_PRODUCTS_ENDPOINT)
-    //         const result = await response.json()
+        try {
+            const response = await fetch(GET_PRODUCTS_ENDPOINT, {
+                search: 'Hoodie',
+                method: "GET",
+            })
+            const result = await response.json()
 
-    //         if (result) {
-    //             setItems(result.products)
-    //             setIsSearching(false)
-    //             console.log(result)
+            if (result) {
+                let res = []
+                result.products.map(product => product.name.includes(event.target.value) ? res.push(product):null)
+                setItems(res)
+                setIsSearching(false)
+                console.log(result)
 
-    //             return
-    //         }
-    //         setItems([])
-    //         setIsSearching(false)
-    //     } catch (error) {
-    //         console.log(error)
-    //         alert(error)
-    //     }
-    // }, 500)
+                return
+            }
+            setItems([])
+            setIsSearching(false)
+        } catch (error) {
+            console.log(error)
+            alert(error)
+        }
+    }, 500)
 
     return (
         <header className={'header'}>
@@ -68,19 +73,19 @@ export default function Header({ }) {
                             />
                         </a>
                     </div>
-                    <Search onChange={e => setSearchText(e.target.value)} />
+                    <Search onChange={handleSearchName} />
                     {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
 
                     {items.length > 0 ?
                         <div className="absolute bg-white max-w-[910px] h-auto w-full z-20 left-0 top-12 border p-1">
-                            {items.map((item) => ( 
+                            {items.map((item) => (
                                 <div className="p-1" key={item.id}>
                                     <Link
-                                        // href={`/product/${item?.id}`}
+                                        href={`/product/${item?.id}`}
                                         className="flex items-center justify-between w-full cursor-pointer hover:bg-gray-200 p-1 px-2"
                                     >
                                         <div className="flex items-center">
-                                            <img className="rounded-md" width="40" src={item?.url + '/40'} />
+                                            <img className="rounded-md" width="40" src={item?.images[0].src} />
                                             <div className="truncate ml-2">{item?.name}</div>
                                         </div>
                                         <div className="truncate">£{(item?.price / 100).toFixed(2)}</div>
