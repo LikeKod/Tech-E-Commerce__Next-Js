@@ -7,16 +7,14 @@ import Menu from './headerItem/Menu'
 import { useContext, useState } from 'react';
 import debounce from "debounce"
 
-import { navItem } from '../../../lib/data';
+import { getProducts, navItem } from '../../../lib/data';
 import Search from '../../../ui/components/input/Input'
 import { IoCartOutline } from "react-icons/io5";
 import { LuUser } from "react-icons/lu";
 import { IoIosHeartEmpty } from "react-icons/io";
 import SubNavItem from './headerItem/SubNavItem'
-import { GET_PRODUCTS_ENDPOINT } from '../../../lib/constants/endpoints';
 import { BiLoaderCircle } from 'react-icons/bi'
 import Link from 'next/link';
-import { AppContext } from '../../../context/ShopingCartContext';
 
 
 
@@ -26,30 +24,25 @@ export default function Header({ }) {
     const [menuActive, setMenuActive] = useState(false)
     const [items, setItems] = useState([])
     const [isSearching, setIsSearching] = useState(null)
-    const { searchText, setSearchText } = useContext(AppContext)
 
     const handleSearchName = debounce(async (event) => {
+
+        
         if (event.target.value == '') {
             setItems([])
             return
         }
-
+        
         setIsSearching(true)
-
+        
         try {
-            const response = await fetch(GET_PRODUCTS_ENDPOINT, {
-                search: 'Hoodie',
-                method: "GET",
-            })
-            const result = await response.json()
+            // setParams()
+            
+            const { data } = await getProducts({ search: `${event.target.value}` });
 
-            if (result) {
-                let res = []
-                result.products.map(product => product.name.includes(event.target.value) ? res.push(product):null)
-                setItems(res)
+            if (data) {
+                setItems(data.products)
                 setIsSearching(false)
-                console.log(result)
-
                 return
             }
             setItems([])

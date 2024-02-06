@@ -6,11 +6,27 @@ export const AppContext = React.createContext([{}, () => { }]);
 
 export const AppProvider = ({ children }) => {
 
-  const [filteredData, setFilteredData] = useState([]); // стейт данных после фильтрации
-  const [searchText, setSearchText] = useState(''); // стейт для поля поиска
+  // const [filteredData, setFilteredData] = useState({}); // state data for filters
   const [cart, setCart] = useLocalStorage("shopping-cart", []);
   const [wishList, setWishList] = useLocalStorage("swish-list", []);
   const [products, setProducts] = useState([]);
+
+  // async function fetchProducts() {
+  //   try {
+  //     const { data } = await getProducts({ search: `${event.target.value}` });
+  //     if (data) {
+  //       setProductDetails(data.products)
+  //       setFilteredData(data.products)
+  //       return
+  //     }
+  //     setProductDetails([])
+
+  //   } catch (error) {
+  //     console.log(error)
+  //     alert(error)
+  //   }
+
+  // }
 
   function getItemQuantity(id) {
     console.log("getItemQuantity:", id);
@@ -76,12 +92,6 @@ export const AppProvider = ({ children }) => {
     });
   }
 
-  if (searchText) {
-    setFilteredData(products.filter(
-      (item) => item.name.toString().toLowerCase().includes((searchText).toLowerCase())
-    ));
-  }
-
   return (
     <AppContext.Provider
       value={{
@@ -90,8 +100,6 @@ export const AppProvider = ({ children }) => {
         wishList,
         setWishList,
         getItemQuantity,
-        searchText,
-        setSearchText,
         increaseCartQty,
         decreaseCartQuantity,
         removerFromCart,
