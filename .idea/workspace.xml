@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="" />
+    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/api/products/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/products/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/components/products/ProductsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/products/ProductsContainer.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705058196010</updated>
       <workItem from="1705058197458" duration="127000" />
+      <workItem from="1707208979594" duration="3000" />
     </task>
     <servers />
   </component>
@@ -51,5 +56,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
