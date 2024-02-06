@@ -32,9 +32,9 @@ export default function ProductCart({ product }) {
 
             <a className="grow" href={`/product/${product?.slug}`}>
                 <div className='flex flex-col gap-y-4 items-center h-full'>
-                    <div className="mb-2 w-full h-[160px] relative ">
+                    <div className="mb-2  w-full h-[160px] relative ">
                         <img
-                            className="object-cover object-center h-full"
+                            className="object-cover object-center h-full ms-auto me-auto"
                             src={img?.src ?? ''}
                             alt={img?.alt}
                         />

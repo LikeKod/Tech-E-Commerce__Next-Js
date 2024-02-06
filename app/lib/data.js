@@ -1,9 +1,16 @@
 
 import { GET_PRODUCTS_ENDPOINT } from "../lib/constants/endpoints"
 
-export async function getProducts() {
+export async function getProducts(params) {
+    let query = '';
+
+    // в цикле извлекаем ключи и значения для формирования QUERY прараметров
+    for (const key in params) {
+        query  = query + `${key}=${params[key]}&`;
+    }
+
     // Fetch data from external API
-    const res = await fetch(GET_PRODUCTS_ENDPOINT)
+        const res = await fetch(`${GET_PRODUCTS_ENDPOINT}?${query}`)
     let data
 
     if (!res.ok) {
