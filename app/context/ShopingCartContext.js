@@ -11,22 +11,6 @@ export const AppProvider = ({ children }) => {
   const [wishList, setWishList] = useLocalStorage("swish-list", []);
   const [products, setProducts] = useState([]);
 
-  // async function fetchProducts() {
-  //   try {
-  //     const { data } = await getProducts({ search: `${event.target.value}` });
-  //     if (data) {
-  //       setProductDetails(data.products)
-  //       setFilteredData(data.products)
-  //       return
-  //     }
-  //     setProductDetails([])
-
-  //   } catch (error) {
-  //     console.log(error)
-  //     alert(error)
-  //   }
-
-  // }
 
   function getItemQuantity(id) {
     console.log("getItemQuantity:", id);
