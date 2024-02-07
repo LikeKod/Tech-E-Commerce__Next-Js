@@ -30,7 +30,7 @@ export default function ProductCart({ product }) {
             
             <AddToFavourite id={product.id} isAdded={isAdded} setIsAdded={setIsAdded} />
 
-            <a className="grow" href={`/product/${product?.slug}`}>
+            <a className="grow" href={`/product/${product?.id}`}>
                 <div className='flex flex-col gap-y-4 items-center h-full'>
                     <div className="mb-2  w-full h-[160px] relative ">
                         <img

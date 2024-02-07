@@ -6,6 +6,7 @@ export const GET_PAGES_ENDPOINT = `${ process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL
 export const COMMENTS_ENDPOINT = `${ process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL }/wp-json/wp/v2/comments`;
 
 export const GET_PRODUCTS_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/products`;
+export const GET_SINGLE_PRODUCT_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/product`;
 
 /**
  * Cart

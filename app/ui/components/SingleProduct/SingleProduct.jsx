@@ -1,7 +1,29 @@
+'use client'
+
 import ScreenshotIcon from '@mui/icons-material/Screenshot';
 import ProductGallery from './ProductGallery'
+import { useEffect, useState } from 'react';
+import { getSingleProduct} from '../../../lib/data';
 
-const SingleProduct = ({id ,product, variants }) => {
+const SingleProduct = ({id} ) => {
+
+    const [product, setProduct] = useState({});
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await getSingleProduct(id);
+                data ? setProduct(data?.product) : setProduct([]);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    console.log("🚀 ~ SingleProduct ~ product:", product)
     // получаем первое фото из массива фотографий
     let img = "";
     if (product.images) {
@@ -43,7 +65,7 @@ const SingleProduct = ({id ,product, variants }) => {
                             </div>
 
                             <div className="flex flex-wrap items-center gap-2 mb-6">
-                                {variants
+                                {/* {variants
                                     ? variants.map((variant) => (
                                         <button
                                             key={variant.id}
@@ -53,7 +75,7 @@ const SingleProduct = ({id ,product, variants }) => {
                                             {variant.name}
                                         </button>
                                     ))
-                                    : ""}
+                                    : ""} */}
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-4 mb-6">
