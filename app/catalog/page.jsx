@@ -1,4 +1,3 @@
-
 import MainLayout from "../layouts/MainLayout"
 import Arrow from '../../public/images/Icons/Arrow-24.svg'
 import Image from "next/image"
@@ -6,11 +5,7 @@ import Image from "next/image"
 import { getProducts } from "../lib/data"
 import CatalogPage from '../ui/components/catalogPage/CatalogPage'
 
-// async function getData(){
-//     const  data  = await getProducts();
-//     console.log(data)
-//     return data.products
-// }
+
 export default async function Catalog({ }) {
     const  {data}  = await getProducts();
     return (

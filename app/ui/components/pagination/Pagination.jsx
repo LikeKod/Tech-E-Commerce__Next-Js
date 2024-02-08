@@ -6,19 +6,6 @@ import ProductCart from '../products/ProductCart';
 import './Pagination.css'
 
 
-
-// function Items({ currentItems }) {
-//     console.log('items', currentItems)
-//     return (
-//         <div className="flex justify-center flex-wrap gap-4">
-//             {currentItems && currentItems.map((product) =>
-//                 <ProductsContainer key={product.id} products={currentItems} />
-//             )}
-//         </div>
-//     );
-// }
-
-
 export default function PaginatedItems({ itemsPerPage, items, open }) {
     const [sortIndex, setSortIndex] = useState(0);
 
@@ -48,7 +35,6 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
         if (item) {
             const { key, type } = sortOptions[sortIndex];
             const f = sortFunctions[type];
-            // return [...item].sort((a, b) => f(a[key], b[key]));
             setSortedItems([...item].sort((a, b) => f(a[key], b[key])))
         };
     }, [item, sortIndex]);
@@ -79,7 +65,7 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
         setItemOffset(newOffset);
     };
     return (
-        <>
+        <div>
             <div className='flex mb-5 justify-center items-center sm:justify-between'>
                 <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">{items.items.length}</span></div>
                 <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
@@ -106,6 +92,6 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
                 breakLabel="..."
                 renderOnZeroPageCount={null}
             />
-        </>
+        </div>
     );
 }
