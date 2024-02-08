@@ -5,6 +5,7 @@ import { AppContext } from '../../../context/ShopingCartContext';
 import { isEmpty } from 'lodash';
 import AddToCart from '../Cart/AddToCart';
 import AddToFavourite from '../wishList/AddToFavourite'
+import Link from 'next/link';
 
 
 export default function ProductCart({ product }) {
@@ -30,7 +31,7 @@ export default function ProductCart({ product }) {
             
             <AddToFavourite id={product.id} isAdded={isAdded} setIsAdded={setIsAdded} />
 
-            <a className="grow" href={`/product/${product?.id}`}>
+            <Link className="grow" href={`/product/${product?.id}`}>
                 <div className='flex flex-col gap-y-4 items-center h-full'>
                     <div className="mb-2  w-full h-[160px] relative ">
                         <img
@@ -43,7 +44,7 @@ export default function ProductCart({ product }) {
                     <div className="grow">{product.name}</div>
                     <div className="font-semibold text-[24px]">$ {product.price}</div>
                 </div>
-            </a>
+            </Link>
 
             <AddToCart product={product} />
         </div> 
