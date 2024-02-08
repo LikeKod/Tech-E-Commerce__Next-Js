@@ -3,12 +3,19 @@
 import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
+import { AppContext } from '../../../../context/ShopingCartContext'
 
 export default function Brand() {
     const [isOpen, setIsOpen] = useState(false)
+    const { setFilteredData, filteredData } = useContext(AppContext)
+    const FilterChange = (event) => {
+        console.log("event", event.target.value);
+        setFilteredData( {filters: `${event.target.value}`})
+        console.log("filteredData", filteredData);
+    };
     return (
         <>
             <div className='mb-[24px]'>
@@ -21,7 +28,7 @@ export default function Brand() {
                     {categoryFoFilters.map((category) =>
                     category.brand ?
                         <div key={category.id} className="Checkbox mb-[8px]">
-                            <input type="checkbox" className="custom-checkbox" id={category?.brand} />
+                            <input type="checkbox" value={category?.brand} onChange={FilterChange} className="custom-checkbox" id={category?.brand} />
                             <label for={category?.brand}>{category?.brand}
                                 <p className="checkbox_number">125</p>
                             </label>

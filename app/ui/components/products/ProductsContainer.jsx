@@ -5,7 +5,6 @@ import { useEffect, useContext, useState } from "react";
 import ProductCart from "./ProductCart"
 import { getProducts } from "../../../lib/data";
 import { AppContext } from "../../../context/ShopingCartContext";
-import { GET_PRODUCTS_ENDPOINT } from "../../../lib/constants/endpoints";
 
 export default function ProductsContainer() {
     const { products, setProducts } = useContext(AppContext);

@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocalStorage } from "../lib/hooks/useLocalStorage";
-import { getProducts } from "../lib/data.js";
 export const AppContext = React.createContext([{}, () => { }]);
 
 export const AppProvider = ({ children }) => {
 
-  // const [filteredData, setFilteredData] = useState({}); // state data for filters
+  const [filteredData, setFilteredData] = useState({}); // state data for filters
   const [cart, setCart] = useLocalStorage("shopping-cart", []);
   const [wishList, setWishList] = useLocalStorage("swish-list", []);
   const [products, setProducts] = useState([]);
@@ -81,6 +80,8 @@ export const AppProvider = ({ children }) => {
       value={{
         cart,
         setCart,
+        filteredData,
+        setFilteredData,
         wishList,
         setWishList,
         getItemQuantity,

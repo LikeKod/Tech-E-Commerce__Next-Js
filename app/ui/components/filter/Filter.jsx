@@ -8,7 +8,7 @@ import Price from './price/Price'
 
 
 
-export default function Filter() {
+export default function Filter({items}) {
     return (
         <>
             <Price />
