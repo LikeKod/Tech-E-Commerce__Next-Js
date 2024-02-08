@@ -3,18 +3,22 @@
 import ScreenshotIcon from '@mui/icons-material/Screenshot';
 import ProductGallery from './ProductGallery'
 import { useEffect, useState } from 'react';
-import { getSingleProduct} from '../../../lib/data';
+import { getSingleProduct } from '../../../lib/data';
+// import parse from "html-react-parser";
+// import DOMPurify from 'dompurify';
+import CleanHTML from '../CleanHtml/CleanHtml'
 
-const SingleProduct = ({id} ) => {
-
+const SingleProduct = ({ id }) => {
     const [product, setProduct] = useState({});
-
+    const [loading, setLoadding] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async () => {            
             try {
+                setLoadding(true)
                 const { data } = await getSingleProduct(id);
                 data ? setProduct(data?.product) : setProduct([]);
+                setLoadding(false)
             } catch (error) {
                 console.error(error);
             }
@@ -23,7 +27,6 @@ const SingleProduct = ({id} ) => {
         fetchData();
     }, []);
 
-    console.log("🚀 ~ SingleProduct ~ product:", product)
     // получаем первое фото из массива фотографий
     let img = "";
     if (product.images) {
@@ -34,15 +37,14 @@ const SingleProduct = ({id} ) => {
         <div className="single-product">
             <section className="product__info py-28">
                 <div className="container">
-                    <div className="flex flex-row justify-between h-[672px] gap-x-8">
+                    <div className="flex flex-row justify-between bg-slate-50 min-h-[672px] gap-x-8 py-5 mb-20">
                         <div className="product-images w-1/2">
-                            
-                                {product?.images ? (
-                                    <ProductGallery items={ product?.images }/>                                    
-                                ) 
-                                : null }                            
-                        </div>
 
+                            {product?.images ? (
+                                <ProductGallery loading={loading} imageList={product?.images} />
+                            )
+                                : null}
+                        </div>
                         <div className="w-1/2">
                             <h1 className="text-4xl/[40px] font-semibold mb-6">
                                 {product?.name}
@@ -137,17 +139,18 @@ const SingleProduct = ({id} ) => {
                                 </div>
                             </div>
 
-                            <p className=" text-[14px] tracking-wide leading-6 text-gray-500 mb-8 ">
-                                {product?.description}
-                                <span className="text-gray-700 ">
+                            <div className=" text-[14px] tracking-wide leading-6 text-gray-500 mb-8 ">
+                                {/* {parse(cleanHTML)} */}
+
+                                {/* <span className="text-gray-700 ">
                                     {" "}
                                     <a className="underline" href="#">
                                         more...
                                     </a>{" "}
-                                </span>
-                            </p>
+                                </span> */}
+                            </div>
 
-                            <div className="flex gap-x-4">
+                            <div className="flex gap-x-4 mb-20">
                                 <button
                                     type="button"
                                     className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center px-14 py-4"
@@ -163,8 +166,11 @@ const SingleProduct = ({id} ) => {
                                     Add to Card
                                 </button>
                             </div>
+                            <CleanHTML  dirtyHTML={product?.short_description} />
                         </div>
-                    </div>
+                        <div>
+                        </div>
+                    </div>                        
                 </div>
             </section>
         </div>
