@@ -13,7 +13,7 @@ export default function Price() {
     const [leftValue, setLeftValue] = useState(0)
     const [rightValue, setRightValue] = useState(100)
     const [isOpen, setIsOpen] = useState(false)
-    const { setFilteredData } = useContext(AppContext)
+    const { setFilteredData, filteredData, setMaxPrice } = useContext(AppContext)
 
     const LeftOnChangeEventTriggerd = (newValue) => {
         console.log("new Value", newValue[1]);
@@ -24,6 +24,7 @@ export default function Price() {
         console.log("new Value", newValue[1]);
         setFilteredData({ max_price: newValue[1] })
         setRightValue(newValue[1]);
+        console.log("FilteredData", filteredData);
     };
     return (
         <>

@@ -2,12 +2,16 @@
 import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
+import { AppContext } from '../../../../context/ShopingCartContext'
 
 export default function Battery() {
     const [isOpen, setIsOpen] = useState(false)
+    const {product} = useContext(AppContext)
+
+    console.log(product)
     return (
         <>
             <div className='mb-[24px]'>

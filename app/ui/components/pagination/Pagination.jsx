@@ -1,7 +1,7 @@
 'use client'
 
 import ReactPaginate from 'react-paginate';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import ProductCart from '../products/ProductCart';
 import './Pagination.css'
 
@@ -9,11 +9,11 @@ import './Pagination.css'
 export default function PaginatedItems({ itemsPerPage, items, open }) {
     const [sortIndex, setSortIndex] = useState(0);
 
-    const [item, setItem] = useState(items.items)
+    const [item, setItem] = useState(items)
 
     const [page, setPage] = useState(0)
 
-    const [sortedItems, setSortedItems] = useState(items.items)
+    const [sortedItems, setSortedItems] = useState(items)
 
     const [currentItems, setCurrentItems] = useState();
     const [pageCount, setPageCount] = useState(0);
@@ -67,7 +67,7 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
     return (
         <div>
             <div className='flex mb-5 justify-center items-center sm:justify-between'>
-                <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">{items.items.length}</span></div>
+                <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">{items.length}</span></div>
                 <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
                     <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" value={sortIndex} onChange={onSortChange}>
                         {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}

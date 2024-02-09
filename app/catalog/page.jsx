@@ -1,21 +1,19 @@
+'use client'
+
 import MainLayout from "../layouts/MainLayout"
 import Arrow from '../../public/images/Icons/Arrow-24.svg'
 import Image from "next/image"
 
-import { getProducts } from "../lib/data"
+
 import CatalogPage from '../ui/components/catalogPage/CatalogPage'
 import { useContext } from "react"
 import { AppContext } from "../context/ShopingCartContext"
 
 
-export default async function Catalog() {
+export default function Catalog() {
     // const {filteredData} = useContext(AppContext)
-    let params = {
-        per_page: 15,
-        // max_price: 2
-    }
-    const { data } = await getProducts(params);
     
+
     return (
         <MainLayout>
 
@@ -28,7 +26,7 @@ export default async function Catalog() {
                     <p className="text-black">Smartphones</p>
                 </div>
 
-                <CatalogPage items={data.products} />
+                <CatalogPage />
 
             </div>
 
