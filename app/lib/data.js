@@ -5,18 +5,14 @@ import {
 
 export async function getProducts(params) {
   let query = "";
-
-  // в цикле извлекаем ключи и значения для формирования QUERY прараметров
   for (const key in params) {
     query = query + `${key}=${params[key]}&`;
   }
-
-  // Fetch data from external API
-  const res = await fetch(`${GET_PRODUCTS_ENDPOINT}?${query}`);
+  const res = await fetch(`${GET_PRODUCTS_ENDPOINT}?${query}`, {
+    next: { revalidate: 360 },
+  });
   let data;
-
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
   data = await res.json();
@@ -26,11 +22,10 @@ export async function getProducts(params) {
 }
 
 export async function getSingleProduct(id) {
-  // Fetch data from external API
+  console.log("🚀 ~ getSingleProduct ~ id:", id);
   const res = await fetch(`${GET_SINGLE_PRODUCT_ENDPOINT}?id=${id}`);
   let data;
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
   data = await res.json();
@@ -43,7 +38,7 @@ export const navItem = [
   { id: 1, value: "Home", href: "/" },
   { id: 2, value: "About", href: "/about" },
   { id: 3, value: "Contact", href: "/contact" },
-  { id: 4, value: "Blog", href: "/blog" },
+  { id: 4, value: "Catalog", href: "/catalog" },
 ];
 
 export const productsList = [
