@@ -3,25 +3,28 @@
 import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import defis from '../../../../../public/images/filters/defis.svg'
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import { AppContext } from '../../../../context/ShopingCartContext'
 
 export default function Price() {
-    const [leftValue, setLeftValue] = useState(1000)
-    const [rightValue, setRightValue] = useState(7000)
+    const [leftValue, setLeftValue] = useState(0)
+    const [rightValue, setRightValue] = useState(100)
     const [isOpen, setIsOpen] = useState(false)
+    const { setFilteredData } = useContext(AppContext)
 
     const LeftOnChangeEventTriggerd = (newValue) => {
         console.log("new Value", newValue[1]);
         setLeftValue(newValue[1]);
-      };
+    };
 
-      const RightOnChangeEventTriggerd = (newValue) => {
+    const RightOnChangeEventTriggerd = (newValue) => {
         console.log("new Value", newValue[1]);
+        setFilteredData({ max_price: newValue[1] })
         setRightValue(newValue[1]);
-      };
+    };
     return (
         <>
             <div className='mb-[24px]'>
@@ -36,14 +39,14 @@ export default function Price() {
                             <p className='text-sm text-zinc-400'>To</p>
                         </div>
                         <div className='flex justify-between mt-[8px] mb-[16px]'>
-                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text"  value={leftValue} />
+                            <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" value={leftValue} />
                             <Image src={defis} />
                             <input className={`price_border w-[107px] h-[40px] rounded pl-[8px]`} type="text" value={rightValue} />
                         </div>
                         <label></label>
                         <Slider
-                            min={0} max={1000000} defaultValue= {[leftValue, rightValue]} 
-                            step={1000}
+                            min={0} max={1000} defaultValue={[leftValue, rightValue]}
+                            step={10}
                             onChange={RightOnChangeEventTriggerd}
                             value={[leftValue, rightValue]}
                             range />

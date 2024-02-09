@@ -8,6 +8,7 @@ import FiltersMenu from './FiltersMenu'
 
 export default function CatalogPage(items) {
     const [isOpen, setIsOpen] = useState(false)
+    console.log('data:',items.items)
 
     return (
         <div className="flex justify-center sm:justify-between">
@@ -16,7 +17,7 @@ export default function CatalogPage(items) {
                     <Image className="mr-[16px]" src={ArrowLeft} />
                     Filters
                 </div>
-                <Filter />
+                <Filter items={items.items}/>
             </div>
 
             <div className={`${isOpen ? 'hidden' : ''}`}>
