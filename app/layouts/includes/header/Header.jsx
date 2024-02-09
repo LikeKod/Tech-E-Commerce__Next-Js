@@ -10,6 +10,7 @@ import { navItem } from '../../../lib/data';
 import Search from '../../../ui/components/input/Input'
 import HeaderNavIcons from './headerItem/HeaderNavIcons'
 import SubNavItem from './headerItem/SubNavItem'
+import Link from 'next/link';
 
 export default function Header({ }) {
     const [menuActive, setMenuActive] = useState(false)
@@ -19,13 +20,13 @@ export default function Header({ }) {
             <div className={'header__nav'}>
                 <div className={'header__nav__container relative'}>
                     <div className={"logo__black"}>
-                        <a href="/">
+                        <Link href="/">
                             <Image
                                 priority
                                 src={logo}
                                 alt="Logo"
                             />
-                        </a>
+                        </Link>
                     </div>
                     <Search />
                     <Menu active={menuActive} setActive={setMenuActive} items={navItem} />
