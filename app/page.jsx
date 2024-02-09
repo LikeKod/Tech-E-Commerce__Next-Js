@@ -21,7 +21,7 @@ export default async function Home() {
 
     return (
         <MainLayout >
-            {/* <Banner /> */}
+            <Banner />
             <Banners />
             <Slider />
 
