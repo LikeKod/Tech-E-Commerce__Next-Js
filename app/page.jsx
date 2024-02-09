@@ -7,11 +7,18 @@ import TopFilters from "./ui/components/TagsFilter/TopFilters"
 import Sale from "./ui/sale/sale"
 import Slider from "./ui/Slider/Slider"
 import MainLayout from "./layouts/MainLayout"
-import {GET_PRODUCTS_ENDPOINT} from "./lib/constants/endpoints.js"
+import { GET_PRODUCTS_ENDPOINT } from "./lib/constants/endpoints.js"
 
 
 export default async function Home() {
-    
+    const params = {
+        per_page: 30,
+        page: 1
+    }
+
+    const { data } = await getProducts(params);
+    const products = data?.products || [];
+
     return (
         <MainLayout >
             <Banner />
@@ -22,17 +29,19 @@ export default async function Home() {
                 <div className="products__tags mb-8">
                     <TopFilters filters={tagsList} />
                 </div>
-                <ProductsContainer />
+                <ProductsContainer products={products} />
             </div>
 
 
             <CardCategory />
 
+            <h2>Второй блок</h2>
+
             <div className="container py-14">
                 <div className="products__tags mb-8">
                     <TopFilters filters={discontList} />
                 </div>
-                <ProductsContainer />
+                <ProductsContainer products={products} />
             </div>
 
             <Sale />

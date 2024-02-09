@@ -4,34 +4,11 @@ import ScreenshotIcon from '@mui/icons-material/Screenshot';
 import ProductGallery from './ProductGallery'
 import { useEffect, useState } from 'react';
 import { getSingleProduct } from '../../../lib/data';
-// import parse from "html-react-parser";
-// import DOMPurify from 'dompurify';
 import CleanHTML from '../CleanHtml/CleanHtml'
+import ProductsContainer from '../products/ProductsContainer';
 
-const SingleProduct = ({ id }) => {
-    const [product, setProduct] = useState({});
+const SingleProduct = ({ id, product }) => {
     const [loading, setLoadding] = useState(false);
-
-    useEffect(() => {
-        const fetchData = async () => {            
-            try {
-                setLoadding(true)
-                const { data } = await getSingleProduct(id);
-                data ? setProduct(data?.product) : setProduct([]);
-                setLoadding(false)
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    // получаем первое фото из массива фотографий
-    let img = "";
-    if (product.images) {
-        img = product?.images[0];
-    }
 
     return (
         <div className="single-product">
@@ -67,17 +44,7 @@ const SingleProduct = ({ id }) => {
                             </div>
 
                             <div className="flex flex-wrap items-center gap-2 mb-6">
-                                {/* {variants
-                                    ? variants.map((variant) => (
-                                        <button
-                                            key={variant.id}
-                                            type="button"
-                                            className=" min-w-[96px] text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 "
-                                        >
-                                            {variant.name}
-                                        </button>
-                                    ))
-                                    : ""} */}
+                                
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-4 mb-6">
@@ -140,14 +107,7 @@ const SingleProduct = ({ id }) => {
                             </div>
 
                             <div className=" text-[14px] tracking-wide leading-6 text-gray-500 mb-8 ">
-                                {/* {parse(cleanHTML)} */}
-
-                                {/* <span className="text-gray-700 ">
-                                    {" "}
-                                    <a className="underline" href="#">
-                                        more...
-                                    </a>{" "}
-                                </span> */}
+                                
                             </div>
 
                             <div className="flex gap-x-4 mb-20">
@@ -166,11 +126,11 @@ const SingleProduct = ({ id }) => {
                                     Add to Card
                                 </button>
                             </div>
-                            <CleanHTML  dirtyHTML={product?.short_description} />
+                            
                         </div>
                         <div>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
             </section>
         </div>
