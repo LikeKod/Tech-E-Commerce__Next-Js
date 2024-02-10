@@ -6,6 +6,7 @@ import { useContext, useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
 import { AppContext } from '../../../../context/ShopingCartContext'
+import Checkbox from '../../checkbox/Checkbox'
 
 export default function Battery() {
     const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +22,7 @@ export default function Battery() {
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                 <Search />
-                    {categoryFoFilters.map((category) =>
+                    {/* {categoryFoFilters.map((category) =>
                         category.battery ?
                             <div key={category.id} className="Checkbox mb-[8px]">
                                 <input type="checkbox" className="custom-checkbox" id={category?.battery} />
@@ -30,7 +31,8 @@ export default function Battery() {
                                 </label>
                             </div>
                             : null
-                    )}
+                    )} */}
+                    <Checkbox foFilters={categoryFoFilters} cat={'battery'} />
                 </div>
             </div>
         </>

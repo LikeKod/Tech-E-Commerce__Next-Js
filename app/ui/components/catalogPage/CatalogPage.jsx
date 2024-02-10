@@ -12,13 +12,15 @@ import { AppContext } from "../../../context/ShopingCartContext";
 
 export default  function CatalogPage() {
     // const { data } = await getProducts(params);
+    const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
+    
     const [isOpen, setIsOpen] = useState(false)
     
-    const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
 
     const params = {max_price: maxPrice}
       
     console.log('CatalogPage', filteredData)
+
     useEffect(() => {
         const fetchData = async () => {
             try {

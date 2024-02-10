@@ -1,13 +1,16 @@
 'use client'
 
 import ReactPaginate from 'react-paginate';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProductCart from '../products/ProductCart';
 import './Pagination.css'
+import { AppContext } from '../../../context/ShopingCartContext';
 
 
 export default function PaginatedItems({ itemsPerPage, items, open }) {
     const [sortIndex, setSortIndex] = useState(0);
+
+    const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
 
     const [item, setItem] = useState(items)
 

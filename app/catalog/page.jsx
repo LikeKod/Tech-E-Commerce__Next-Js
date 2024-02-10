@@ -1,5 +1,3 @@
-'use client'
-
 import MainLayout from "../layouts/MainLayout"
 import Arrow from '../../public/images/Icons/Arrow-24.svg'
 import Image from "next/image"
@@ -12,7 +10,8 @@ import { AppContext } from "../context/ShopingCartContext"
 
 export default function Catalog() {
     // const {filteredData} = useContext(AppContext)
-    
+    // const { data } = await getProducts(params);
+
 
     return (
         <MainLayout>
@@ -26,7 +25,7 @@ export default function Catalog() {
                     <p className="text-black">Smartphones</p>
                 </div>
 
-                <CatalogPage />
+                <CatalogPage  />
 
             </div>
 

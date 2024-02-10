@@ -15,9 +15,9 @@ export default function Protection() {
         const currentIndex = checked.indexOf(value)
         const newChecked = [...checked]
 
-        if(currentIndex === -1){
+        if (currentIndex === -1) {
             newChecked.push(value)
-        }else{
+        } else {
             newChecked.splice(currentIndex, 1)
         }
 
@@ -34,16 +34,16 @@ export default function Protection() {
                     <Image className={`${isOpen ? "arrow_open" : "arrow"}`} src={arrow} />
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
-                <Search />
+                    <Search />
                     {categoryFoFilters.map((category) =>
-                    category.protection ?
-                        <div key={category.id} className="Checkbox mb-[8px]">
-                            <input type="checkbox" className="custom-checkbox" checked id={category?.protection} onChange={() => handleToggle(category.protection)}/>
-                            <label for={category?.protection}>{category?.protection}
-                                <p className="checkbox_number">125</p>
-                            </label>
-                        </div>
-                        : null
+                        category.protection ?
+                            <div key={category.id} className="Checkbox mb-[8px]">
+                                <input type="checkbox" className="custom-checkbox" checked id={category?.protection} onChange={() => handleToggle(category.protection)} />
+                                <label for={category?.protection}>{category?.protection}
+                                    <p className="checkbox_number">125</p>
+                                </label>
+                            </div>
+                            : null
                     )}
                 </div>
             </div>
