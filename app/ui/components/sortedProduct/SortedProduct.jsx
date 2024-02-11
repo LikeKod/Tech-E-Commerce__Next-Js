@@ -10,7 +10,7 @@ export default function SortedProduct() {
                     <div className='flex justify-around'>
                     <button className='flex px-[16px] w-[164px] h-[56px] items-center justify-between rounded-lg bg-white border text-base sm:hidden'>
                         Filters
-                        <Image src={Filter}/>
+                        <Image alt="Icon" src={Filter}/>
                     </button>
                     <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" name="filter" id="">
                         <option value="rating">By rating</option>

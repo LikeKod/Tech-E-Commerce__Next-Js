@@ -8,7 +8,7 @@ export default function FiltersMenu({ isOpen, setIsOpen }) {
             <div className='flex justify-around'>
                 <button onClick={() => setIsOpen(!isOpen)} className='flex px-[16px] w-[164px] h-[56px] items-center justify-between rounded-lg bg-white border text-base sm:hidden'>
                     Filters
-                    <Image src={Filters} />
+                    <Image alt="Icon" src={Filters} />
                 </button>
             </div>
         </div>

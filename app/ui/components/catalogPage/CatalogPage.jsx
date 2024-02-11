@@ -10,37 +10,36 @@ import FiltersMenu from './FiltersMenu'
 import { AppContext } from "../../../context/ShopingCartContext";
 
 
-export default  function CatalogPage() {
+export default function CatalogPage({products}) {
     // const { data } = await getProducts(params);
-    const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
-    
+    // const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
+
     const [isOpen, setIsOpen] = useState(false)
-    
 
-    const params = {max_price: maxPrice}
-      
-    console.log('CatalogPage', filteredData)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const { data } = await getProducts(params);
-                data ? setProducts(data?.products) : setProducts([]);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+    // const params = {
+    //     // max_price: maxPrice,
+    //     per_page: 30,
+    // }
 
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const { data } = await getProducts(params);
+    //             data ? setProducts(data?.products) : setProducts([]);
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     };
 
-    console.log(products)
-
+    //     fetchData();
+    // }, []);
+    // console.log(products)
     return (
         <div className="flex justify-center sm:justify-between">
             <div className={`${isOpen ? "block" : "hidden"} min-w-[256px] pt-[3.5rem] mr-[28px] sm:block`}>
                 <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer flex text-2xl mb-[24px] sm:hidden">
-                    <Image className="mr-[16px]" src={ArrowLeft} />
+                    <Image alt="Icon" className="mr-[16px]" src={ArrowLeft} />
                     Filters
                 </div>
                 <Filter items={products} />

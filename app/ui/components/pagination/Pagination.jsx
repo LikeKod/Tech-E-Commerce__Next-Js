@@ -10,12 +10,9 @@ import { AppContext } from '../../../context/ShopingCartContext';
 export default function PaginatedItems({ itemsPerPage, items, open }) {
     const [sortIndex, setSortIndex] = useState(0);
 
-    const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
+    // const { products, setProducts, filteredData, maxPrice } = useContext(AppContext);
 
     const [item, setItem] = useState(items)
-
-    const [page, setPage] = useState(0)
-
     const [sortedItems, setSortedItems] = useState(items)
 
     const [currentItems, setCurrentItems] = useState();
@@ -54,7 +51,6 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
         // Fetch items from another resources.
         if (sortedItems !== undefined) {
             const endOffset = itemOffset + itemsPerPage;
-            // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
             setCurrentItems(sortedItems.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(sortedItems.length / itemsPerPage));
         }
@@ -73,7 +69,7 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
                 <div className="text-neutral-400 mt-[24px] hidden text-sm sm:block">Selected Products: <span className="text-black text-xl">{items.length}</span></div>
                 <div className={`${open ? "hidden" : "block"} text-center sm:block sm:text-right`}>
                     <select className="w-[164px] h-[56px] rounded-lg px-[16px] bg-white border text-base sm:w-[256px] sm:h-[40px]" value={sortIndex} onChange={onSortChange}>
-                        {sortOptions.map((n, i) => <option value={i}>{n.key}</option>)}
+                        {sortOptions.map((n, i) => <option key={n.key} value={i}>{n.key}</option>)}
                     </select>
                 </div>
             </div>
@@ -88,8 +84,6 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
                 className={"main"}
                 nextLabel=">"
                 onPageChange={handlePageClick}
-                // pageRangeDisplayed={10}
-                // marginPagesDisplayed={2}
                 pageCount={pageCount}
                 previousLabel="<"
                 breakLabel="..."
