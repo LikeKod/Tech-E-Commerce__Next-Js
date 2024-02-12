@@ -5,7 +5,8 @@ export const AppContext = React.createContext([{}, () => { }]);
 
 export const AppProvider = ({ children }) => {
 
-  const [filteredData, setFilteredData] = useState({}); // state data for filters
+  const [filteredData, setFilteredData] = useState({per_page: 15,}); // state data for filters
+  const [maxPrice, setMaxPrice] = useState(1000)
   const [cart, setCart] = useLocalStorage("shopping-cart", []);
   const [wishList, setWishList] = useLocalStorage("swish-list", []);
   const [products, setProducts] = useState([]);
@@ -82,6 +83,8 @@ export const AppProvider = ({ children }) => {
         setCart,
         filteredData,
         setFilteredData,
+        maxPrice,
+        setMaxPrice,
         wishList,
         setWishList,
         getItemQuantity,

@@ -1,0 +1,17 @@
+.container__shop-cart {
+    max-width: 1440px;
+    margin: 100px auto;
+    height: 100%;
+}
+
+.shop__order {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.shopping__cart {
+    display: flex;
+    flex-direction: column;
+}
+
