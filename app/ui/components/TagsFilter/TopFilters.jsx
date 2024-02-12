@@ -1,20 +1,18 @@
-'use client'
+'use server'
 
-import { Button } from "@mui/material";
+import { SubmitButton } from '../SubmitButton/SubmitButton'
+import { setParams } from '../../../actions'
 
-export default function TopFilters({filters}) {
+export default async function TopFilters({ filters }) {
 
     return (
-
-        <ul className="flex gap-6 text-lg font-medium">
-            {filters.map((filter) => 
-                <li key={filter.id} className="">
-                    <button className="text-black">
-                    {filter.name}
-                    </button>
-                </li>
+        <div className="flex gap-6 text-lg font-medium">
+            {filters?.tags?.map((filter) =>
+                <form key={filter.id} action={setParams}>
+                        <input type="hidden" id = {filter.id} name="tagId" value={filter.id} />
+                        <SubmitButton text={filter.name} />
+                </form>
             )}
-        </ul>
-
+        </div>
     );
 }

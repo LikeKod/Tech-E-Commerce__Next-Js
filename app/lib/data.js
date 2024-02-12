@@ -1,7 +1,18 @@
 import {
   GET_PRODUCTS_ENDPOINT,
   GET_SINGLE_PRODUCT_ENDPOINT,
+  GET_PRODUCT_TAGS_ENDPOINT,
 } from "../lib/constants/endpoints";
+
+export let productParams = {
+  per_page: 30,
+  page: 1,
+  tag: 83,
+};
+
+export function setProductParams(id) {
+  productParams.tag = Number(id);
+}
 
 export async function getProducts(params) {
   let query = "";
@@ -31,6 +42,30 @@ export async function getSingleProduct(id) {
   data = await res.json();
   return {
     data,
+  };
+}
+
+// функци возвращает список всех тегов
+
+export const tagsParams = {
+  id: "",
+};
+
+export async function getProductTags(params) {
+  let query = "";
+  for (const key in params) {
+    query = query + `${key}=${params[key]}&`;
+  }
+  const res = await fetch(`${GET_PRODUCT_TAGS_ENDPOINT}?${query}`, {
+    next: { revalidate: 360 },
+  });
+  let tagsList;
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  tagsList = await res.json();
+  return {
+    tagsList,
   };
 }
 
@@ -161,20 +196,20 @@ export const productInfo = [
   },
 ];
 
-export const tagsList = [
-  {
-    id: 1,
-    name: "New Arrival",
-  },
-  {
-    id: 2,
-    name: "Bestseller",
-  },
-  {
-    id: 3,
-    name: "Featured Products",
-  },
-];
+// export const tagsList = [
+//   {
+//     id: 1,
+//     name: "New Arrival",
+//   },
+//   {
+//     id: 2,
+//     name: "Bestseller",
+//   },
+//   {
+//     id: 3,
+//     name: "Featured Products",
+//   },
+// ];
 
 export const discontList = [
   {
