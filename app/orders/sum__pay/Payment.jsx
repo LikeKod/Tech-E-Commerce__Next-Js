@@ -11,34 +11,11 @@ import Close from '/public/images/Icons/Close-24.svg'
 import Plus from '/public/images/Icons/Plus-24.svg'
 
 
-import { useState } from "react"
-
 import "./Payment.css"
 
 export default function Payment() {
-    const [isOpen, setIsOpen] = useState(true)
-    const [isShipment, setIsShipment] = useState(true)
-    const [ispayment, setPayment] = useState(false)
 
-    function handleClick1() {
-        setIsOpen(!isOpen);
-        setIsShipment(!isShipment);
-    }
-
-    function handleClick2() {
-        setIsShipment(!isShipment);
-        setPayment(!ispayment)
-    }
-
-    function backClick1() {
-        setIsShipment(!isShipment);
-        setPayment(!ispayment)
-    }
-
-    function backClick2() {
-        setIsOpen(!isOpen);
-        setIsShipment(!isShipment);
-    }
+    
 
     return (
         <div className={"content"}>
