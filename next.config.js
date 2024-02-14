@@ -8,8 +8,8 @@ const nextConfig = {
       images: {
         remotePatterns: [
           {
-            protocol: 'http',
-            hostname: 'arniabid.beget.tech',
+            protocol: 'https',
+            hostname: 'magazic.ru',
             port: '',
             pathname: '/wp-content/uploads/**',
           },

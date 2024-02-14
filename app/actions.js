@@ -1,9 +1,7 @@
 'use server'
 
-import {tagsParams, setProductParams} from './lib/data'
+import {setProductParams} from './lib/data'
 import { revalidatePath } from "next/cache";
-
-
 
 export async function setParams (formData) {
     const id = formData.get("tagId");
