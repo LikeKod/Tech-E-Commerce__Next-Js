@@ -4,26 +4,29 @@ import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../../context/ShopingCartContext';
 import { isEmpty } from 'lodash';
 import AddToCart from '../Cart/AddToCart';
+import RemoveFromCart from '../Cart/RemoveFromCart';
 import AddToFavourite from '../wishList/AddToFavourite'
 import Link from 'next/link';
+import DecrementCart from "../Cart/DecrementCart";
+import Image from "next/image";
 
 
 export default function ProductCart({ product }) {
+    const { wishList } = useContext(AppContext);
+    const [isAdded, setIsAdded] = useState(false);
+
+    useEffect(() => {
+            setIsAdded(wishList.find(item => item.id === product.id));
+    }, [wishList, product])
+
     if (isEmpty(product)) {
         return null;
     }
-
-    const { wishList, addToWishList, removerFromWishList } = useContext(AppContext);
-    const [isAdded, setIsAdded] = useState(false);
     
     // get first image from array
     const img = product?.images[0] ?? {};    
     
-    useEffect(() => {
-        if(product) {
-            setIsAdded(wishList.find(item => item.id === product.id));
-        }
-    }, [wishList])
+
 
     return (
         product ?
@@ -34,8 +37,11 @@ export default function ProductCart({ product }) {
             <Link className="grow" href={`/product/${product?.id}`}>
                 <div className='flex flex-col gap-y-4 items-center h-full'>
                     <div className="mb-2  w-full h-[160px] relative ">
-                        <img
-                            className="object-cover object-center h-full ms-auto me-auto"
+                        <Image
+                            sizes="(max-width: 100%)"
+                            fill={true}
+                            loading="lazy"
+                            style={{objectFit: "cover", objectPosition: "center", marginRight: "auto", marginLeft: "auto"}}
                             src={img?.src ?? ''}
                             alt={img?.alt}
                         />
@@ -47,6 +53,8 @@ export default function ProductCart({ product }) {
             </Link>
 
             <AddToCart product={product} />
+            <RemoveFromCart product={product} />
+            <DecrementCart product={product} />
         </div> 
         :
         <h3> Loading... </h3>
