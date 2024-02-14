@@ -6,6 +6,7 @@ import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
 import { useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
+import Checkbox from '../../checkbox/Checkbox'
 
 export default function Protection() {
     const [isOpen, setIsOpen] = useState(false)
@@ -35,16 +36,7 @@ export default function Protection() {
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                     <Search />
-                    {categoryFoFilters.map((category) =>
-                        category.protection ?
-                            <div key={category.id} className="Checkbox mb-[8px]">
-                                <input type="checkbox" className="custom-checkbox" checked id={category?.protection} onChange={() => handleToggle(category.protection)} />
-                                <label htmlFor={category?.protection}>{category?.protection}
-                                    <p className="checkbox_number">125</p>
-                                </label>
-                            </div>
-                            : null
-                    )}
+                    <Checkbox tags={'protection'}/>
                 </div>
             </div>
         </>

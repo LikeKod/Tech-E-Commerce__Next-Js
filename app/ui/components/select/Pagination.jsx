@@ -5,16 +5,6 @@ import ReactPaginate from 'react-paginate';
 import ProductsContainer from "../../../ui/components/products/ProductsContainer"
 
 
-function Items({ currentItems }) {
-  return (
-      <div className="flex justify-center flex-wrap gap-4">
-          {currentItems && currentItems.map((product) =>
-              <ProductsContainer key={product.id} products={product} />
-          )}
-      </div>
-  );
-}
-
 export default  function Select({ items, sortOptions, sortFunctions, itemsPerPage }) {
   const item = items.items
     const [ sortIndex, setSortIndex ] = useState(0);
