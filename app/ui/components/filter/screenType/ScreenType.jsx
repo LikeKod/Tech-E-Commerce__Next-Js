@@ -6,6 +6,7 @@ import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
 import { useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
+import Checkbox from '../../checkbox/Checkbox'
 
 export default function ScreenType() {
     const [isOpen, setIsOpen] = useState(false)
@@ -18,16 +19,7 @@ export default function ScreenType() {
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                     <Search />
-                    {categoryFoFilters.map((category) =>
-                        category.screenType ?
-                            <div key={category.id} className="Checkbox mb-[8px]">
-                                <input type="checkbox" className="custom-checkbox" id={category?.screenType} />
-                                <label htmlFor={category?.screenType}>{category?.screenType}
-                                    <p className="checkbox_number">125</p>
-                                </label>
-                            </div>
-                            : null
-                    )}
+                    <Checkbox tags={'screenType'}/>
                 </div>
             </div>
         </>

@@ -7,8 +7,9 @@ import { useContext, useState } from 'react'
 import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../../lib/data'
 import { AppContext } from '../../../../context/ShopingCartContext'
+import Checkbox from '../../checkbox/Checkbox'
 
-export default function Brand() {
+export default function Brand(item) {
     const [isOpen, setIsOpen] = useState(false)
     const { setFilteredData, filteredData } = useContext(AppContext)
     const FilterChange = (event) => {
@@ -25,16 +26,7 @@ export default function Brand() {
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                     <Search />
-                    {categoryFoFilters.map((category) =>
-                    category.brand ?
-                        <div key={category.id} className="Checkbox mb-[8px]">
-                            <input type="checkbox" value={category?.brand} onChange={FilterChange} className="custom-checkbox" id={category?.brand} />
-                            <label htmlFor={category?.brand}>{category?.brand}
-                                <p className="checkbox_number">125</p>
-                            </label>
-                        </div>
-                        : null
-                    )}
+                    <Checkbox tags={'brand'}/>
                 </div>
             </div>
         </>

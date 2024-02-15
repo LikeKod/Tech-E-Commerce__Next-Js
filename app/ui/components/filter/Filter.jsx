@@ -9,10 +9,11 @@ import Price from './price/Price'
 
 
 export default function Filter({items}) {
+    console.log(items)
     return (
         <>
             <Price />
-            <Brand />
+            <Brand item={items.categories}/>
             <Memory />
             <Protection />
             <ScreenDiag />
