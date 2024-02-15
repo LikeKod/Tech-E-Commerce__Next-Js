@@ -8,17 +8,30 @@ import Price from './price/Price'
 
 
 
-export default function Filter({items}) {
+export default function Filter({ items }) {
     console.log(items)
     return (
         <>
             <Price />
-            <Brand item={items.categories}/>
-            <Memory />
+            {/* {items.map(item => {
+
+            })}
+            <div className='mb-[24px]'>
+                <div className='flex justify-between border-b-2 pb-[12px]'>
+                    <button onClick={() => setIsOpen(!isOpen)} className='font-medium text-xl'>Brand</button>
+                    <Image alt="Icon" className={`${isOpen ? "arrow_open" : "arrow"}`} src={arrow} />
+                </div>
+                <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
+                    <Search />
+                    <Checkbox tags={'brand'} />
+                </div>
+            </div> */}
+            <Brand item={items} />
+            {/* <Memory />
             <Protection />
             <ScreenDiag />
             <ScreenType />
-            <Battery />
+            <Battery /> */}
         </>
     )
 }

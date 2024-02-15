@@ -16,7 +16,6 @@ export default function CatalogPage({products}) {
 
     const [isOpen, setIsOpen] = useState(false)
 
-
     // const params = {
     //     // max_price: maxPrice,
     //     per_page: 30,

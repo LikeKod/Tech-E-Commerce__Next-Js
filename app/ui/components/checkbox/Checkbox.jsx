@@ -1,20 +1,19 @@
 import '../filter/Filter.css'
 import { categoryFoFilters } from '../../../lib/data'
 
-export default function Checkbox({tags}) {
-
-
+export default function Checkbox({ tryq }) {
+        console.log()
     return (<>
-        {categoryFoFilters.map((category) =>
-            category[tags] ?
-                <div key={category.id} className="Checkbox mb-[8px]">
-                    <input type="checkbox" value={category[tags]}  className="custom-checkbox" id={category[tags]} />
-                    <label htmlFor={category[tags]}>{category[tags]}
-                        <p className="checkbox_number">125</p>
-                    </label>
-                </div>
-                : null
-        )}
+        {/* {tryq?.map((category) =>
+            category.categories ? */}
+        <div key={tryq.id} className="Checkbox mb-[8px]">
+            <input type="checkbox" value={tryq.name} className="custom-checkbox" id={tryq.name} />
+            <label htmlFor={tryq.name}>{tryq.name}
+                <p className="checkbox_number">125</p>
+            </label>
+        </div>
+        {/* : null
+        )} */}
     </>
     )
 }
