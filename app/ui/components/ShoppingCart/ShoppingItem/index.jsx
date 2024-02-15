@@ -1,27 +1,33 @@
+'use client'
 
+import DecrementCart from "../../Cart/DecrementCart";
+import IncrementCart from "../../Cart/IncrementCart";
+import RemoveFromCart from "../../Cart/RemoveFromCart";
 import "./style.css"
+import { useEffect } from "react";
 
-export default function ShoppingItem({ item, orders }) {
-
-    const order = orders.orders.find(el => el.id == item )
+export default function ShoppingItem({ cartItem }) {
 
     return (
         <div className="shopping__cart-item">
             <div className="shopping__cart-info">
                 <div className="shopping__cart-info__product">
-                    {/* <img src={order.images[0].src} alt={order.name} /> */}
-                    {order.name}
-
+                    {cartItem?.name}
                 </div>
-                <div className="shopping__cart-article">#25139526913984</div>
+                <div className="shopping__cart-article">#{cartItem?.sku}</div>
             </div>
             <div className="shopping__cart-pagintaion">
-                <button className="minus">-</button>
-                <div className="shopping__cart-score"></div>
-                <button className="plus">+</button>
+                <DecrementCart product={cartItem} />
+                <div className="text-base mx-10">
+                    {cartItem?.qty}
+                </div>
+                <IncrementCart product={cartItem} />
+                
             </div>
-            <div className="shopping__cart-price">50$</div>
-            <div className="shopping__cart-delete">+</div>
+            <div className="text-base">{cartItem?.price}</div>
+            <div className="shopping__cart-delete">
+                <RemoveFromCart product={cartItem} />
+            </div>
         </div>
     );
 }

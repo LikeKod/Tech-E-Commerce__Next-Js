@@ -1,21 +1,20 @@
 import { useDispatch } from 'react-redux'
-import { decrementCartQty } from '../../../../redux/slices/cartSlice'
-import RemoveIcon from '@mui/icons-material/Remove';
+import { incrementCartQty } from '../../../../redux/slices/cartSlice'
+import AddIcon from '@mui/icons-material/Add';
 
-const DecrementCart = ({ product }) => {
+const IncrementCart = ({ product }) => {
     const dispatch = useDispatch()
-
 
     return (
         <div className='flex items-center gap-x-4'>
             <button
                 className=" text-stone-950  hover:text-red-600  "
-                onClick={() => dispatch(decrementCartQty(product))}
+                onClick={() => dispatch(incrementCartQty(product))}
             >
-                <RemoveIcon/>
+                <AddIcon />
             </button>
         </div>
     );
 };
 
-export default DecrementCart;
+export default IncrementCart;

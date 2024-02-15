@@ -53,8 +53,6 @@ export default function ProductCart({ product }) {
             </Link>
 
             <AddToCart product={product} />
-            <RemoveFromCart product={product} />
-            <DecrementCart product={product} />
         </div> 
         :
         <h3> Loading... </h3>

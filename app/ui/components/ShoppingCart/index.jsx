@@ -1,31 +1,38 @@
 'use client'
-import "./style.css"
+import "./style.css";
 import ShoppingItem from "./ShoppingItem";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import React, { useContext, useState, useEffect } from "react";
-import { AppContext } from "../../../context/ShopingCartContext";
+export default function ShoppingCart() {
+    const cart = useSelector(((state) => state.cart))
+    const [showChild, setShowChild] = useState(false);  
 
-export default function ShoppingCart(orders) {
-    
-    const { cart } = useContext(AppContext);
-    const products = cart.map((cartItem) => {
-        return <ShoppingItem item={cartItem.id} orders={orders}/>
+    const products = cart?.map((cartItem) => {
+        return <ShoppingItem key={cartItem.id} cartItem={cartItem} />
     })
 
-    return (
-        <div className={"container__shop-cart"}>
-            <div className={`shop__order`} >
-                <div className={"shopping__cart"}>
-                    <h1 className={"shopping__cart-title"}>Shopping Cart</h1>
-                    <div className={"shopping__cart-items"}>
-                    {/* {cart.map(cartItem => {
-                        <ShoppingItem item={cartItem.id} orders={orders}/>
-                    })} */}
-                    {products}
-                    
+    useEffect(() => {
+        setShowChild(true);
+    }, []);
+
+    if (!showChild) {
+        return null;
+    }
+
+    if (typeof window === 'undefined') {
+        return <></>;
+    } else {
+        return (
+            <div className={"container__shop-cart"}>
+                <div className={`shop__order`} >
+                    <div className={"shopping__cart"}>
+                        <h1 className={"shopping__cart-title"}>Shopping Cart</h1>
+                        <div className={"shopping__cart-items"}>
+                            {cart?.length > 0 && products}
+                        </div>
                     </div>
-                </div>
-                <div className={"order__summary"}>
+                    <div className={"order__summary"}>
                     <h1 className={"order__summary-title"}>Order Summary</h1>
                     <div className={"contact-form"}>
                         <label className={"contact-form-label"}>
@@ -75,7 +82,7 @@ export default function ShoppingCart(orders) {
                         <button className={"checkout"} onClick={() => handcleClick()} >Checkout</button>
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
-    )
-}
+        )}
+    }

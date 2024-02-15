@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { removeFromCart } from '../../../../redux/slices/cartSlice'
+import ClearIcon from '@mui/icons-material/Clear';
 
 const RemoveFromCart = ({ product }) => {
     const dispatch = useDispatch()
@@ -7,10 +8,10 @@ const RemoveFromCart = ({ product }) => {
     return (
         <div className='flex items-center gap-x-4'>
             <button
-                className=" text-white bg-[#050708] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm text-center inline-flex items-center px-12 py-3  "
+                className=" text-stone-950  hover:text-red-600   "
                 onClick={() => dispatch(removeFromCart(product))}
             >
-                удалить
+                <ClearIcon/>
             </button>
         </div>
     );
