@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/api/products/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/products/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/components/products/ProductsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/products/ProductsContainer.jsx" afterDir="false" />
+    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/orders/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/orders/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/components/ShoppingCart/ShoppingItem/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/ShoppingCart/ShoppingItem/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/components/ShoppingCart/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/ShoppingCart/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/slices/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/slices/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +33,14 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components" />
+      <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components\products" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -40,7 +52,39 @@
       <updated>1705058196010</updated>
       <workItem from="1705058197458" duration="127000" />
       <workItem from="1707208979594" duration="3000" />
+      <workItem from="1707906399586" duration="11073000" />
+      <workItem from="1707937984168" duration="5451000" />
+      <workItem from="1707981623673" duration="655000" />
     </task>
+    <task id="LOCAL-00001" summary="redux и логика корзины">
+      <created>1707914395053</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707914395053</updated>
+    </task>
+    <task id="LOCAL-00002" summary="action.js убран не используемый импорт">
+      <created>1707914479356</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707914479356</updated>
+    </task>
+    <task id="LOCAL-00003" summary="в настройках Next скорректирован путь к картинкам">
+      <created>1707914527213</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707914527213</updated>
+    </task>
+    <task id="LOCAL-00004" summary="workspace.xml">
+      <created>1707914586055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707914586055</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +101,12 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="redux и логика корзины" />
+    <MESSAGE value="action.js убран не используемый импорт" />
+    <MESSAGE value="в настройках Next скорректирован путь к картинкам" />
+    <MESSAGE value="workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
   </component>
 </project>
