@@ -2,8 +2,6 @@
 
 import { setProductParams } from "./lib/data";
 import { revalidatePath } from "next/cache";
-import Auth from "@auth/core";
-import WordPress from "@auth/core/providers/wordpress";
 import { POST_USERS_ENDPOINT } from "./lib/constants/endpoints";
 
 export async function setParams(formData) {
@@ -29,6 +27,7 @@ export async function authenticate(formData) {
 }
 
 export async function registerNewUser(formData) {
+  console.log("🚀 ~ registerNewUser ~ formData:", formData)
   const email = formData.get("email");
   const password = formData.get("password");
   const username = formData.get("username");

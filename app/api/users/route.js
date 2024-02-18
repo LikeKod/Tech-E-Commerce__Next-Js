@@ -13,6 +13,7 @@ export async function POST(request) {
     body: srtingified,
   });
 
+  
   const data  = await res.json();
   return new NextResponse(JSON.stringify(data));
 }

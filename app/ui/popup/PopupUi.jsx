@@ -10,7 +10,24 @@ export default function PopapUi() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const handleSubmit = (formData) => {
+
+        registerNewUser(formData)
+        .then(data => {
+            // Обработка успешного ответа
+            console.log(data);
+            alert(JSON.stringify(data));
+        })
+        .catch(error => {
+            // Обработка ошибки
+            alert(error);
+        });
+
+    }
+
     
+
+
 
 
     return (
@@ -43,7 +60,7 @@ export default function PopapUi() {
                             </div>
 
                             <div className="p-4 md:p-5">
-                                <form className="space-y-4" action={registerNewUser}>
+                                <form className="space-y-4" action={handleSubmit}>
                                     <div>
                                         <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                                         <input
