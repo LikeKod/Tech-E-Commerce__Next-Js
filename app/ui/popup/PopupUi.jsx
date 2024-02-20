@@ -1,34 +1,25 @@
 import React from 'react'
 import { useState } from 'react'
 import { LuUser } from "react-icons/lu";
-import { registerNewUser, authenticate } from '../../actions';
-import { SubmitButton } from '../components/SubmitButton/SubmitButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../../redux/slices/userSlice';
 
 export default function PopapUi() {
+    const dispatch = useDispatch();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const handleSubmit = (formData) => {
-
-        registerNewUser(formData)
+        dispatch(registerUser(formData))
         .then(data => {
-            // Обработка успешного ответа
-            console.log(data);
             alert(JSON.stringify(data));
         })
         .catch(error => {
-            // Обработка ошибки
             alert(error);
         });
-
     }
-
-    
-
-
-
 
     return (
         <div className=''>

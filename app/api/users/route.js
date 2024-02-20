@@ -1,19 +1,22 @@
-import Server, { NextResponse, NextRequest } from "next/server";
-const http = require("http");
+import axios from 'axios';
+import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const postData = await request.json();
   const srtingified = JSON.stringify(postData);
 
-  const res = await fetch("https://magazic.ru/wp-json/userapi/v1/create-user", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: srtingified,
-  });
+  try {
+    const response = await axios.post("https://magazic.ru/wp-json/userapi/v1/create-user", srtingified, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  
-  const data  = await res.json();
-  return new NextResponse(JSON.stringify(data));
+    return new NextResponse(JSON.stringify(response.data));
+  } catch (error) {
+    // Обработка ошибки, если запрос не удался
+    return new NextResponse(JSON.stringify({ error: error.message }), {
+      status: 500,
+    });
+  }
 }
