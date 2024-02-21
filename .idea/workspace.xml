@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="workspace.xml">
-      <change afterPath="$PROJECT_DIR$/app/api/user/login/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/user/register/route.js" afterDir="false" />
+    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="userSlise and asynkThunks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/users/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/users/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/popup/PopupUi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/popup/PopupUi.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/slices/userSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +50,8 @@
       <workItem from="1707906399586" duration="11073000" />
       <workItem from="1707937984168" duration="5451000" />
       <workItem from="1707981623673" duration="655000" />
-      <workItem from="1708438154856" duration="14859000" />
+      <workItem from="1708438154856" duration="15393000" />
+      <workItem from="1708501261461" duration="2959000" />
     </task>
     <task id="LOCAL-00001" summary="redux и логика корзины">
       <created>1707914395053</created>
@@ -88,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707914586055</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="userSlise and asynkThunks">
+      <created>1708462969790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708462969790</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +111,7 @@
     <MESSAGE value="action.js убран не используемый импорт" />
     <MESSAGE value="в настройках Next скорректирован путь к картинкам" />
     <MESSAGE value="workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+    <MESSAGE value="userSlise and asynkThunks" />
+    <option name="LAST_COMMIT_MESSAGE" value="userSlise and asynkThunks" />
   </component>
 </project>
