@@ -10,6 +10,8 @@ export const GET_PRODUCTS_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/
 export const GET_SINGLE_PRODUCT_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/product`;
 export const GET_PRODUCT_TAGS_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/tags`;
 
+export const POST_USERS_ENDPOINT = `${ process.env.NEXT_PUBLIC_SITE_URL }/api/users`;
+
 /**
  * Cart
  * @type {string}
