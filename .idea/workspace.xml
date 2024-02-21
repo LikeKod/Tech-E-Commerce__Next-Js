@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="userSlise and asynkThunks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/slices/userSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layouts/includes/header/headerItem/HeaderNavIcons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layouts/includes/header/headerItem/HeaderNavIcons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/popup/PopupUi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/modules/AuthPopup/AuthPopup.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components\modules" />
       <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components" />
       <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components\products" />
     </key>
@@ -51,7 +53,7 @@
       <workItem from="1707937984168" duration="5451000" />
       <workItem from="1707981623673" duration="655000" />
       <workItem from="1708438154856" duration="15393000" />
-      <workItem from="1708501261461" duration="2959000" />
+      <workItem from="1708501261461" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="redux и логика корзины">
       <created>1707914395053</created>
@@ -88,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708462969790</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="userSlise and asynkThunks">
+      <created>1708504979248</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708504979248</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

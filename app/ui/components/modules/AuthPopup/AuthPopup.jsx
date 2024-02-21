@@ -3,11 +3,23 @@ import { useState } from 'react'
 import { LuUser } from "react-icons/lu";
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../redux/slices/userSlice';
+import { registerUser } from '../../../../../redux/slices/userSlice';
 
-export default function PopapUi() {
+export default function AuthPopup() {
     const dispatch = useDispatch();
     const [show, setShow] = useState(false);
+    const [isAuthSwitched, setIsAuthSwitched ] = useState(false);
+    const [isSignInActive, setIsSignInActive ] = useState(false);
+    const [isSignUpActive, setIsSignUpActive ] = useState(false);
+
+    console.log('isSignInActive:', isSignInActive)
+
+    const toggleAuth = () => {
+        setIsAuthSwitched(!isAuthSwitched)
+        setIsSignInActive(!isSignInActive)
+        setIsSignUpActive(!isSignUpActive)
+    }
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -39,7 +51,7 @@ export default function PopapUi() {
                         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                    Sign in to our platform
+                                    { !isSignInActive ? 'Авторизация' : 'Регистрация' }
                                 </h3>
                                 <button
                                     type="button"
@@ -63,6 +75,7 @@ export default function PopapUi() {
                                             required
                                         />
                                     </div>
+                                    { isSignInActive ?
                                     <div>
                                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                                         <input
@@ -74,6 +87,7 @@ export default function PopapUi() {
                                             required
                                         />
                                     </div>
+                                        : null }
                                     <div>
                                         <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
                                         <input
@@ -104,10 +118,15 @@ export default function PopapUi() {
                                         className="w-full border border-gray-300 text-slate hover:text-white hover:bg-slate-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                                     // onClick={handleClose}
                                     >
-                                        Login to your account
+                                        { !isSignInActive ?  'Войти' : 'Зарегистрироваться' }
                                     </button>
                                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                        Not registered? <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                                        { !isSignInActive ? 'Нет акаунта? ' : 'Уже зарегистрированы? ' }
+                                        <button onClick={toggleAuth} className="text-blue-700 hover:underline dark:text-blue-500">
+                                            { !isSignInActive ?  ' Создать акаунт' : ' Войти' }
+
+                                        </button>
+
                                     </div>
                                 </form>
                             </div>
