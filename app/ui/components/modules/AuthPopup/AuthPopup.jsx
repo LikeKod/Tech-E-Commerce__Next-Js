@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { LuUser } from "react-icons/lu";
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../../../redux/slices/userSlice';
+import {loginUser, registerUser} from '../../../../../redux/slices/userSlice';
 
 export default function AuthPopup() {
     const dispatch = useDispatch();
@@ -11,8 +11,6 @@ export default function AuthPopup() {
     const [isAuthSwitched, setIsAuthSwitched ] = useState(false);
     const [isSignInActive, setIsSignInActive ] = useState(false);
     const [isSignUpActive, setIsSignUpActive ] = useState(false);
-
-    console.log('isSignInActive:', isSignInActive)
 
     const toggleAuth = () => {
         setIsAuthSwitched(!isAuthSwitched)
@@ -23,7 +21,7 @@ export default function AuthPopup() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleSubmit = (formData) => {
+    const handleSignUp = (formData) => {
         dispatch(registerUser(formData))
         .then(data => {
             alert(JSON.stringify(data));
@@ -31,6 +29,16 @@ export default function AuthPopup() {
         .catch(error => {
             alert(error);
         });
+    }
+
+    const handleSignIn = (formData) => {
+        dispatch(loginUser(formData))
+            .then(data => {
+                alert(JSON.stringify(data));
+            })
+            .catch(error => {
+                alert(error);
+            });
     }
 
     return (
@@ -63,7 +71,7 @@ export default function AuthPopup() {
                             </div>
 
                             <div className="p-4 md:p-5">
-                                <form className="space-y-4" action={handleSubmit}>
+                                <form className="space-y-4" action={isSignInActive ? handleSignUp : handleSignIn} >
                                     <div>
                                         <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                                         <input
@@ -120,15 +128,13 @@ export default function AuthPopup() {
                                     >
                                         { !isSignInActive ?  'Войти' : 'Зарегистрироваться' }
                                     </button>
-                                    <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                        { !isSignInActive ? 'Нет акаунта? ' : 'Уже зарегистрированы? ' }
-                                        <button onClick={toggleAuth} className="text-blue-700 hover:underline dark:text-blue-500">
-                                            { !isSignInActive ?  ' Создать акаунт' : ' Войти' }
-
-                                        </button>
-
-                                    </div>
                                 </form>
+                                <div className="text-sm font-medium text-gray-500 dark:text-gray-300 mt-3">
+                                    { !isSignInActive ? 'Нет акаунта? ' : 'Уже зарегистрированы? ' }
+                                    <button onClick={toggleAuth} className="text-blue-700 hover:underline dark:text-blue-500">
+                                        { !isSignInActive ?  ' Создать акаунт' : ' Авторизоваться' }
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,19 +1,18 @@
-import axios from 'axios';
+import { NextResponse} from "next/server";
+const http = require("http");
 
+export async function POST(request) {
+    const postData = await request.json();
+    const userData = JSON.stringify(postData);
 
-    export default async function handler(req, res) {
-        if (req.method === 'POST') {
-            try {
-                const response = await axios.post('http://yourdomain.com/wp-json/jwt-auth/v1/token', {
-                    username: 'admin',
-                    password: 'password'
-                });
+    const res = await fetch("https://magazic.ru/wp-json/jwt-auth/v1/token", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: userData,
+    });
 
-                res.status(200).json(response.data);
-            } catch (error) {
-                res.status(500).json({ error: error.response.data[0] });
-            }
-        } else {
-            res.status(405).end(); // Method Not Allowed
-        }
-    }
+    const data  = await res.json();
+    return new NextResponse(JSON.stringify(data));
+}
