@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="workspace.xml">
-      <change afterPath="$PROJECT_DIR$/app/api/user/login/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/user/register/route.js" afterDir="false" />
+    <list default="true" id="a4aec52f-b163-4c67-8464-5b726d5faa65" name="Changes" comment="dynamic auth popup dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/users/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/users/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/popup/PopupUi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/popup/PopupUi.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/user/login/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/user/login/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/components/modules/AuthPopup/AuthPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/components/modules/AuthPopup/AuthPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux/slices/userSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +35,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components\modules" />
       <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components" />
       <recent name="E:\Frontend_WEB\2023\Nest-Next\study-project\Tech-E-Commerce__Next-Js\app\ui\components\products" />
     </key>
@@ -58,7 +53,9 @@
       <workItem from="1707906399586" duration="11073000" />
       <workItem from="1707937984168" duration="5451000" />
       <workItem from="1707981623673" duration="655000" />
-      <workItem from="1708438154856" duration="14859000" />
+      <workItem from="1708438154856" duration="15393000" />
+      <workItem from="1708501261461" duration="6139000" />
+      <workItem from="1708584162577" duration="3376000" />
     </task>
     <task id="LOCAL-00001" summary="redux и логика корзины">
       <created>1707914395053</created>
@@ -88,7 +85,28 @@
       <option name="project" value="LOCAL" />
       <updated>1707914586055</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="userSlise and asynkThunks">
+      <created>1708462969790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708462969790</updated>
+    </task>
+    <task id="LOCAL-00006" summary="userSlise and asynkThunks">
+      <created>1708504979248</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708504979248</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dynamic auth popup dialog">
+      <created>1708512704110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708512704110</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +129,8 @@
     <MESSAGE value="action.js убран не используемый импорт" />
     <MESSAGE value="в настройках Next скорректирован путь к картинкам" />
     <MESSAGE value="workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+    <MESSAGE value="userSlise and asynkThunks" />
+    <MESSAGE value="dynamic auth popup dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="dynamic auth popup dialog" />
   </component>
 </project>
