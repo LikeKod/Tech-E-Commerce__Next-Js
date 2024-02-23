@@ -11,12 +11,7 @@ import Checkbox from '../../checkbox/Checkbox'
 
 export default function Brand(item) {
     const [isOpen, setIsOpen] = useState(false)
-    // const { setFilteredData, filteredData } = useContext(AppContext)
-    // const FilterChange = (event) => {
-    //     console.log("event", event.target.value);
-    //     setFilteredData( {filters: `${event.target.value}`})
-    //     console.log("filteredData", filteredData);
-    // };
+
     console.log(item.item[0].categories[0])
     const items = item.item
     return (
