@@ -27,7 +27,6 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
         string: (a, b) => a.localeCompare(b),
     };
 
-
     useEffect(() => {
         if (item) {
             const { key, type } = sortOptions[sortIndex];
@@ -36,13 +35,9 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
         };
     }, [item, sortIndex]);
 
-
-
-
     const onSortChange = e => {
         setSortIndex(+e.target.value)
     }
-
 
     useEffect(() => {
         // Fetch items from another resources.

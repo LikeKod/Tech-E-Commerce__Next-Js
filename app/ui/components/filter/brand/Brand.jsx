@@ -14,6 +14,7 @@ export default function Brand(item) {
 
     console.log(item.item[0].categories[0])
     const items = item.item
+    console.log(items)
     return (
         <>
             <div className='mb-[24px]'>

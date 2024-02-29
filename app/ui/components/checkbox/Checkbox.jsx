@@ -1,19 +1,29 @@
+'use client'
+
+import { useContext } from 'react'
 import '../filter/Filter.css'
-import { categoryFoFilters } from '../../../lib/data'
+import { AppContext } from '../../../context/ShopingCartContext'
 
 export default function Checkbox({ tryq }) {
-        console.log()
-    return (<>
-        {/* {tryq?.map((category) =>
-            category.categories ? */}
+
+    const { filteredData, setFilteredData } = useContext(AppContext)
+    const name = tryq.name
+
+    if (filteredData.indexOf(name) === -1) {
+        return
+    }
+
+    filteredData.push(name)
+    console.log(filteredData)
+
+    return (
+
         <div key={tryq.id} className="Checkbox mb-[8px]">
-            <input type="checkbox" value={tryq.name} className="custom-checkbox" id={tryq.name} />
-            <label htmlFor={tryq.name}>{tryq.name}
+            <input type="checkbox" value={name} className="custom-checkbox" id={name} />
+            <label htmlFor={name}>{name}
                 <p className="checkbox_number">125</p>
             </label>
         </div>
-        {/* : null
-        )} */}
-    </>
+
     )
 }
