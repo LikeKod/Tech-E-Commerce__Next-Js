@@ -28,11 +28,11 @@ export default function Filter({ items }) {
                 </div>
             </div> */}
             <Brand item={items} />
-            {/* <Memory />
-            <Protection />
-            <ScreenDiag />
-            <ScreenType />
-            <Battery /> */}
+            <Memory item={items}/>
+            <Protection item={items}/>
+            <ScreenDiag item={items}/>
+            <ScreenType item={items}/>
+            <Battery item={items}/>
         </>
     )
 }
