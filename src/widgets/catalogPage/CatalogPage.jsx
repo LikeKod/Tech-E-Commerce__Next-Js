@@ -17,7 +17,7 @@ export default function CatalogPage({products}) {
                     <Image alt="Icon" className="mr-[16px]" src={ArrowLeft} />
                     Filters
                 </div>
-                <Filter items={products} />
+                <Filter products={products} />
             </div>
 
             <div className={`${isOpen ? 'hidden' : ''}`}>
