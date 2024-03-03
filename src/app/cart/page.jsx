@@ -1,5 +1,5 @@
-import Cart from "../../pages/cart/cart";
+import Cart from "../../pages/cart";
 
-export default async function Product() {
+export default async function Page() {
     return <Cart/>
 }

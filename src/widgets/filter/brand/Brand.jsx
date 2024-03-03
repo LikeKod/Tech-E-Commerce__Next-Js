@@ -8,7 +8,7 @@ import Search from '../../search/Search'
 import { categoryFoFilters } from '../../../shared/lib/utils/data'
 import Checkbox from "../../checkbox/Checkbox";
 
-export default function Brand(item) {
+export default function Brand({items}) {
     const [isOpen, setIsOpen] = useState(false)
     // const { setFilteredData, filteredData } = useContext(AppContext)
     // const FilterChange = (event) => {
@@ -16,8 +16,7 @@ export default function Brand(item) {
     //     setFilteredData( {filters: `${event.target.value}`})
     //     console.log("filteredData", filteredData);
     // };
-    console.log(item.item[0].categories[0])
-    const items = item.item
+    console.log(items)
     return (
         <>
             <div className='mb-[24px]'>
@@ -27,8 +26,8 @@ export default function Brand(item) {
                 </div>
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                     <Search />
-                    {items.map((ob) =>
-                        <Checkbox key={index} tryq={ob.categories[0]} />
+                    {items.map((item) =>
+                        <Checkbox key={item.id} item={item} />
                     )}
                 </div>
             </div>

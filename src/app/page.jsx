@@ -8,15 +8,13 @@ import Sale from "../widgets/sale/sale"
 import Slider from "../widgets/Slider/Slider"
 import {AppProvider} from "../shared/context/ShopingCartContext";
 
-
 export default async function Home() {
     const { products } = await getProducts(productParams);
     const { tagsList } = await getProductTags(tagsParams);
-    // const products = data?.products || [];
 
     return (
         <AppProvider>
-            <h1> Home </h1>
+            <h1> Home  </h1>
             <Banner />
             {/*<Banners />*/}
             {/*<Slider />*/}

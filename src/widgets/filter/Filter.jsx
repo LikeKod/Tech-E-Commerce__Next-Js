@@ -8,8 +8,7 @@ import Price from './price/Price'
 
 
 
-export default function Filter({ items }) {
-    console.log(items)
+export default function Filter({ products }) {
     return (
         <>
             <Price />
@@ -26,7 +25,7 @@ export default function Filter({ items }) {
                     <Checkbox tags={'brand'} />
                 </div>
             </div> */}
-            <Brand item={items} />
+            <Brand items={products} />
             {/* <Memory />
             <Protection />
             <ScreenDiag />

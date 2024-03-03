@@ -13,7 +13,6 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
 import { combineReducers } from "redux";
 
 const persistConfig = {

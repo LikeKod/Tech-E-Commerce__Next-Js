@@ -32,7 +32,7 @@ export default function PaginatedItems({ itemsPerPage, items, open }) {
             const f = sortFunctions[type];
             setSortedItems([...item].sort((a, b) => f(a[key], b[key])))
         };
-    }, [item, sortIndex, sortFunctions, sortOptions]);
+    }, [item, sortIndex]);
 
 
 

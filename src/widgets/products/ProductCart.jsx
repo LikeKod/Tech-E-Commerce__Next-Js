@@ -19,7 +19,7 @@ export default function ProductCart({ product }) {
     const [isAdded, setIsAdded] = useState(false);
 
     useEffect(() => {
-            setIsAdded(wishList.find(item => item.id === product.id));
+            setIsAdded(wishList?.find(item => item.id === product.id));
     }, [wishList, product])
 
     if (isEmpty(product)) {

@@ -1,3 +1,5 @@
-export default function About() {
-    return  <div>Put there about page component from src/pages/ </div>
+import About from "../../pages/about/ui";
+
+export default function Page() {
+    return  <About/>
 }
