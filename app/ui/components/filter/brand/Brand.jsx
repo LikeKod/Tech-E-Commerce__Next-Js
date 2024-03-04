@@ -3,18 +3,14 @@
 import '../Filter.css'
 import Image from 'next/image'
 import arrow from '../../../../../public/images/Icons/Arrow_Down-24.svg'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import Search from '../../search/Search'
-import { categoryFoFilters } from '../../../../lib/data'
-import { AppContext } from '../../../../context/ShopingCartContext'
 import Checkbox from '../../checkbox/Checkbox'
 
 export default function Brand(item) {
     const [isOpen, setIsOpen] = useState(false)
-
-    console.log(item.item[0].categories[0])
+    console.log(item)
     const items = item.item
-    console.log(items)
     return (
         <>
             <div className='mb-[24px]'>
@@ -25,7 +21,7 @@ export default function Brand(item) {
                 <div className={`container_checkboxes ${isOpen ? "active" : ""}`}>
                     <Search />
                     {items.map((ob) => 
-                        <Checkbox tryq={ob.categories[0]} />
+                        <Checkbox key={ob.name} tryq={ob} />
                     )}
                 </div>
             </div>

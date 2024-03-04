@@ -11,10 +11,12 @@ export default function Checkbox({ tryq }) {
 
     if (filteredData.indexOf(name) === -1) {
         return
+    } else {
+
+        filteredData.push(name)
+        console.log(filteredData)
     }
 
-    filteredData.push(name)
-    console.log(filteredData)
 
     return (
 
