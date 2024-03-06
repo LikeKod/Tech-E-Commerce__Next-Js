@@ -16,21 +16,11 @@ export default async function Catalog() {
     const { data } = await getProducts(params);
     const products = data?.products || [];
 
-    // let nav = [
-    //     { name: 'Home' },
-    //     { name: 'Catalog' },
-    //     { name: 'Smartphones' },
-    // ]
-
     return (
         <MainLayout>
 
             <div className="container">
                 <div className="hidden mt-[44px] text-neutral-400 gap-[16px] sm:flex">
-                    {/* {nav.map(item => (
-
-                        <p>{item.name}</p>
-                    ))} */}
                     <Image alt="Icon" src={Arrow} />
                     <p>Catalog</p>
                     <Image alt="Icon" src={Arrow} />

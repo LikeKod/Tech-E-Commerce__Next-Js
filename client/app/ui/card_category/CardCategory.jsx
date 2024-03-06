@@ -18,7 +18,7 @@ export default function CardCategory() {
                     <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center flex justify-end bg-card-category'>
                         <Image className='ml-[47px] mb-[27px]' src={image1} alt="watch" />
                     </div>
-                    <div className={"card__category__description"}>
+                    <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                         <h3>Popular Products</h3>
                         <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                         <button className={"btn__black-small"}>
@@ -30,7 +30,7 @@ export default function CardCategory() {
                     <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center flex justify-end'>
                         <img src="/images/card_category/image 64.png" alt="watch" />
                     </div>
-                    <div className={"card__category__description"}>
+                    <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                         <h3>Ipad Pro</h3>
                         <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                         <button className={"btn__black-small"}>
@@ -42,7 +42,7 @@ export default function CardCategory() {
                     <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
                         <img src="/images/card_category/image 41.png" alt="watch" />
                     </div>
-                    <div className={"card__category__description"}>
+                    <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                         <h3>Samsung Galaxy </h3>
                         <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                         <button className={"btn__black-small"}>
@@ -54,7 +54,7 @@ export default function CardCategory() {
                     <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center ml-[78px]'>
                         <img className='max-w-full max-h-full' src="/images/card_category/Macbook_1.png" alt="watch" />
                     </div>
-                    <div className={"card__category__description"}>
+                    <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                         <h3>Macbook Pro</h3>
                         <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                         <button className={"btn__white-small"}>
@@ -68,7 +68,7 @@ export default function CardCategory() {
                 <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center bg-card-category'>
                     <Image className='max-w-[262px] max-h-[308px]' src={image1} alt="watch" />
                 </div>
-                <div className={"card__category__description"}>
+                <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                     <h3>Popular Products</h3>
                     <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                     <button className={"btn__black-small"}>
@@ -80,7 +80,7 @@ export default function CardCategory() {
                 <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
                     <img src="/images/card_category/image 64.png" alt="watch" />
                 </div>
-                <div className={"card__category__description"}>
+                <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                     <h3>Ipad Pro</h3>
                     <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                     <button className={"btn__black-small"}>
@@ -92,7 +92,7 @@ export default function CardCategory() {
                 <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
                     <img src="/images/card_category/image 41.png" alt="watch" />
                 </div>
-                <div className={"card__category__description"}>
+                <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                     <h3>Samsung Galaxy </h3>
                     <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                     <button className={"btn__black-small"}>
@@ -104,7 +104,7 @@ export default function CardCategory() {
                 <div className='bg-contain bg-no-repeat max-w-full max-h-[336px] text-center'>
                     <img className='max-w-full max-h-[500px]' src="/images/card_category/Macbook_1.png" alt="watch" />
                 </div>
-                <div className={"card__category__description"}>
+                <div className='text-left mx-[32px] mt-[68px] max-w-[296px] max-h-[208px]'>
                     <h3>Macbook Pro</h3>
                     <p className={"card__category__description-p"}>iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.</p>
                     <button className={"btn__white-small"}>
