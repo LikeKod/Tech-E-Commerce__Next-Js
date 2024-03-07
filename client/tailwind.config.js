@@ -20,6 +20,11 @@ module.exports = {
         'card-category-1': '#F9F9F9',
         'card-category-2': '#EAEAEA',
         'card-category-3': '#2C2C2C',
+        'card-category-p': '#909090',
+
+      },
+      fontFamily: {
+        'main': ['SF Pro Display',],
       },
       fontSize: {
         sm: '0.8rem',
